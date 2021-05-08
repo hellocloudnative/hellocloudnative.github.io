@@ -22,11 +22,11 @@
       
       <item>
         <title>Emoji Support</title>
-        <link>https://hellocloudnative.github.io/posts/emoji-support/</link>
+        <link>https://hellocloudnative.github.io/zh/posts/emoji-support/</link>
         <pubDate>Mon, 16 Dec 2019 12:00:06 +0900</pubDate>
         <author>zzossig@gmail.com (zzossig)</author>
         <atom:modified>Mon, 16 Dec 2019 12:00:06 +0900</atom:modified>
-        <guid>https://hellocloudnative.github.io/posts/emoji-support/</guid>
+        <guid>https://hellocloudnative.github.io/zh/posts/emoji-support/</guid>
         <description>&lt;p&gt;Emoji can be enabled in a Hugo project in a number of ways.&lt;/p&gt;</description>
         
         <dc:creator>Kim</dc:creator>
