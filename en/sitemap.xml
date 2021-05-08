@@ -37,11 +37,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ko"
-                href="https://hellocloudnative.github.io/ko/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="en"
                 href="https://hellocloudnative.github.io/en/"
                 />
@@ -120,11 +115,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ko"
-                href="https://hellocloudnative.github.io/ko/tags/shortcode/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="en"
                 href="https://hellocloudnative.github.io/en/tags/shortcode/"
                 />
@@ -148,11 +138,6 @@
                 rel="alternate"
                 hreflang="zh"
                 href="https://hellocloudnative.github.io/zh/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="https://hellocloudnative.github.io/ko/tags/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -195,11 +180,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ko"
-                href="https://hellocloudnative.github.io/ko/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="en"
                 href="https://hellocloudnative.github.io/en/categories/"
                 />
@@ -210,11 +190,6 @@
                 rel="alternate"
                 hreflang="zh"
                 href="https://hellocloudnative.github.io/zh/tags/css/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="https://hellocloudnative.github.io/ko/tags/css/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -231,11 +206,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ko"
-                href="https://hellocloudnative.github.io/ko/tags/html/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="en"
                 href="https://hellocloudnative.github.io/en/tags/html/"
                 />
@@ -246,11 +216,6 @@
                 rel="alternate"
                 hreflang="zh"
                 href="https://hellocloudnative.github.io/zh/tags/markdown/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="https://hellocloudnative.github.io/ko/tags/markdown/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -280,11 +245,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ko"
-                href="https://hellocloudnative.github.io/ko/series/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="en"
                 href="https://hellocloudnative.github.io/en/series/"
                 />
@@ -295,11 +255,6 @@
                 rel="alternate"
                 hreflang="zh"
                 href="https://hellocloudnative.github.io/zh/categories/syntax/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="https://hellocloudnative.github.io/ko/categories/syntax/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -316,11 +271,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ko"
-                href="https://hellocloudnative.github.io/ko/tags/themes/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="en"
                 href="https://hellocloudnative.github.io/en/tags/themes/"
                 />
@@ -331,11 +281,6 @@
                 rel="alternate"
                 hreflang="zh"
                 href="https://hellocloudnative.github.io/zh/categories/themes/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="https://hellocloudnative.github.io/ko/categories/themes/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -352,11 +297,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ko"
-                href="https://hellocloudnative.github.io/ko/series/themes-guide/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="en"
                 href="https://hellocloudnative.github.io/en/series/themes-guide/"
                 />
@@ -367,11 +307,6 @@
                 rel="alternate"
                 hreflang="zh"
                 href="https://hellocloudnative.github.io/zh/tags/privacy/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="https://hellocloudnative.github.io/ko/tags/privacy/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -401,11 +336,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ko"
-                href="https://hellocloudnative.github.io/ko/tags/shortcodes/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="en"
                 href="https://hellocloudnative.github.io/en/tags/shortcodes/"
                 />
@@ -419,11 +349,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ko"
-                href="https://hellocloudnative.github.io/ko/tags/hugo/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="en"
                 href="https://hellocloudnative.github.io/en/tags/hugo/"
                 />
@@ -434,11 +359,6 @@
                 rel="alternate"
                 hreflang="zh"
                 href="https://hellocloudnative.github.io/zh/categories/hugo/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="https://hellocloudnative.github.io/ko/categories/hugo/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -481,11 +401,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ko"
-                href="https://hellocloudnative.github.io/ko/tags/amoji/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="en"
                 href="https://hellocloudnative.github.io/en/tags/amoji/"
                 />
@@ -499,11 +414,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ko"
-                href="https://hellocloudnative.github.io/ko/tags/bamoji/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="en"
                 href="https://hellocloudnative.github.io/en/tags/bamoji/"
                 />
@@ -514,11 +424,6 @@
                 rel="alternate"
                 hreflang="zh"
                 href="https://hellocloudnative.github.io/zh/tags/emoji/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="https://hellocloudnative.github.io/ko/tags/emoji/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -548,11 +453,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ko"
-                href="https://hellocloudnative.github.io/ko/tags/gamoji/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="en"
                 href="https://hellocloudnative.github.io/en/tags/gamoji/"
                 />
@@ -566,11 +466,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ko"
-                href="https://hellocloudnative.github.io/ko/tags/namoji/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="en"
                 href="https://hellocloudnative.github.io/en/tags/namoji/"
                 />
@@ -581,11 +476,6 @@
                 rel="alternate"
                 hreflang="zh"
                 href="https://hellocloudnative.github.io/zh/categories/diagram/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="https://hellocloudnative.github.io/ko/categories/diagram/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -654,11 +544,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ko"
-                href="https://hellocloudnative.github.io/ko/tags/diagram/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="en"
                 href="https://hellocloudnative.github.io/en/tags/diagram/"
                 />
@@ -682,11 +567,6 @@
                 rel="alternate"
                 hreflang="zh"
                 href="https://hellocloudnative.github.io/zh/categories/math/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="https://hellocloudnative.github.io/ko/categories/math/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -731,6 +611,45 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://hellocloudnative.github.io/en/posts/test-flowchart/"
+                />
+  </url><url>
+    <loc>https://hellocloudnative.github.io/en/gallery/cartoon/</loc>
+    <lastmod>2019-10-31T10:20:16+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://hellocloudnative.github.io/zh/gallery/cartoon/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://hellocloudnative.github.io/en/gallery/cartoon/"
+                />
+  </url><url>
+    <loc>https://hellocloudnative.github.io/en/gallery/</loc>
+    <lastmod>2019-10-31T10:20:16+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://hellocloudnative.github.io/zh/gallery/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://hellocloudnative.github.io/en/gallery/"
+                />
+  </url><url>
+    <loc>https://hellocloudnative.github.io/en/gallery/photo/</loc>
+    <lastmod>2019-10-31T10:20:16+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://hellocloudnative.github.io/zh/gallery/photo/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://hellocloudnative.github.io/en/gallery/photo/"
                 />
   </url><url>
     <loc>https://hellocloudnative.github.io/en/presentation/dir/fourth/</loc>
@@ -824,16 +743,50 @@
                 href="https://hellocloudnative.github.io/en/about/"
                 />
   </url><url>
+    <loc>https://hellocloudnative.github.io/en/publication/article/article_any_folder_name_1/</loc>
+    <lastmod>2018-06-01T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://hellocloudnative.github.io/zh/publication/article/article_any_folder_name_1/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://hellocloudnative.github.io/en/publication/article/article_any_folder_name_1/"
+                />
+  </url><url>
+    <loc>https://hellocloudnative.github.io/en/publication/book/book_any_folder_name_1/</loc>
+    <lastmod>2017-06-01T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://hellocloudnative.github.io/zh/publication/book/book_any_folder_name_1/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://hellocloudnative.github.io/en/publication/book/book_any_folder_name_1/"
+                />
+  </url><url>
+    <loc>https://hellocloudnative.github.io/en/publication/misc/misc_any_folder_name_1/</loc>
+    <lastmod>2016-11-01T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://hellocloudnative.github.io/zh/publication/misc/misc_any_folder_name_1/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://hellocloudnative.github.io/en/publication/misc/misc_any_folder_name_1/"
+                />
+  </url><url>
     <loc>https://hellocloudnative.github.io/en/tags/index/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
                 href="https://hellocloudnative.github.io/zh/tags/index/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="https://hellocloudnative.github.io/ko/tags/index/"
                 />
     <xhtml:link
                 rel="alternate"
