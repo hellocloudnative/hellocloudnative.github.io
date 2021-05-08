@@ -2,778 +2,843 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://xuan200922702.github.io/en/</loc>
-    <lastmod>2020-01-25T06:40:51+09:00</lastmod>
+    <loc>https://hellocloudnative.github.io/en/showcase/hugo/hugo-theme-zzo/</loc>
+    <lastmod>2020-01-19T21:13:42+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://xuan200922702.github.io/zh/"
+                href="https://hellocloudnative.github.io/zh/showcase/hugo/hugo-theme-zzo/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://hellocloudnative.github.io/en/showcase/hugo/hugo-theme-zzo/"
+                />
+  </url><url>
+    <loc>https://hellocloudnative.github.io/en/showcase/hugo/hugo-theme-zdoc/</loc>
+    <lastmod>2020-01-19T21:13:42+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://hellocloudnative.github.io/zh/showcase/hugo/hugo-theme-zdoc/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://hellocloudnative.github.io/en/showcase/hugo/hugo-theme-zdoc/"
+                />
+  </url><url>
+    <loc>https://hellocloudnative.github.io/en/</loc>
+    <lastmod>2020-03-05T14:08:48+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://hellocloudnative.github.io/zh/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://xuan200922702.github.io/ko/"
+                href="https://hellocloudnative.github.io/ko/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://xuan200922702.github.io/en/"
+                href="https://hellocloudnative.github.io/en/"
                 />
   </url><url>
-    <loc>https://xuan200922702.github.io/en/posts/</loc>
-    <lastmod>2020-01-25T06:40:51+09:00</lastmod>
+    <loc>https://hellocloudnative.github.io/en/publication/article/</loc>
+    <lastmod>2020-03-05T14:08:48+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://xuan200922702.github.io/zh/posts/"
+                href="https://hellocloudnative.github.io/zh/publication/article/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://xuan200922702.github.io/en/posts/"
+                href="https://hellocloudnative.github.io/en/publication/article/"
                 />
   </url><url>
-    <loc>https://xuan200922702.github.io/en/tags/shortcode/</loc>
+    <loc>https://hellocloudnative.github.io/en/publication/book/</loc>
+    <lastmod>2020-03-05T14:08:48+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://hellocloudnative.github.io/zh/publication/book/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://hellocloudnative.github.io/en/publication/book/"
+                />
+  </url><url>
+    <loc>https://hellocloudnative.github.io/en/publication/misc/</loc>
+    <lastmod>2020-03-05T14:08:48+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://hellocloudnative.github.io/zh/publication/misc/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://hellocloudnative.github.io/en/publication/misc/"
+                />
+  </url><url>
+    <loc>https://hellocloudnative.github.io/en/publication/</loc>
+    <lastmod>2020-03-05T14:08:48+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://hellocloudnative.github.io/zh/publication/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://hellocloudnative.github.io/en/publication/"
+                />
+  </url><url>
+    <loc>https://hellocloudnative.github.io/en/posts/</loc>
     <lastmod>2020-01-25T06:40:51+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://xuan200922702.github.io/zh/tags/shortcode/"
+                href="https://hellocloudnative.github.io/zh/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://hellocloudnative.github.io/en/posts/"
+                />
+  </url><url>
+    <loc>https://hellocloudnative.github.io/en/tags/shortcode/</loc>
+    <lastmod>2020-01-25T06:40:51+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://hellocloudnative.github.io/zh/tags/shortcode/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://xuan200922702.github.io/ko/tags/shortcode/"
+                href="https://hellocloudnative.github.io/ko/tags/shortcode/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://xuan200922702.github.io/en/tags/shortcode/"
+                href="https://hellocloudnative.github.io/en/tags/shortcode/"
                 />
   </url><url>
-    <loc>https://xuan200922702.github.io/en/posts/shortcodes/</loc>
+    <loc>https://hellocloudnative.github.io/en/posts/shortcodes/</loc>
     <lastmod>2020-01-25T06:40:51+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://xuan200922702.github.io/zh/posts/shortcodes/"
+                href="https://hellocloudnative.github.io/zh/posts/shortcodes/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://xuan200922702.github.io/en/posts/shortcodes/"
+                href="https://hellocloudnative.github.io/en/posts/shortcodes/"
                 />
   </url><url>
-    <loc>https://xuan200922702.github.io/en/tags/</loc>
+    <loc>https://hellocloudnative.github.io/en/tags/</loc>
     <lastmod>2020-01-25T06:40:51+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://xuan200922702.github.io/zh/tags/"
+                href="https://hellocloudnative.github.io/zh/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://xuan200922702.github.io/ko/tags/"
+                href="https://hellocloudnative.github.io/ko/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://xuan200922702.github.io/en/tags/"
+                href="https://hellocloudnative.github.io/en/tags/"
                 />
   </url><url>
-    <loc>https://xuan200922702.github.io/en/showcase/</loc>
+    <loc>https://hellocloudnative.github.io/en/showcase/hugo/</loc>
+    <lastmod>2020-01-19T21:04:11+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://hellocloudnative.github.io/zh/showcase/hugo/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://hellocloudnative.github.io/en/showcase/hugo/"
+                />
+  </url><url>
+    <loc>https://hellocloudnative.github.io/en/showcase/</loc>
     <lastmod>2020-01-19T15:43:38+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://xuan200922702.github.io/zh/showcase/"
+                href="https://hellocloudnative.github.io/zh/showcase/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://xuan200922702.github.io/en/showcase/"
+                href="https://hellocloudnative.github.io/en/showcase/"
                 />
   </url><url>
-    <loc>https://xuan200922702.github.io/en/categories/</loc>
+    <loc>https://hellocloudnative.github.io/en/categories/</loc>
     <lastmod>2019-12-20T12:00:06+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://xuan200922702.github.io/zh/categories/"
+                href="https://hellocloudnative.github.io/zh/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://xuan200922702.github.io/ko/categories/"
+                href="https://hellocloudnative.github.io/ko/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://xuan200922702.github.io/en/categories/"
+                href="https://hellocloudnative.github.io/en/categories/"
                 />
   </url><url>
-    <loc>https://xuan200922702.github.io/en/tags/css/</loc>
+    <loc>https://hellocloudnative.github.io/en/tags/css/</loc>
     <lastmod>2019-12-20T12:00:06+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://xuan200922702.github.io/zh/tags/css/"
+                href="https://hellocloudnative.github.io/zh/tags/css/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://xuan200922702.github.io/ko/tags/css/"
+                href="https://hellocloudnative.github.io/ko/tags/css/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://xuan200922702.github.io/en/tags/css/"
+                href="https://hellocloudnative.github.io/en/tags/css/"
                 />
   </url><url>
-    <loc>https://xuan200922702.github.io/en/tags/html/</loc>
+    <loc>https://hellocloudnative.github.io/en/tags/html/</loc>
     <lastmod>2019-12-20T12:00:06+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://xuan200922702.github.io/zh/tags/html/"
+                href="https://hellocloudnative.github.io/zh/tags/html/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://xuan200922702.github.io/ko/tags/html/"
+                href="https://hellocloudnative.github.io/ko/tags/html/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://xuan200922702.github.io/en/tags/html/"
+                href="https://hellocloudnative.github.io/en/tags/html/"
                 />
   </url><url>
-    <loc>https://xuan200922702.github.io/en/tags/markdown/</loc>
+    <loc>https://hellocloudnative.github.io/en/tags/markdown/</loc>
     <lastmod>2019-12-20T12:00:06+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://xuan200922702.github.io/zh/tags/markdown/"
+                href="https://hellocloudnative.github.io/zh/tags/markdown/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://xuan200922702.github.io/ko/tags/markdown/"
+                href="https://hellocloudnative.github.io/ko/tags/markdown/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://xuan200922702.github.io/en/tags/markdown/"
+                href="https://hellocloudnative.github.io/en/tags/markdown/"
                 />
   </url><url>
-    <loc>https://xuan200922702.github.io/en/posts/markdown-syntax/</loc>
+    <loc>https://hellocloudnative.github.io/en/posts/markdown-syntax/</loc>
     <lastmod>2019-12-20T12:00:06+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://xuan200922702.github.io/zh/posts/markdown-syntax/"
+                href="https://hellocloudnative.github.io/zh/posts/markdown-syntax/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://xuan200922702.github.io/en/posts/markdown-syntax/"
+                href="https://hellocloudnative.github.io/en/posts/markdown-syntax/"
                 />
   </url><url>
-    <loc>https://xuan200922702.github.io/en/series/</loc>
+    <loc>https://hellocloudnative.github.io/en/series/</loc>
     <lastmod>2019-12-20T12:00:06+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://xuan200922702.github.io/zh/series/"
+                href="https://hellocloudnative.github.io/zh/series/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://xuan200922702.github.io/ko/series/"
+                href="https://hellocloudnative.github.io/ko/series/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://xuan200922702.github.io/en/series/"
+                href="https://hellocloudnative.github.io/en/series/"
                 />
   </url><url>
-    <loc>https://xuan200922702.github.io/en/categories/syntax/</loc>
+    <loc>https://hellocloudnative.github.io/en/categories/syntax/</loc>
     <lastmod>2019-12-20T12:00:06+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://xuan200922702.github.io/zh/categories/syntax/"
+                href="https://hellocloudnative.github.io/zh/categories/syntax/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://xuan200922702.github.io/ko/categories/syntax/"
+                href="https://hellocloudnative.github.io/ko/categories/syntax/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://xuan200922702.github.io/en/categories/syntax/"
+                href="https://hellocloudnative.github.io/en/categories/syntax/"
                 />
   </url><url>
-    <loc>https://xuan200922702.github.io/en/tags/themes/</loc>
+    <loc>https://hellocloudnative.github.io/en/tags/themes/</loc>
     <lastmod>2019-12-20T12:00:06+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://xuan200922702.github.io/zh/tags/themes/"
+                href="https://hellocloudnative.github.io/zh/tags/themes/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://xuan200922702.github.io/ko/tags/themes/"
+                href="https://hellocloudnative.github.io/ko/tags/themes/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://xuan200922702.github.io/en/tags/themes/"
+                href="https://hellocloudnative.github.io/en/tags/themes/"
                 />
   </url><url>
-    <loc>https://xuan200922702.github.io/en/categories/themes/</loc>
+    <loc>https://hellocloudnative.github.io/en/categories/themes/</loc>
     <lastmod>2019-12-20T12:00:06+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://xuan200922702.github.io/zh/categories/themes/"
+                href="https://hellocloudnative.github.io/zh/categories/themes/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://xuan200922702.github.io/ko/categories/themes/"
+                href="https://hellocloudnative.github.io/ko/categories/themes/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://xuan200922702.github.io/en/categories/themes/"
+                href="https://hellocloudnative.github.io/en/categories/themes/"
                 />
   </url><url>
-    <loc>https://xuan200922702.github.io/en/series/themes-guide/</loc>
+    <loc>https://hellocloudnative.github.io/en/series/themes-guide/</loc>
     <lastmod>2019-12-20T12:00:06+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://xuan200922702.github.io/zh/series/themes-guide/"
+                href="https://hellocloudnative.github.io/zh/series/themes-guide/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://xuan200922702.github.io/ko/series/themes-guide/"
+                href="https://hellocloudnative.github.io/ko/series/themes-guide/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://xuan200922702.github.io/en/series/themes-guide/"
+                href="https://hellocloudnative.github.io/en/series/themes-guide/"
                 />
   </url><url>
-    <loc>https://xuan200922702.github.io/en/tags/privacy/</loc>
+    <loc>https://hellocloudnative.github.io/en/tags/privacy/</loc>
     <lastmod>2019-12-19T12:00:06+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://xuan200922702.github.io/zh/tags/privacy/"
+                href="https://hellocloudnative.github.io/zh/tags/privacy/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://xuan200922702.github.io/ko/tags/privacy/"
+                href="https://hellocloudnative.github.io/ko/tags/privacy/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://xuan200922702.github.io/en/tags/privacy/"
+                href="https://hellocloudnative.github.io/en/tags/privacy/"
                 />
   </url><url>
-    <loc>https://xuan200922702.github.io/en/posts/rich-content/</loc>
+    <loc>https://hellocloudnative.github.io/en/posts/rich-content/</loc>
     <lastmod>2019-12-19T12:00:06+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://xuan200922702.github.io/zh/posts/rich-content/"
+                href="https://hellocloudnative.github.io/zh/posts/rich-content/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://xuan200922702.github.io/en/posts/rich-content/"
+                href="https://hellocloudnative.github.io/en/posts/rich-content/"
                 />
   </url><url>
-    <loc>https://xuan200922702.github.io/en/tags/shortcodes/</loc>
+    <loc>https://hellocloudnative.github.io/en/tags/shortcodes/</loc>
     <lastmod>2019-12-19T12:00:06+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://xuan200922702.github.io/zh/tags/shortcodes/"
+                href="https://hellocloudnative.github.io/zh/tags/shortcodes/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://xuan200922702.github.io/ko/tags/shortcodes/"
+                href="https://hellocloudnative.github.io/ko/tags/shortcodes/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://xuan200922702.github.io/en/tags/shortcodes/"
+                href="https://hellocloudnative.github.io/en/tags/shortcodes/"
                 />
   </url><url>
-    <loc>https://xuan200922702.github.io/en/tags/hugo/</loc>
+    <loc>https://hellocloudnative.github.io/en/tags/hugo/</loc>
     <lastmod>2019-12-18T10:33:41+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://xuan200922702.github.io/zh/tags/hugo/"
+                href="https://hellocloudnative.github.io/zh/tags/hugo/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://xuan200922702.github.io/ko/tags/hugo/"
+                href="https://hellocloudnative.github.io/ko/tags/hugo/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://xuan200922702.github.io/en/tags/hugo/"
+                href="https://hellocloudnative.github.io/en/tags/hugo/"
                 />
   </url><url>
-    <loc>https://xuan200922702.github.io/en/categories/hugo/</loc>
+    <loc>https://hellocloudnative.github.io/en/categories/hugo/</loc>
     <lastmod>2019-12-18T10:33:41+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://xuan200922702.github.io/zh/categories/hugo/"
+                href="https://hellocloudnative.github.io/zh/categories/hugo/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://xuan200922702.github.io/ko/categories/hugo/"
+                href="https://hellocloudnative.github.io/ko/categories/hugo/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://xuan200922702.github.io/en/categories/hugo/"
+                href="https://hellocloudnative.github.io/en/categories/hugo/"
                 />
   </url><url>
-    <loc>https://xuan200922702.github.io/en/posts/syntax-highlight/</loc>
+    <loc>https://hellocloudnative.github.io/en/posts/syntax-highlight/</loc>
     <lastmod>2019-12-18T10:33:41+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://xuan200922702.github.io/zh/posts/syntax-highlight/"
+                href="https://hellocloudnative.github.io/zh/posts/syntax-highlight/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://xuan200922702.github.io/en/posts/syntax-highlight/"
+                href="https://hellocloudnative.github.io/en/posts/syntax-highlight/"
                 />
   </url><url>
-    <loc>https://xuan200922702.github.io/en/posts/math-typesetting/</loc>
+    <loc>https://hellocloudnative.github.io/en/posts/math-typesetting/</loc>
     <lastmod>2019-12-17T12:00:06+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://xuan200922702.github.io/zh/posts/math-typesetting/"
+                href="https://hellocloudnative.github.io/zh/posts/math-typesetting/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://xuan200922702.github.io/en/posts/math-typesetting/"
+                href="https://hellocloudnative.github.io/en/posts/math-typesetting/"
                 />
   </url><url>
-    <loc>https://xuan200922702.github.io/en/tags/amoji/</loc>
+    <loc>https://hellocloudnative.github.io/en/tags/amoji/</loc>
     <lastmod>2019-12-16T12:00:06+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://xuan200922702.github.io/zh/tags/amoji/"
+                href="https://hellocloudnative.github.io/zh/tags/amoji/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://xuan200922702.github.io/ko/tags/amoji/"
+                href="https://hellocloudnative.github.io/ko/tags/amoji/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://xuan200922702.github.io/en/tags/amoji/"
+                href="https://hellocloudnative.github.io/en/tags/amoji/"
                 />
   </url><url>
-    <loc>https://xuan200922702.github.io/en/tags/bamoji/</loc>
+    <loc>https://hellocloudnative.github.io/en/tags/bamoji/</loc>
     <lastmod>2019-12-16T12:00:06+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://xuan200922702.github.io/zh/tags/bamoji/"
+                href="https://hellocloudnative.github.io/zh/tags/bamoji/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://xuan200922702.github.io/ko/tags/bamoji/"
+                href="https://hellocloudnative.github.io/ko/tags/bamoji/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://xuan200922702.github.io/en/tags/bamoji/"
+                href="https://hellocloudnative.github.io/en/tags/bamoji/"
                 />
   </url><url>
-    <loc>https://xuan200922702.github.io/en/tags/emoji/</loc>
+    <loc>https://hellocloudnative.github.io/en/tags/emoji/</loc>
     <lastmod>2019-12-16T12:00:06+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://xuan200922702.github.io/zh/tags/emoji/"
+                href="https://hellocloudnative.github.io/zh/tags/emoji/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://xuan200922702.github.io/ko/tags/emoji/"
+                href="https://hellocloudnative.github.io/ko/tags/emoji/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://xuan200922702.github.io/en/tags/emoji/"
+                href="https://hellocloudnative.github.io/en/tags/emoji/"
                 />
   </url><url>
-    <loc>https://xuan200922702.github.io/en/posts/emoji-support/</loc>
+    <loc>https://hellocloudnative.github.io/en/posts/emoji-support/</loc>
     <lastmod>2019-12-16T12:00:06+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://xuan200922702.github.io/zh/posts/emoji-support/"
+                href="https://hellocloudnative.github.io/zh/posts/emoji-support/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://xuan200922702.github.io/en/posts/emoji-support/"
+                href="https://hellocloudnative.github.io/en/posts/emoji-support/"
                 />
   </url><url>
-    <loc>https://xuan200922702.github.io/en/tags/gamoji/</loc>
+    <loc>https://hellocloudnative.github.io/en/tags/gamoji/</loc>
     <lastmod>2019-12-16T12:00:06+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://xuan200922702.github.io/zh/tags/gamoji/"
+                href="https://hellocloudnative.github.io/zh/tags/gamoji/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://xuan200922702.github.io/ko/tags/gamoji/"
+                href="https://hellocloudnative.github.io/ko/tags/gamoji/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://xuan200922702.github.io/en/tags/gamoji/"
+                href="https://hellocloudnative.github.io/en/tags/gamoji/"
                 />
   </url><url>
-    <loc>https://xuan200922702.github.io/en/tags/namoji/</loc>
+    <loc>https://hellocloudnative.github.io/en/tags/namoji/</loc>
     <lastmod>2019-12-16T12:00:06+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://xuan200922702.github.io/zh/tags/namoji/"
+                href="https://hellocloudnative.github.io/zh/tags/namoji/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://xuan200922702.github.io/ko/tags/namoji/"
+                href="https://hellocloudnative.github.io/ko/tags/namoji/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://xuan200922702.github.io/en/tags/namoji/"
+                href="https://hellocloudnative.github.io/en/tags/namoji/"
                 />
   </url><url>
-    <loc>https://xuan200922702.github.io/en/categories/diagram/</loc>
+    <loc>https://hellocloudnative.github.io/en/categories/diagram/</loc>
     <lastmod>2019-11-18T21:00:06+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://xuan200922702.github.io/zh/categories/diagram/"
+                href="https://hellocloudnative.github.io/zh/categories/diagram/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://xuan200922702.github.io/ko/categories/diagram/"
+                href="https://hellocloudnative.github.io/ko/categories/diagram/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://xuan200922702.github.io/en/categories/diagram/"
+                href="https://hellocloudnative.github.io/en/categories/diagram/"
                 />
   </url><url>
-    <loc>https://xuan200922702.github.io/en/posts/test-viz/</loc>
+    <loc>https://hellocloudnative.github.io/en/posts/test-viz/</loc>
     <lastmod>2019-11-18T21:00:06+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://xuan200922702.github.io/zh/posts/test-viz/"
+                href="https://hellocloudnative.github.io/zh/posts/test-viz/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://xuan200922702.github.io/en/posts/test-viz/"
+                href="https://hellocloudnative.github.io/en/posts/test-viz/"
                 />
   </url><url>
-    <loc>https://xuan200922702.github.io/en/posts/test-wavedrom/</loc>
+    <loc>https://hellocloudnative.github.io/en/posts/test-wavedrom/</loc>
     <lastmod>2019-11-18T18:00:06+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://xuan200922702.github.io/zh/posts/test-wavedrom/"
+                href="https://hellocloudnative.github.io/zh/posts/test-wavedrom/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://xuan200922702.github.io/en/posts/test-wavedrom/"
+                href="https://hellocloudnative.github.io/en/posts/test-wavedrom/"
                 />
   </url><url>
-    <loc>https://xuan200922702.github.io/en/posts/test-chartjs/</loc>
+    <loc>https://hellocloudnative.github.io/en/posts/test-chartjs/</loc>
     <lastmod>2019-11-18T12:00:06+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://xuan200922702.github.io/zh/posts/test-chartjs/"
+                href="https://hellocloudnative.github.io/zh/posts/test-chartjs/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://xuan200922702.github.io/en/posts/test-chartjs/"
+                href="https://hellocloudnative.github.io/en/posts/test-chartjs/"
                 />
   </url><url>
-    <loc>https://xuan200922702.github.io/en/posts/test-js-sequence-diagrams/</loc>
+    <loc>https://hellocloudnative.github.io/en/posts/test-js-sequence-diagrams/</loc>
     <lastmod>2019-11-18T12:00:06+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://xuan200922702.github.io/zh/posts/test-js-sequence-diagrams/"
+                href="https://hellocloudnative.github.io/zh/posts/test-js-sequence-diagrams/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://xuan200922702.github.io/en/posts/test-js-sequence-diagrams/"
+                href="https://hellocloudnative.github.io/en/posts/test-js-sequence-diagrams/"
                 />
   </url><url>
-    <loc>https://xuan200922702.github.io/en/tags/diagram/</loc>
+    <loc>https://hellocloudnative.github.io/en/tags/diagram/</loc>
     <lastmod>2019-11-17T12:00:06+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://xuan200922702.github.io/zh/tags/diagram/"
+                href="https://hellocloudnative.github.io/zh/tags/diagram/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://xuan200922702.github.io/ko/tags/diagram/"
+                href="https://hellocloudnative.github.io/ko/tags/diagram/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://xuan200922702.github.io/en/tags/diagram/"
+                href="https://hellocloudnative.github.io/en/tags/diagram/"
                 />
   </url><url>
-    <loc>https://xuan200922702.github.io/en/posts/test-mermaid/</loc>
+    <loc>https://hellocloudnative.github.io/en/posts/test-mermaid/</loc>
     <lastmod>2019-11-17T12:00:06+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://xuan200922702.github.io/zh/posts/test-mermaid/"
+                href="https://hellocloudnative.github.io/zh/posts/test-mermaid/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://xuan200922702.github.io/en/posts/test-mermaid/"
+                href="https://hellocloudnative.github.io/en/posts/test-mermaid/"
                 />
   </url><url>
-    <loc>https://xuan200922702.github.io/en/categories/math/</loc>
+    <loc>https://hellocloudnative.github.io/en/categories/math/</loc>
     <lastmod>2019-11-16T12:00:06+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://xuan200922702.github.io/zh/categories/math/"
+                href="https://hellocloudnative.github.io/zh/categories/math/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://xuan200922702.github.io/ko/categories/math/"
+                href="https://hellocloudnative.github.io/ko/categories/math/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://xuan200922702.github.io/en/categories/math/"
+                href="https://hellocloudnative.github.io/en/categories/math/"
                 />
   </url><url>
-    <loc>https://xuan200922702.github.io/en/posts/test-mathjax/</loc>
+    <loc>https://hellocloudnative.github.io/en/posts/test-mathjax/</loc>
     <lastmod>2019-11-16T12:00:06+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://xuan200922702.github.io/zh/posts/test-mathjax/"
+                href="https://hellocloudnative.github.io/zh/posts/test-mathjax/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://xuan200922702.github.io/en/posts/test-mathjax/"
+                href="https://hellocloudnative.github.io/en/posts/test-mathjax/"
                 />
   </url><url>
-    <loc>https://xuan200922702.github.io/en/posts/test-katex/</loc>
+    <loc>https://hellocloudnative.github.io/en/posts/test-katex/</loc>
     <lastmod>2019-11-15T12:00:06+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://xuan200922702.github.io/zh/posts/test-katex/"
+                href="https://hellocloudnative.github.io/zh/posts/test-katex/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://xuan200922702.github.io/en/posts/test-katex/"
+                href="https://hellocloudnative.github.io/en/posts/test-katex/"
                 />
   </url><url>
-    <loc>https://xuan200922702.github.io/en/posts/test-flowchart/</loc>
+    <loc>https://hellocloudnative.github.io/en/posts/test-flowchart/</loc>
     <lastmod>2019-11-14T12:00:06+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://xuan200922702.github.io/zh/posts/test-flowchart/"
+                href="https://hellocloudnative.github.io/zh/posts/test-flowchart/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://xuan200922702.github.io/en/posts/test-flowchart/"
+                href="https://hellocloudnative.github.io/en/posts/test-flowchart/"
                 />
   </url><url>
-    <loc>https://xuan200922702.github.io/en/gallery/cartoon/</loc>
-    <lastmod>2019-10-31T10:20:16+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://xuan200922702.github.io/zh/gallery/cartoon/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://xuan200922702.github.io/en/gallery/cartoon/"
-                />
-  </url><url>
-    <loc>https://xuan200922702.github.io/en/gallery/</loc>
-    <lastmod>2019-10-31T10:20:16+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://xuan200922702.github.io/zh/gallery/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://xuan200922702.github.io/en/gallery/"
-                />
-  </url><url>
-    <loc>https://xuan200922702.github.io/en/presentation/dir/fourth/</loc>
+    <loc>https://hellocloudnative.github.io/en/presentation/dir/fourth/</loc>
     <lastmod>2019-10-30T20:48:10+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://xuan200922702.github.io/zh/presentation/dir/fourth/"
+                href="https://hellocloudnative.github.io/zh/presentation/dir/fourth/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://xuan200922702.github.io/en/presentation/dir/fourth/"
+                href="https://hellocloudnative.github.io/en/presentation/dir/fourth/"
                 />
   </url><url>
-    <loc>https://xuan200922702.github.io/en/presentation/</loc>
+    <loc>https://hellocloudnative.github.io/en/presentation/</loc>
     <lastmod>2019-10-30T20:48:10+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://xuan200922702.github.io/zh/presentation/"
+                href="https://hellocloudnative.github.io/zh/presentation/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://xuan200922702.github.io/en/presentation/"
+                href="https://hellocloudnative.github.io/en/presentation/"
                 />
   </url><url>
-    <loc>https://xuan200922702.github.io/en/presentation/third/</loc>
+    <loc>https://hellocloudnative.github.io/en/presentation/third/</loc>
     <lastmod>2019-10-30T20:46:30+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://xuan200922702.github.io/zh/presentation/third/"
+                href="https://hellocloudnative.github.io/zh/presentation/third/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://xuan200922702.github.io/en/presentation/third/"
+                href="https://hellocloudnative.github.io/en/presentation/third/"
                 />
   </url><url>
-    <loc>https://xuan200922702.github.io/en/presentation/second/</loc>
+    <loc>https://hellocloudnative.github.io/en/presentation/second/</loc>
     <lastmod>2019-10-30T20:45:24+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://xuan200922702.github.io/zh/presentation/second/"
+                href="https://hellocloudnative.github.io/zh/presentation/second/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://xuan200922702.github.io/en/presentation/second/"
+                href="https://hellocloudnative.github.io/en/presentation/second/"
                 />
   </url><url>
-    <loc>https://xuan200922702.github.io/en/presentation/first/</loc>
+    <loc>https://hellocloudnative.github.io/en/presentation/first/</loc>
     <lastmod>2019-10-30T19:45:20+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://xuan200922702.github.io/zh/presentation/first/"
+                href="https://hellocloudnative.github.io/zh/presentation/first/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://xuan200922702.github.io/en/presentation/first/"
+                href="https://hellocloudnative.github.io/en/presentation/first/"
                 />
   </url><url>
-    <loc>https://xuan200922702.github.io/en/archive/</loc>
+    <loc>https://hellocloudnative.github.io/en/archive/</loc>
     <lastmod>2019-10-19T11:44:14+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://xuan200922702.github.io/zh/archive/"
+                href="https://hellocloudnative.github.io/zh/archive/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://xuan200922702.github.io/en/archive/"
+                href="https://hellocloudnative.github.io/en/archive/"
                 />
   </url><url>
-    <loc>https://xuan200922702.github.io/en/about/</loc>
+    <loc>https://hellocloudnative.github.io/en/about/</loc>
     <lastmod>2019-02-28T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://xuan200922702.github.io/zh/about/"
+                href="https://hellocloudnative.github.io/zh/about/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://xuan200922702.github.io/en/about/"
+                href="https://hellocloudnative.github.io/en/about/"
                 />
   </url><url>
-    <loc>https://xuan200922702.github.io/en/tags/index/</loc>
+    <loc>https://hellocloudnative.github.io/en/tags/index/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://xuan200922702.github.io/zh/tags/index/"
+                href="https://hellocloudnative.github.io/zh/tags/index/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://xuan200922702.github.io/ko/tags/index/"
+                href="https://hellocloudnative.github.io/ko/tags/index/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://xuan200922702.github.io/en/tags/index/"
+                href="https://hellocloudnative.github.io/en/tags/index/"
                 />
   </url>
 </urlset>
