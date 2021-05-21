@@ -43,16 +43,6 @@
   </url><url>
     <loc>https://hellocloudnative.github.io/en/authors/example-author/</loc>
     <lastmod>2021-03-31T13:11:22+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://hellocloudnative.github.io/zh/authors/example-author/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://hellocloudnative.github.io/en/authors/example-author/"
-                />
   </url><url>
     <loc>https://hellocloudnative.github.io/en/posts/</loc>
     <lastmod>2021-03-31T13:11:22+08:00</lastmod>
@@ -69,16 +59,6 @@
   </url><url>
     <loc>https://hellocloudnative.github.io/en/posts/math-support/</loc>
     <lastmod>2020-11-20T22:52:56+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://hellocloudnative.github.io/zh/posts/math-support/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://hellocloudnative.github.io/en/posts/math-support/"
-                />
   </url><url>
     <loc>https://hellocloudnative.github.io/en/docs/example-doc/chapter-1/</loc>
     <lastmod>2020-10-16T00:00:00+00:00</lastmod>
@@ -186,29 +166,9 @@
   </url><url>
     <loc>https://hellocloudnative.github.io/en/posts/featured-image/</loc>
     <lastmod>2020-05-26T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://hellocloudnative.github.io/zh/posts/featured-image/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://hellocloudnative.github.io/en/posts/featured-image/"
-                />
   </url><url>
     <loc>https://hellocloudnative.github.io/en/tags/image/</loc>
     <lastmod>2020-05-26T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://hellocloudnative.github.io/zh/tags/image/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://hellocloudnative.github.io/en/tags/image/"
-                />
   </url><url>
     <loc>https://hellocloudnative.github.io/en/series/</loc>
     <lastmod>2020-05-26T00:00:00+00:00</lastmod>
@@ -238,171 +198,41 @@
   </url><url>
     <loc>https://hellocloudnative.github.io/en/categories/themes/</loc>
     <lastmod>2020-05-26T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://hellocloudnative.github.io/zh/categories/themes/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://hellocloudnative.github.io/en/categories/themes/"
-                />
   </url><url>
     <loc>https://hellocloudnative.github.io/en/series/themes-guide/</loc>
     <lastmod>2020-05-26T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://hellocloudnative.github.io/zh/series/themes-guide/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://hellocloudnative.github.io/en/series/themes-guide/"
-                />
   </url><url>
     <loc>https://hellocloudnative.github.io/en/tags/css/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://hellocloudnative.github.io/zh/tags/css/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://hellocloudnative.github.io/en/tags/css/"
-                />
   </url><url>
     <loc>https://hellocloudnative.github.io/en/tags/html/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://hellocloudnative.github.io/zh/tags/html/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://hellocloudnative.github.io/en/tags/html/"
-                />
   </url><url>
     <loc>https://hellocloudnative.github.io/en/authors/hugo-authors/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://hellocloudnative.github.io/zh/authors/hugo-authors/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://hellocloudnative.github.io/en/authors/hugo-authors/"
-                />
   </url><url>
     <loc>https://hellocloudnative.github.io/en/tags/markdown/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://hellocloudnative.github.io/zh/tags/markdown/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://hellocloudnative.github.io/en/tags/markdown/"
-                />
   </url><url>
     <loc>https://hellocloudnative.github.io/en/posts/markdown-syntax/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://hellocloudnative.github.io/zh/posts/markdown-syntax/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://hellocloudnative.github.io/en/posts/markdown-syntax/"
-                />
   </url><url>
     <loc>https://hellocloudnative.github.io/en/categories/syntax/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://hellocloudnative.github.io/zh/categories/syntax/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://hellocloudnative.github.io/en/categories/syntax/"
-                />
   </url><url>
     <loc>https://hellocloudnative.github.io/en/tags/themes/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://hellocloudnative.github.io/zh/tags/themes/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://hellocloudnative.github.io/en/tags/themes/"
-                />
   </url><url>
     <loc>https://hellocloudnative.github.io/en/posts/placeholder-text/</loc>
     <lastmod>2019-03-09T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://hellocloudnative.github.io/zh/posts/placeholder-text/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://hellocloudnative.github.io/en/posts/placeholder-text/"
-                />
   </url><url>
     <loc>https://hellocloudnative.github.io/en/tags/text/</loc>
     <lastmod>2019-03-09T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://hellocloudnative.github.io/zh/tags/text/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://hellocloudnative.github.io/en/tags/text/"
-                />
   </url><url>
     <loc>https://hellocloudnative.github.io/en/tags/emoji/</loc>
     <lastmod>2019-03-05T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://hellocloudnative.github.io/zh/tags/emoji/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://hellocloudnative.github.io/en/tags/emoji/"
-                />
   </url><url>
     <loc>https://hellocloudnative.github.io/en/posts/emoji-support/</loc>
     <lastmod>2019-03-05T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://hellocloudnative.github.io/zh/posts/emoji-support/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://hellocloudnative.github.io/en/posts/emoji-support/"
-                />
   </url>
 </urlset>
