@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>分类 on 云原生研究院</title>
-    <link>https://hellocloudnative.github.io/zh/categories/</link>
+    <link>http://hellocloudnative.github.io/zh/categories/</link>
     <description>Recent content in 分类 on 云原生研究院</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>&amp;copy; 2021 &lt;a href=&#34;https://hellocloudnative.github.io/&#34;&gt;Pengxuan Zhang&lt;/a&gt; 
-</copyright><atom:link href="https://hellocloudnative.github.io/zh/categories/index.xml" rel="self" type="application/rss+xml" />
+</copyright><atom:link href="http://hellocloudnative.github.io/zh/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
