@@ -15,32 +15,6 @@
                 href="https://hellocloudnative.github.io/en/authors/pengxuan/"
                 />
   </url><url>
-    <loc>https://hellocloudnative.github.io/en/homepage/about/</loc>
-    <lastmod>2021-05-21T15:48:13+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://hellocloudnative.github.io/zh/homepage/about/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://hellocloudnative.github.io/en/homepage/about/"
-                />
-  </url><url>
-    <loc>https://hellocloudnative.github.io/en/homepage/pages/</loc>
-    <lastmod>2021-05-21T15:48:13+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://hellocloudnative.github.io/zh/homepage/pages/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://hellocloudnative.github.io/en/homepage/pages/"
-                />
-  </url><url>
     <loc>https://hellocloudnative.github.io/en/authors/</loc>
     <lastmod>2021-05-21T15:48:13+08:00</lastmod>
     <xhtml:link
@@ -156,19 +130,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://hellocloudnative.github.io/en/docs/example-doc/nested-chapter/"
-                />
-  </url><url>
-    <loc>https://hellocloudnative.github.io/en/homepage/</loc>
-    <lastmod>2021-05-21T15:48:13+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://hellocloudnative.github.io/zh/homepage/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://hellocloudnative.github.io/en/homepage/"
                 />
   </url><url>
     <loc>https://hellocloudnative.github.io/en/categories/</loc>
