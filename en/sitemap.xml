@@ -2,8 +2,47 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://hellocloudnative.github.io/en/authors/pengxuan/</loc>
+    <lastmod>2021-05-21T15:48:13+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://hellocloudnative.github.io/zh/authors/pengxuan/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://hellocloudnative.github.io/en/authors/pengxuan/"
+                />
+  </url><url>
+    <loc>https://hellocloudnative.github.io/en/homepage/about/</loc>
+    <lastmod>2021-05-21T15:48:13+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://hellocloudnative.github.io/zh/homepage/about/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://hellocloudnative.github.io/en/homepage/about/"
+                />
+  </url><url>
+    <loc>https://hellocloudnative.github.io/en/homepage/pages/</loc>
+    <lastmod>2021-05-21T15:48:13+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://hellocloudnative.github.io/zh/homepage/pages/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://hellocloudnative.github.io/en/homepage/pages/"
+                />
+  </url><url>
     <loc>https://hellocloudnative.github.io/en/authors/</loc>
-    <lastmod>2021-05-21T11:17:00+08:00</lastmod>
+    <lastmod>2021-05-21T15:48:13+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -16,7 +55,7 @@
                 />
   </url><url>
     <loc>https://hellocloudnative.github.io/en/</loc>
-    <lastmod>2021-05-21T11:17:00+08:00</lastmod>
+    <lastmod>2021-05-21T15:48:13+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -29,7 +68,7 @@
                 />
   </url><url>
     <loc>https://hellocloudnative.github.io/en/posts/diagram-support/</loc>
-    <lastmod>2021-05-21T11:17:00+08:00</lastmod>
+    <lastmod>2021-05-21T15:48:13+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -40,9 +79,6 @@
                 hreflang="en"
                 href="https://hellocloudnative.github.io/en/posts/diagram-support/"
                 />
-  </url><url>
-    <loc>https://hellocloudnative.github.io/en/posts/math-support/</loc>
-    <lastmod>2021-05-21T11:17:00+08:00</lastmod>
   </url><url>
     <loc>https://hellocloudnative.github.io/en/docs/example-doc/chapter-1/</loc>
     <lastmod>2021-05-21T11:17:00+08:00</lastmod>
@@ -122,8 +158,21 @@
                 href="https://hellocloudnative.github.io/en/docs/example-doc/nested-chapter/"
                 />
   </url><url>
+    <loc>https://hellocloudnative.github.io/en/homepage/</loc>
+    <lastmod>2021-05-21T15:48:13+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://hellocloudnative.github.io/zh/homepage/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://hellocloudnative.github.io/en/homepage/"
+                />
+  </url><url>
     <loc>https://hellocloudnative.github.io/en/categories/</loc>
-    <lastmod>2021-05-21T11:17:00+08:00</lastmod>
+    <lastmod>2021-05-21T15:48:13+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -135,76 +184,8 @@
                 href="https://hellocloudnative.github.io/en/categories/"
                 />
   </url><url>
-    <loc>https://hellocloudnative.github.io/en/posts/featured-image/</loc>
-    <lastmod>2021-05-21T11:17:00+08:00</lastmod>
-  </url><url>
-    <loc>https://hellocloudnative.github.io/en/tags/image/</loc>
-    <lastmod>2021-05-21T11:17:00+08:00</lastmod>
-  </url><url>
-    <loc>https://hellocloudnative.github.io/en/series/</loc>
-    <lastmod>2021-05-21T11:17:00+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://hellocloudnative.github.io/zh/series/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://hellocloudnative.github.io/en/series/"
-                />
-  </url><url>
-    <loc>https://hellocloudnative.github.io/en/tags/</loc>
-    <lastmod>2021-05-21T11:17:00+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://hellocloudnative.github.io/zh/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://hellocloudnative.github.io/en/tags/"
-                />
-  </url><url>
-    <loc>https://hellocloudnative.github.io/en/categories/themes/</loc>
-    <lastmod>2021-05-21T11:17:00+08:00</lastmod>
-  </url><url>
-    <loc>https://hellocloudnative.github.io/en/series/themes-guide/</loc>
-    <lastmod>2021-05-21T11:17:00+08:00</lastmod>
-  </url><url>
-    <loc>https://hellocloudnative.github.io/en/tags/css/</loc>
-    <lastmod>2021-05-21T11:17:00+08:00</lastmod>
-  </url><url>
-    <loc>https://hellocloudnative.github.io/en/tags/html/</loc>
-    <lastmod>2021-05-21T11:17:00+08:00</lastmod>
-  </url><url>
-    <loc>https://hellocloudnative.github.io/en/tags/markdown/</loc>
-    <lastmod>2021-05-21T11:17:00+08:00</lastmod>
-  </url><url>
-    <loc>https://hellocloudnative.github.io/en/posts/markdown-syntax/</loc>
-    <lastmod>2021-05-21T11:17:00+08:00</lastmod>
-  </url><url>
-    <loc>https://hellocloudnative.github.io/en/categories/syntax/</loc>
-    <lastmod>2021-05-21T11:17:00+08:00</lastmod>
-  </url><url>
-    <loc>https://hellocloudnative.github.io/en/tags/themes/</loc>
-    <lastmod>2021-05-21T11:17:00+08:00</lastmod>
-  </url><url>
-    <loc>https://hellocloudnative.github.io/en/posts/placeholder-text/</loc>
-    <lastmod>2021-05-21T11:17:00+08:00</lastmod>
-  </url><url>
-    <loc>https://hellocloudnative.github.io/en/tags/text/</loc>
-    <lastmod>2021-05-21T11:17:00+08:00</lastmod>
-  </url><url>
-    <loc>https://hellocloudnative.github.io/en/tags/emoji/</loc>
-    <lastmod>2021-05-21T11:17:00+08:00</lastmod>
-  </url><url>
-    <loc>https://hellocloudnative.github.io/en/posts/emoji-support/</loc>
-    <lastmod>2021-05-21T11:17:00+08:00</lastmod>
-  </url><url>
     <loc>https://hellocloudnative.github.io/en/docs/</loc>
-    <lastmod>2021-05-21T11:17:00+08:00</lastmod>
+    <lastmod>2021-05-21T15:48:13+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -216,14 +197,8 @@
                 href="https://hellocloudnative.github.io/en/docs/"
                 />
   </url><url>
-    <loc>https://hellocloudnative.github.io/en/authors/example-author/</loc>
-    <lastmod>2021-05-21T11:17:00+08:00</lastmod>
-  </url><url>
-    <loc>https://hellocloudnative.github.io/en/authors/hugo-authors/</loc>
-    <lastmod>2021-05-21T11:17:00+08:00</lastmod>
-  </url><url>
     <loc>https://hellocloudnative.github.io/en/posts/</loc>
-    <lastmod>2021-05-21T11:17:00+08:00</lastmod>
+    <lastmod>2021-05-21T15:48:13+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -233,6 +208,32 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://hellocloudnative.github.io/en/posts/"
+                />
+  </url><url>
+    <loc>https://hellocloudnative.github.io/en/tags/</loc>
+    <lastmod>2021-05-21T15:48:13+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://hellocloudnative.github.io/zh/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://hellocloudnative.github.io/en/tags/"
+                />
+  </url><url>
+    <loc>https://hellocloudnative.github.io/en/series/</loc>
+    <lastmod>2021-05-21T15:48:13+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://hellocloudnative.github.io/zh/series/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://hellocloudnative.github.io/en/series/"
                 />
   </url>
 </urlset>
