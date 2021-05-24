@@ -9,12 +9,12 @@
     <copyright>&amp;copy; 2021 &lt;a href=&#34;https://hellocloudnative.github.io/&#34;&gt;Pengxuan Zhang&lt;/a&gt; 
 </copyright><atom:link href="https://hellocloudnative.github.io/zh/authors/pengxuan/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Diagram Support</title>
-      <link>https://hellocloudnative.github.io/zh/posts/diagram-support/</link>
-      <pubDate>Wed, 31 Mar 2021 13:11:22 +0800</pubDate>
+      <title>迁移新站后的第一篇博客</title>
+      <link>https://hellocloudnative.github.io/zh/posts/hello_world/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://hellocloudnative.github.io/zh/posts/diagram-support/</guid>
-      <description>&lt;p&gt;Eureka supports the rendering of diagrams by using Mermaid.&lt;/p&gt;</description>
+      <guid>https://hellocloudnative.github.io/zh/posts/hello_world/</guid>
+      <description>我有幸从事云计算研究工作，此站为了方便记录与分享云计算研究过程。</description>
     </item>
     
   </channel>
