@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>云原生研究院</title>
-    <link>https://hellocloudnative.github.io/zh/</link>
-    <description>Recent content on 云原生研究院</description>
+    <title>Istio入门与实战 on 云原生研究院</title>
+    <link>https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/</link>
+    <description>Recent content in Istio入门与实战 on 云原生研究院</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>&amp;copy; 2021 &lt;a href=&#34;https://hellocloudnative.github.io/&#34;&gt;Pengxuan Zhang&lt;/a&gt; 
 </copyright>
-    <lastBuildDate>Mon, 24 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://hellocloudnative.github.io/zh/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Oct 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>istio的安装部署</title>
       <link>https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/1-istio%E7%9A%84%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/</link>
@@ -35,15 +35,6 @@
       
       <guid>https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/3-%E5%B8%B8%E7%94%A8%E8%B5%84%E6%BA%90%E7%B1%BB%E5%9E%8B/</guid>
       <description>&lt;p&gt;常用的资源类型主要有流量控制、请求配额、mTLS认证策略、RBAC访问权限。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>迁移新站后的第一篇博客</title>
-      <link>https://hellocloudnative.github.io/zh/posts/hello_world/</link>
-      <pubDate>Mon, 24 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://hellocloudnative.github.io/zh/posts/hello_world/</guid>
-      <description>我有幸从事云计算研究工作，此站为了方便记录与分享云计算研究过程。</description>
     </item>
     
   </channel>

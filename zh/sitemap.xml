@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/1-istio%E7%9A%84%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/</loc>
+    <lastmod>2019-10-12T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://hellocloudnative.github.io/zh/authors/pengxuan/</loc>
     <lastmod>2021-05-21T15:37:26+08:00</lastmod>
     <xhtml:link
@@ -14,6 +17,12 @@
                 hreflang="zh"
                 href="https://hellocloudnative.github.io/zh/authors/pengxuan/"
                 />
+  </url><url>
+    <loc>https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/2-%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8istio%E7%9A%84%E8%A6%81%E6%B1%82/</loc>
+    <lastmod>2019-10-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/3-%E5%B8%B8%E7%94%A8%E8%B5%84%E6%BA%90%E7%B1%BB%E5%9E%8B/</loc>
+    <lastmod>2019-10-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://hellocloudnative.github.io/zh/authors/</loc>
     <lastmod>2021-05-24T17:55:02+08:00</lastmod>
@@ -32,7 +41,7 @@
     <lastmod>2021-05-24T17:55:02+08:00</lastmod>
   </url><url>
     <loc>https://hellocloudnative.github.io/zh/</loc>
-    <lastmod>2021-05-24T17:55:02+08:00</lastmod>
+    <lastmod>2021-05-27T16:38:00+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -47,83 +56,8 @@
     <loc>https://hellocloudnative.github.io/zh/posts/hello_world/</loc>
     <lastmod>2021-05-24T17:55:02+08:00</lastmod>
   </url><url>
-    <loc>https://hellocloudnative.github.io/zh/docs/example-doc/chapter-1/</loc>
-    <lastmod>2021-05-21T11:17:00+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://hellocloudnative.github.io/en/docs/example-doc/chapter-1/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://hellocloudnative.github.io/zh/docs/example-doc/chapter-1/"
-                />
-  </url><url>
-    <loc>https://hellocloudnative.github.io/zh/docs/example-doc/nested-chapter/chapter-1/</loc>
-    <lastmod>2021-05-21T11:17:00+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://hellocloudnative.github.io/en/docs/example-doc/nested-chapter/chapter-1/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://hellocloudnative.github.io/zh/docs/example-doc/nested-chapter/chapter-1/"
-                />
-  </url><url>
-    <loc>https://hellocloudnative.github.io/zh/docs/example-doc/chapter-2/</loc>
-    <lastmod>2021-05-21T11:17:00+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://hellocloudnative.github.io/en/docs/example-doc/chapter-2/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://hellocloudnative.github.io/zh/docs/example-doc/chapter-2/"
-                />
-  </url><url>
-    <loc>https://hellocloudnative.github.io/zh/docs/example-doc/nested-chapter/chapter-2/</loc>
-    <lastmod>2021-05-21T11:17:00+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://hellocloudnative.github.io/en/docs/example-doc/nested-chapter/chapter-2/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://hellocloudnative.github.io/zh/docs/example-doc/nested-chapter/chapter-2/"
-                />
-  </url><url>
-    <loc>https://hellocloudnative.github.io/zh/docs/example-doc/</loc>
-    <lastmod>2021-05-21T11:17:00+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://hellocloudnative.github.io/en/docs/example-doc/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://hellocloudnative.github.io/zh/docs/example-doc/"
-                />
-  </url><url>
-    <loc>https://hellocloudnative.github.io/zh/docs/example-doc/nested-chapter/</loc>
-    <lastmod>2021-05-21T11:17:00+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://hellocloudnative.github.io/en/docs/example-doc/nested-chapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://hellocloudnative.github.io/zh/docs/example-doc/nested-chapter/"
-                />
+    <loc>https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/</loc>
+    <lastmod>2019-10-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://hellocloudnative.github.io/zh/categories/</loc>
     <lastmod>2021-05-21T15:48:13+08:00</lastmod>
@@ -139,7 +73,7 @@
                 />
   </url><url>
     <loc>https://hellocloudnative.github.io/zh/docs/</loc>
-    <lastmod>2021-05-21T11:17:00+08:00</lastmod>
+    <lastmod>2021-05-27T16:38:00+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
