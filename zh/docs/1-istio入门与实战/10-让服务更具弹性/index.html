@@ -1,0 +1,1586 @@
+<!DOCTYPE html>
+<html lang='zh' ><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+<title>让服务更具弹性 | Istio入门与实战 | 云原生研究院</title>
+
+<meta name="generator" content="Hugo Eureka 0.8.0" />
+<link rel="stylesheet" href="https://hellocloudnative.github.io/css/eureka.min.css">
+<script defer src="https://hellocloudnative.github.io/js/eureka.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
+   crossorigin></script>
+
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js"
+     crossorigin></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
+   integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
+  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js" 
+  integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://hellocloudnative.github.io/images/icon_hu567c00f0881afc0330ccceee033e1285_28734_32x32_fill_box_center_2.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://hellocloudnative.github.io/images/icon_hu567c00f0881afc0330ccceee033e1285_28734_180x180_fill_box_center_2.png">
+
+<meta name="description"
+  content="让服务更具弹性">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"文档",
+      "item":"https://hellocloudnative.github.io/zh/docs/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"Istio入门与实战",
+      "item":"https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/"},{
+      "@type": "ListItem",
+      "position": 3 ,
+      "name":"让服务更具弹性",
+      "item":"https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/10-%E8%AE%A9%E6%9C%8D%E5%8A%A1%E6%9B%B4%E5%85%B7%E5%BC%B9%E6%80%A7/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/10-%E8%AE%A9%E6%9C%8D%E5%8A%A1%E6%9B%B4%E5%85%B7%E5%BC%B9%E6%80%A7/"
+    },
+    "headline": "让服务更具弹性 | Istio入门与实战 | 云原生研究院","datePublished": "2019-10-12T00:00:00+00:00",
+    "dateModified": "2019-10-12T00:00:00+00:00",
+    "wordCount":  12503 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "Pengxuan Zhang",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://hellocloudnative.github.io/images/icon.png"
+        }
+        },
+    "description": "让服务更具弹性"
+}
+</script><meta property="og:title" content="让服务更具弹性 | Istio入门与实战 | 云原生研究院" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="https://hellocloudnative.github.io/images/icon.png">
+
+
+<meta property="og:url" content="https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/10-%E8%AE%A9%E6%9C%8D%E5%8A%A1%E6%9B%B4%E5%85%B7%E5%BC%B9%E6%80%A7/" />
+
+
+
+<meta property="og:description" content="让服务更具弹性" />
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="云原生研究院" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2019-10-12T00:00:00&#43;00:00" />
+
+
+<meta property="article:modified_time" content="2019-10-12T00:00:00&#43;00:00" />
+
+
+
+<meta property="article:section" content="docs" />
+
+
+
+
+<body class="flex flex-col min-h-screen">
+  <header class="fixed flex items-center w-full min-h-16 pl-scrollbar z-50 bg-secondary-bg shadow-sm">
+    <div class="w-full max-w-screen-xl mx-auto"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/zh/" class="mr-6 text-primary-text text-xl font-bold">云原生研究院</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:flex-grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:flex-grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/zh/authors/pengxuan/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">关于我</a>
+            <a href="/zh/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">文章</a>
+            <a href="/zh/categories/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">分类</a>
+            <a href="/zh/series/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">系列</a>
+            <a href="/zh/tags/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">标签</a>
+            <a href="/zh/docs/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  mr-4">文档</a>
+        </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col left-0 md:left-auto right-auto md:right-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+  </header>
+  <main class="flex-grow pt-16">
+    <div class="pl-scrollbar">
+      <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
+
+
+<div class="lg:pt-12">
+    <div class="flex flex-col md:flex-row bg-secondary-bg rounded">
+        <div class="md:w-1/4 lg:w-1/5 border-r">
+            <div class="sticky top-16 pt-6">
+                
+
+
+
+
+
+
+
+
+
+
+<div id="sidebar-title" class="md:hidden mx-4 px-2 pt-4 pb-2 md:border-b text-tertiary-text md:text-primary-text">
+    <span class="font-semibold">目录</span>
+    <i class="fas fa-caret-right ml-1"></i>
+</div>
+
+<div id="sidebar-toc"
+    class="hidden md:block overflow-y-auto mx-6 md:mx-0 pr-6 pt-2 md:max-h-doc-sidebar bg-primary-bg md:bg-transparent">
+    <div class="flex flex-wrap ml-4 -mr-2 p-2 bg-secondary-bg md:bg-primary-bg rounded">
+        <a class=" hover:text-eureka"
+            href="https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/">Istio入门与实战</a>
+        
+        
+        
+
+
+    </div>
+    
+<ul class="pl-6">
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/1-istio%E7%9A%84%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/">istio的安装部署</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/2-%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8istio%E7%9A%84%E8%A6%81%E6%B1%82/">服务使用Istio的要求</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/3-%E5%B8%B8%E7%94%A8%E8%B5%84%E6%BA%90%E7%B1%BB%E5%9E%8B/">常用资源类型</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/4-%E5%B8%B8%E7%94%A8%E7%9A%84kubectl%E5%91%BD%E4%BB%A4/">常用的kubectl命令</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/5-%E5%B8%B8%E7%94%A8%E7%9A%84istioctl%E5%91%BD%E4%BB%A4/">常用的istioctl命令</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/6-istio%E6%B3%A8%E5%85%A5/">Istio注入</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/7-%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%BA%94%E7%94%A8%E7%9A%84%E9%83%A8%E7%BD%B2/">微服务应用的部署</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/8-%E5%9C%A8istio%E4%B8%AD%E9%83%A8%E7%BD%B2%E5%BE%AE%E6%9C%8D%E5%8A%A1/">在Istio中部署微服务</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/9-istio%E6%9C%8D%E5%8A%A1%E8%B7%AF%E7%94%B1%E7%9B%B8%E5%85%B3%E7%9A%84%E5%8A%9F%E8%83%BD/">Istio服务路由相关的功能</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" text-eureka  hover:text-eureka"
+                href="https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/10-%E8%AE%A9%E6%9C%8D%E5%8A%A1%E6%9B%B4%E5%85%B7%E5%BC%B9%E6%80%A7/">让服务更具弹性</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/11-%E8%AE%A9%E6%9C%8D%E5%8A%A1%E6%95%85%E9%9A%9C%E6%A3%80%E6%B5%8B%E6%9B%B4%E5%AE%B9%E6%98%93/">让服务故障检测更容易</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/12-%E8%AE%A9%E6%9C%8D%E5%8A%A1%E9%80%9A%E4%BF%A1%E6%9B%B4%E5%AE%89%E5%85%A8%E5%8F%AF%E6%8E%A7/">让服务通信更安全可控</a>
+        </div>
+        
+    </li>
+    
+    
+</ul>
+
+</div>
+
+
+
+
+
+            </div>
+
+        </div>
+        <div class="w-full md:w-3/4 lg:w-4/5 pb-8 pt-2 md:pt-8">
+            <div class="w-full lg:w-3/4 pl-6 ml-0 mr-auto">
+                <h1 class="font-bold text-3xl text-primary-text">让服务更具弹性</h1>
+                <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="mr-6 my-2">
+        <i class="fas fa-calendar mr-1"></i>
+        <span>2019-10-12</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>25分钟阅读时长</span>
+    </div>
+    
+    
+
+    
+</div>
+            </div>
+            <div class="flex">
+                <div class="w-full lg:w-3/4 px-6">
+                    
+                    
+                    <div class="content">
+                        <p>如何借助Istio提供的功能，让我们的服务更具弹性。主要包括 配置服务的负载均衡策略、连接池、健康检测、熔断、超时、重试、限流 等。通过上述这些配置，可以让我们服务在遇到故障时更具弹性。</p>
+<p>服务具备弹性是指系统能够优雅地处理故障并从故障中恢复。尽管我们 在进行服务设计时会尽量做高可用方案，但是服务出现故障或者服务间通信 的网络出现故障的情况是无法避免的，当故障出现时，我们应该尽量保证服 务的可用性，不要让故障变得更加严重，影响整个应用的稳定性。</p>
+<p>Istio提供了许多开箱即用的提升服务弹性的功能，包括负载均衡、连接 池、健康检测、熔断、超时、重试、限流，这些功能都是服务治理的必备功 能。通过组合使用这些功能，可以让服务更具弹性。</p>
+<p>Istio提供了许多开箱即用的提升服务弹性的功能，包括负载均衡、连接 池、健康检测、熔断、超时、重试、限流，这些功能都是服务治理的必备功 能。通过组合使用这些功能，可以让服务更具弹性。</p>
+<p><strong>·负载均衡</strong>。当服务有多个实例时，通过负载均衡器来分发请求，负载 均衡器一般会提供轮询、随机、最少连接、哈希等算法。</p>
+<p>·连接池。当服务调用上游服务时，可以提前创建好到上游服务的连 接，当请求到来时，通过已经创建好的连接直接发送请求给上游服务，减少 连接的创建时间，从而降低请求的整体耗时。我们把这些提前创建好的连接 集合称为连接池。</p>
+<p><strong>·健康检测</strong>。当上游服务部分实例出现故障时，健康检测机制能自动检 测到上游服务的不可用实例，从而避免把请求发送给上游不可用的服务实 例。</p>
+<p>·限流。当服务并发请求激增，流量增大，如果没有使用任何限流措 施，这很有可能导致我们的服务无法承受如此之多的请求，进而导致服务崩溃，还可能会影响整个应用的稳定性。限流功能是当请求数过多时，直接丢 掉过多的流量，防止服务被压垮，保证服务稳定。</p>
+<p><strong>·超时</strong>。当上游服务响应时间过长，很有可能会增加请求的整体耗时， 影响服务调用方。通过设置服务调用的超时时间，当服务没有在规定的时间 内返回数据，就直接取消此次请求，这样可以防止服务提供方拖垮服务调用 方，防止请求的总耗时时间过长。</p>
+<p><strong>·重试</strong>。网络出现抖动，或者被调用的服务出现瞬时故障，这些问题都 是偶发瞬时的，只需要再重新调用一次后端服务，可能请求就会成功。这种 场景下就需要服务的重试功能，防止由于被调用方的服务偶发瞬时故障，导 致出现服务调用不可用的情况，从而影响应用的整体稳定性与可用性。</p>
+<p><strong>·熔断</strong>。后端服务调用偶尔出现失败是正常情况，但是当对后端服务的 调用出现大比例的调用失败，此时可能由于后端服务已经无法承受当前压 力，如果我们还是继续调用后端服务，不仅不能得到响应，还有可能会把后 端服务整个压垮。所以当服务出现大比例调用失败时，应停止调用后端服 务，经过短暂时间间隔后，再尝试让部分请求调用后端服务，如果服务返回 正常，我们就可以让更多的请求调用后端服务，直到服务恢复为正常情况。 如果仍然出现无法响应的情况，我们将再次停止调用服务，这种处理后端服 务调用的机制就称为熔断。</p>
+<p>虽然一个服务出现故障的概率可能很低，但是当服务数量变多，低概率 的故障事件就会必然发生。当服务数量持续增长，服务间的调用关系复杂， 如果不做服务故障处理，提升服务的弹性，就很有可能因为一个服务的故障</p>
+<p>导致其他服务也出现故障，进而导致服务出现级联故障，甚至可能导致整个 应用出现不可用的现象。这会严重影响我们的应用拆分为微服务后的服务可 用性指标，使整个应用的用户体验变差，导致用户流失，进而影响业务发 展。如果经常出现这种故障，这对业务来说无疑是毁灭性的打击。</p>
+<h2 id="负载均衡">负载均衡</h2>
+<p>Istio通过设置DestinationRule来指定服务的负载均衡策略，Istio提供了两 种常用的负载均衡策略:简单负载均衡(simple)和一致性哈希负载均衡 (consistentHash)。可以为服务设置默认的负载均衡策略，也可以在单独的 服务子集中设置负载均衡策略，服务子集中的设置会覆盖服务设置的默认负 载均衡策略。我们还可以设置端口级别的负载均衡策略 (portLevelSettings)，可以为服务设置默认的端口级别的负载均衡策略。当 然，我们也可以在单独的服务子集上设置端口级别的负载均衡策略。</p>
+<h3 id="简单负载均衡">简单负载均衡</h3>
+<p>简单负载均衡策略提供了如下4种负载均衡算法:</p>
+<p>·<strong>轮询(ROUND_ROBIN)</strong>:把请求依次转发给后端健康实例，这是默 认算法。</p>
+<p>·<strong>最少连接(LEAST_CONN)</strong>:把请求转发给活跃请求最少的后端健 康实例，此处的活跃请求数是Istio自己维护的，是Istio调用后端实例且正在 等待返回响应的请求数。由于服务实例可能还有其他客户端在调用，没有经 过Istio统计，所以Istio维护的活跃请求数并不是此时实例真正的活跃请求 数。由于Envoy与服务部署在一个Pod中，并拦截所有流量，因此一般情况 下，可以把Istio维护的活跃请求数看成是服务实例的真正活跃请求数。</p>
+<p>·<strong>随机(RANDOM)</strong>:把请求随机转发给后端健康实例。</p>
+<p>·<strong>直连(PASSTHROUGH)</strong>:将连接转发到调用方请求的原始IP地址， 而不进行任何形式的负载平衡，这是高级用法，一般情况下不会使用。</p>
+<pre><code class="language-shell"> 1 apiVersion: networking.istio.io/v1alpha3
+ 2 kind: DestinationRule
+ 3 metadata:
+ 4   name: service-go
+ 5 spec:
+ 6   host: service-go
+ 7   trafficPolicy:
+ 8     loadBalancer:
+ 9       simple: ROUND_ROBIN
+10   subsets:
+11   - name: v1
+12     labels:
+13       version: v1
+14   - name: v2
+15     labels:
+16       version: v2
+17     trafficPolicy:
+18       loadBalancer:
+19         simple: LEAST_CONN
+20       portLevelSettings:
+21       - port:
+22           number: 80
+23         loadBalancer:
+24           simple: RANDOM
+
+</code></pre>
+<p>第7~9行定义了默认的负载均衡策略为轮询方式。</p>
+<p>第17~19行定义了对于名称为v2的实例子集负载均衡策略为最少连接方式。</p>
+<p>第20~24行定义了端口级别的负载均衡策略，指定80端口的负载均衡策 略为随机方式。</p>
+<h3 id="一致性哈希负载均衡">一致性哈希负载均衡</h3>
+<p>一致性哈希负载均衡策略只适用于使用HTTP类协议(HTTP 1.1/HTTPS/HTTP2)的请求，可以基于请求头、Cookie或者来源IP做会话保 持，让同一用户的请求一直转发到后端同一实例，当实例出现故障时会选择 新的实例。当添加删除新实例时，会有部分用户的会话保持失效。</p>
+<pre><code class="language-yaml"> 1 apiVersion: networking.istio.io/v1alpha3
+ 2 kind: DestinationRule
+ 3 metadata:
+ 4   name: service-go
+ 5 spec:
+ 6   host: service-go
+ 7   trafficPolicy:
+ 8     loadBalancer:
+ 9       consistentHash:
+10         httpHeaderName: x-lb-test
+11   subsets:
+12   - name: v1
+13     labels:
+14       version: v1
+15   - name: v2
+16     labels:
+17       version: v2”
+</code></pre>
+<p>第7~10行定义了默认的负载均衡策略为一致性哈希，基于x-lb-test请求头进行一致性哈希负载均衡。</p>
+<h2 id="实验">【实验】</h2>
+<h3 id="创建测试pod">创建测试Pod</h3>
+<h3 id="创建service-go服务的路由规则">创建service-go服务的路由规则</h3>
+<pre><code class="language-shell">[root@master route]# kubectl apply  -f   virtual-service-go.yaml
+[root@master route]# cat virtual-service-go.yaml
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: service-go
+spec:
+  hosts:
+  - service-go
+  http:
+  - route:
+    - destination:
+        host: service-go
+</code></pre>
+<p>在没有创建一致性哈希负载均衡规则时访问service-go服务，同样的请求 头，会落到service-go服务的v1和v2两个版本。</p>
+<h3 id="创建一致性哈希负载均衡规则">创建一致性哈希负载均衡规则</h3>
+<pre><code class="language-shell">[root@master resilience]#cat destination-rule-go-lb-hash.yaml
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: service-go
+spec:
+  host: service-go
+  trafficPolicy:
+    loadBalancer:
+      consistentHash:
+        httpHeaderName: x-lb-test
+  subsets:
+  - name: v1
+    labels:
+      version: v1
+  - name: v2
+    labels:
+      version: v2
+[root@master resilience]# kubectl apply  -f  destination-rule-go-lb-hash.yaml
+</code></pre>
+<h3 id="访问service-go服务">访问service-go服务</h3>
+<pre><code class="language-shell">[root@master resilience]# kubectl exec dns-test -c dns-test -- curl -s -H &quot;X-lb-test: 3&quot; http://10.102.89.237/env
+{&quot;message&quot;:&quot;go v1&quot;}
+[root@master resilience]# kubectl exec dns-test -c dns-test -- curl -s -H &quot;X-lb-test: 3&quot; http://10.102.89.237/env
+{&quot;message&quot;:&quot;go v1&quot;}
+[root@master resilience]# kubectl exec dns-test -c dns-test -- curl -s -H &quot;X-lb-test: 3&quot; http://10.102.89.237/env
+{&quot;message&quot;:&quot;go v1&quot;}
+[root@master resilience]# kubectl exec dns-test -c dns-test -- curl -s -H &quot;X-lb-test: 3&quot; http://10.102.89.237/env
+{&quot;message&quot;:&quot;go v1&quot;}
+[root@master resilience]# kubectl exec dns-test -c dns-test -- curl -s -H &quot;X-lb-test: 2&quot; http://10.102.89.237/env
+{&quot;message&quot;:&quot;go v2&quot;}
+[root@master resilience]# kubectl exec dns-test -c dns-test -- curl -s -H &quot;X-lb-test: 2&quot; http://10.102.89.237/env
+{&quot;message&quot;:&quot;go v2&quot;}
+[root@master resilience]# kubectl exec dns-test -c dns-test -- curl -s -H &quot;X-lb-test: 1&quot; http://10.102.89.237/env
+{&quot;message&quot;:&quot;go v2&quot;}
+[root@master resilience]# kubectl exec dns-test -c dns-test -- curl -s -H &quot;X-lb-test: 1&quot; http://10.102.89.237/env
+{&quot;message&quot;:&quot;go v2&quot;}
+[root@master resilience]# kubectl exec dns-test -c dns-test -- curl -s -H &quot;X-lb-test: 3&quot; http://10.102.89.237/env
+{&quot;message&quot;:&quot;go v1&quot;}
+</code></pre>
+<p>在创建一致性哈希负载均衡规则后访问service-go服务，同样的请求头， 只会落到service-go服务的同一个版本上。</p>
+<h3 id="总结">总结</h3>
+<p>从以上的实验结果可以看出，实验部署了两个版本的service-go服 务实例，每个版本一个Pod，默认情况下访问service-go服务会轮询地转发到 后端Pod上，因此多次访问会看到两个版本的响应结果;当配置了一致性哈希负载均衡规则以后，以固定的X-lb-test请求头值请求时，多次访问只能获 取到同一个版本的服务实例响应信息。</p>
+<h2 id="连接池">连接池</h2>
+<p>Istio通过设置DestinationRule来指定服务的连接池配置，Istio提供了两类 常用协议的连接池配置:TCP连接池和HTTP连接池。与负载均衡策略设置类 似，连接池的配置也支持服务默认级别的配置、服务子集的配置以及端口级 别的连接池配置。TCP连接池和HTTP连接池可以一同配合使用。</p>
+<h3 id="tcp连接池">TCP连接池</h3>
+<p>TCP连接池对TCP和HTTP类协议均提供支持，示例如下:</p>
+<pre><code class="language-shell"> 1 apiVersion: networking.istio.io/v1alpha3
+ 2 kind: DestinationRule
+ 3 metadata:
+ 4   name: service-go
+ 5 spec:
+ 6   host: service-go
+ 7   trafficPolicy:
+ 8     connectionPool:
+ 9       tcp:
+10         maxConnections: 10
+11         connectTimeout: 30ms
+12   subsets:
+13   - name: v1
+14     labels:
+15       version: v1
+16   - name: v2
+17     labels:
+18       version: v2
+
+</code></pre>
+<p>第8~11行设置TCP连接池中的最大连接数为10，连接超时时间为30毫 秒，当连接池中连接不够用时，服务调用会返回503响应码。</p>
+<h3 id="http连接池">HTTP连接池</h3>
+<p>HTTP连接池对HTTP类协议和gRPC协议均提供支持，示例如下：</p>
+<pre><code class="language-shell"> 1 apiVersion: networking.istio.io/v1alpha3
+ 2 kind: DestinationRule
+ 3 metadata:
+ 4   name: service-go
+ 5 spec:
+ 6   host: service-go
+ 7   trafficPolicy:
+ 8     connectionPool:
+ 9       http:
+10         http2MaxRequests: 10
+11         http1MaxPendingRequests: 5
+12         maxRequestsPerConnection: 2
+13         maxRetries: 3
+14   subsets:
+15   - name: v1
+16     labels:
+17       version: v1
+18   - name: v2
+19     labels:
+20       version: v2
+
+</code></pre>
+<p>第8~13行设置HTTP连接池的后端实例的最大并发请求数为10，每个目 标的最大待处理请求数为5，连接池中每个连接最多处理2个请求后就关闭， 并根据需要重新创建连接池中的连接，请求在服务后端实例集群中失败后的 最大重试次数为3。几个参数说明如下:</p>
+<p>第8~13行设置HTTP连接池的后端实例的最大并发请求数为10，每个目 标的最大待处理请求数为5，连接池中每个连接最多处理2个请求后就关闭， 并根据需要重新创建连接池中的连接，请求在服务后端实例集群中失败后的 最大重试次数为3。几个参数说明如下:</p>
+<p>·http2MaxRequests表示对后端的最大并发请求数，默认值1024。</p>
+<p>·http1MaxPendingRequests表示每个目标的最大待处理请求数，这里的目 标指的是VirtualService路由规则中配置的destination，当连接池连接不够用 时请求就处于待处理状态。默认值1024。</p>
+<p>·maxRequestsPerConnection表示每个连接最多处理多少个请求后关闭， 设置为1时表示关闭keep alive特性，每次请求都创建一个新的请求。</p>
+<p>·maxRetries表示请求后端失败后重试其他后端实例的总次数，默认值 3。</p>
+<h2 id="实验-1">【实验】</h2>
+<h3 id="启动用于并发测试的pod">启动用于并发测试的Pod</h3>
+<pre><code class="language-shell">[root@master istio-zhangpx]# kubectl apply  -f fortio.yaml
+pod/fortio created
+</code></pre>
+<h3 id="创建service-go服务的路由规则-1">创建service-go服务的路由规则</h3>
+<pre><code>[root@master istio-zhangpx]# kubectl apply  -f  route/virtual-service-go.yaml
+</code></pre>
+<h3 id="创建连接池规则">创建连接池规则</h3>
+<pre><code class="language-shell">[root@master resilience]# kubectl apply -f destination-rule-go-pool-http.yaml
+</code></pre>
+<h3 id="并发访问服务">并发访问服务</h3>
+<pre><code class="language-shell">#10
+[root@master resilience]# kubectl exec fortio -c fortio /usr/local/bin/fortio -- load -c 10 -qps 0 -n 100 -loglevel Error http://10.102.89.237/env
+07:56:46 I logger.go:97&gt; Log level is now 4 Error (was 2 Info)
+Fortio 1.0.1 running at 0 queries per second, 4-&gt;4 procs, for 100 calls: http://10.102.89.237/env
+Aggregated Function Time : count 100 avg 0.008110198 +/- 0.009749 min 0.00093558 max 0.040476 sum 0.811019799
+# target 50% 0.0045
+# target 75% 0.0086
+# target 90% 0.025
+# target 99% 0.04
+# target 99.9% 0.0404284
+Sockets used: 15 (for perfect keepalive, would be 10)
+Code 200 : 95 (95.0 %)
+Code 503 : 5 (5.0 %)
+All done 100 calls (plus 0 warmup) 8.110 ms avg, 1127.0 qps
+#20
+[root@master resilience]# kubectl exec fortio -c fortio /usr/local/bin/fortio -- load -c 20 -qps 0 -n 200 -loglevel Error http://10.102.89.237/env
+07:57:48 I logger.go:97&gt; Log level is now 4 Error (was 2 Info)
+Fortio 1.0.1 running at 0 queries per second, 4-&gt;4 procs, for 200 calls: http://10.102.89.237/env
+Aggregated Function Time : count 200 avg 0.019025662 +/- 0.02951 min 0.00030272 max 0.091294218 sum 3.8051324
+# target 50% 0.00535294
+# target 75% 0.0117143
+# target 90% 0.0786667
+# target 99% 0.09
+# target 99.9% 0.0911648
+Sockets used: 48 (for perfect keepalive, would be 20)
+Code 200 : 172 (86.0 %)
+Code 503 : 28 (14.0 %)
+All done 200 calls (plus 0 warmup) 19.026 ms avg, 687.2 qps
+#30
+[root@master resilience]# kubectl exec fortio -c fortio /usr/local/bin/fortio -- load -c 30 -qps 0 -n 300 -loglevel Error http://10.102.89.237/env
+07:58:23 I logger.go:97&gt; Log level is now 4 Error (was 2 Info)
+Fortio 1.0.1 running at 0 queries per second, 4-&gt;4 procs, for 300 calls: http://10.102.89.237/env
+Aggregated Function Time : count 300 avg 0.028799433 +/- 0.03771 min 0.0004523 max 0.105828155 sum 8.63982981
+# target 50% 0.00569231
+# target 75% 0.0754545
+# target 90% 0.0905
+# target 99% 0.104239
+# target 99.9% 0.105669
+Sockets used: 64 (for perfect keepalive, would be 30)
+Code 200 : 265 (88.3 %)
+Code 503 : 35 (11.7 %)
+All done 300 calls (plus 0 warmup) 28.799 ms avg, 757.3 qps
+</code></pre>
+<p>从压测结果可以看出，当并发逐渐增大时，服务不可用的响应码（503）所占比例逐渐升高，说明我们配置的HTTP连接池参数已经生效。</p>
+<h2 id="健康检测">健康检测</h2>
+<p>Istio通过设置DestinationRule来指定服务实例健康检测的配置，可以设置 服务实例健康检测计算的时间间隔、实例移出负载均衡池的条件、实例移出 负载均衡池时间的基础值，以及服务实例移出负载均衡池的最大比例值。设 置移出负载均衡池的最大比例，可以防止异常情况移出负载均衡池过多的服 务实例，导致服务实例不够，剩余实例承受流量过大，压跨整个服务。与负载均衡策略设置类似，服务实例健康检测的配置也支持服务默认级别的配 置、服务子集的配置、端口级别的配置。</p>
+<p>对于HTTP协议的服务，当后端实例返回5xx的响应码时，代表后端实例 出现错误，后端实例的错误计数会增加。对于TCP协议的服务，连接超时、 连接失败会被认为后端实例出现错误，后端实例的错误计数会增加。</p>
+<pre><code class="language-shell"> 1 apiVersion: networking.istio.io/v1alpha3
+ 2 kind: DestinationRule
+ 3 metadata:
+ 4   name: service-go
+ 5 spec:
+ 6   host: service-go
+ 7   trafficPolicy:
+ 8     outlierDetection:
+ 9       consecutiveErrors: 3
+10       interval: 10s
+11       baseEjectionTime: 30s
+12       maxEjectionPercent: 10
+13   subsets:
+14   - name: v1
+15     labels:
+16       version: v1
+17   - name: v2
+18     labels:
+19       version: v2
+</code></pre>
+<p>第8~12行为后端实例健康检测配置的定义，配置最大实例移出比例 (maxEjectionPercent)不超过10%，基础移出时间(baseEjectionTime)为30 秒，当实例恢复健康加入集群中后，再次出现故障被移出时，移出时间会根 据此值增加，每隔10秒(interval)检测一次后端实例是否应该被移出负载均 衡池，当在10秒内出现3次错误时，实例会被移出负载均衡池。其中参数说 明如下:</p>
+<p>·consecutiveErrors表示服务实例移出负载均衡池之前的最大出错次数阈 值，当负载均衡池中的实例在指定的时间间隔内出错次数到达该值时，会被 移出负载均衡池。</p>
+<p>·interval表示两次后端实例健康检查时间间隔，默认值为10秒。 ·baseEjectionTime表示移出负载均衡池的基础时间，默认值为30秒。 ·maxEjectionPercent表示后端实例最大移出百分比，默认值为10。</p>
+<h2 id="熔断">熔断</h2>
+<p>Istio通过结合连接池和实例健康检测机制实现熔断功能。当后端实例出 现故障时就移出负载均衡池，当负载均衡池中无可用健康实例时，服务请求 会立即得到服务不可用的响应码，此时服务就处于熔断状态了。当服务实例 被移出的时间结束后，服务实例会被再次添加到负载均衡池中，等待下一轮 的服务健康检测。</p>
+<pre><code class="language-shell"> 1 apiVersion： networking.istio.io/v1alpha3
+ 2 kind: DestinationRule
+ 3 metadata:
+ 4   name: service-go
+ 5 spec:
+ 6   host: service-go
+ 7   trafficPolicy:
+ 8     connectionPool:
+ 9       tcp:
+10         maxConnections: 10
+11       http:
+12         http2MaxRequests: 10
+13         maxRequestsPerConnection: 10
+14     outlierDetection:
+15       consecutiveErrors: 3
+16       interval: 3s
+17       baseEjectionTime: 3m
+18       maxEjectionPercent: 100
+19   subsets:
+20   - name: v1
+21     labels:
+22       version: v1
+23   - name: v2
+24     labels:
+25       version: v2
+
+</code></pre>
+<p>第8~13行定义了连接池配置，并发请求设置为10。</p>
+<p>第14~18行定义了后端实例健康检测配置，允许全部实例移出连接池。</p>
+<h2 id="实验-2">【实验】</h2>
+<h3 id="启动用于并发测试的pod-1">启动用于并发测试的Pod</h3>
+<pre><code class="language-shell">[root@master istio-zhangpx]# kubectl apply  -f fortio.yaml
+pod/fortio created
+</code></pre>
+<h3 id="创建service-go服务的路由规则-2">创建service-go服务的路由规则</h3>
+<pre><code>[root@master istio-zhangpx]# kubectl apply  -f  route/virtual-service-go.yaml
+</code></pre>
+<h3 id="创建熔断规则">创建熔断规则</h3>
+<pre><code class="language-shell">[root@master resilience]# kubectl apply  -f destination-rule-go-cb.yaml
+destinationrule.networking.istio.io/service-go configured
+</code></pre>
+<h3 id="并发访问服务-1">并发访问服务</h3>
+<pre><code class="language-shell">#20
+[root@master resilience]# kubectl exec fortio -c fortio /usr/local/bin/fortio -- load -c 20 -qps 0 -n 200 -loglevel Error http://10.102.89.237/env
+08:16:55 I logger.go:97&gt; Log level is now 4 Error (was 2 Info)
+Fortio 1.0.1 running at 0 queries per second, 4-&gt;4 procs, for 200 calls: http://10.102.89.237/env
+Aggregated Function Time : count 200 avg 0.011002998 +/- 0.01917 min 0.000182537 max 0.085378387 sum 2.20059964
+# target 50% 0.00393333
+# target 75% 0.009
+# target 90% 0.0358333
+# target 99% 0.0843027
+# target 99.9% 0.0852708
+Sockets used: 35 (for perfect keepalive, would be 20)
+Code 200 : 183 (91.5 %)
+Code 503 : 17 (8.5 %)
+All done 200 calls (plus 0 warmup) 11.003 ms avg, 1103.6 qps
+#30
+[root@master resilience]# kubectl exec fortio -c fortio /usr/local/bin/fortio -- load -c 30 -qps 0 -n 300 -loglevel Error http://10.102.89.237/env
+08:17:23 I logger.go:97&gt; Log level is now 4 Error (was 2 Info)
+Fortio 1.0.1 running at 0 queries per second, 4-&gt;4 procs, for 300 calls: http://10.102.89.237/env
+Aggregated Function Time : count 300 avg 0.009807356 +/- 0.01794 min 0.000175401 max 0.09779143 sum 2.9422068
+# target 50% 0.00422222
+# target 75% 0.00853846
+# target 90% 0.02625
+# target 99% 0.0938957
+# target 99.9% 0.0974019
+Sockets used: 109 (for perfect keepalive, would be 30)
+Code 200 : 214 (71.3 %)
+Code 503 : 86 (28.7 %)
+All done 300 calls (plus 0 warmup) 9.807 ms avg, 1195.5 qps
+#40
+[root@master resilience]# kubectl exec fortio -c fortio /usr/local/bin/fortio -- load -c 40 -qps 0 -n 400 -loglevel Error http://10.102.89.237/env
+08:17:49 I logger.go:97&gt; Log level is now 4 Error (was 2 Info)
+Fortio 1.0.1 running at 0 queries per second, 4-&gt;4 procs, for 400 calls: http://10.102.89.237/env
+Aggregated Function Time : count 400 avg 0.012126067 +/- 0.01976 min 0.00033182 max 0.130106829 sum 4.85042696
+# target 50% 0.0072
+# target 75% 0.0101111
+# target 90% 0.02
+# target 99% 0.0966667
+# target 99.9% 0.126064
+Sockets used: 215 (for perfect keepalive, would be 40)
+Code 200 : 214 (53.5 %)
+Code 503 : 186 (46.5 %)
+All done 400 calls (plus 0 warmup) 12.126 ms avg, 1531.4 qps
+# 查看 istio-proxy 状态
+[root@master resilience]# kubectl exec fortio  -c istio-proxy  -- curl -s localhost:15000/stats | grep service-go | grep pending
+cluster.outbound|80|v1|service-go.default.svc.cluster.local.upstream_rq_pending_active: 0
+cluster.outbound|80|v1|service-go.default.svc.cluster.local.upstream_rq_pending_failure_eject: 0
+cluster.outbound|80|v1|service-go.default.svc.cluster.local.upstream_rq_pending_overflow: 0
+cluster.outbound|80|v1|service-go.default.svc.cluster.local.upstream_rq_pending_total: 0
+cluster.outbound|80|v2|service-go.default.svc.cluster.local.upstream_rq_pending_active: 0
+cluster.outbound|80|v2|service-go.default.svc.cluster.local.upstream_rq_pending_failure_eject: 0
+cluster.outbound|80|v2|service-go.default.svc.cluster.local.upstream_rq_pending_overflow: 0
+cluster.outbound|80|v2|service-go.default.svc.cluster.local.upstream_rq_pending_total: 0
+cluster.outbound|80||service-go.default.svc.cluster.local.upstream_rq_pending_active: 0
+cluster.outbound|80||service-go.default.svc.cluster.local.upstream_rq_pending_failure_eject: 0
+cluster.outbound|80||service-go.default.svc.cluster.local.upstream_rq_pending_overflow: 347
+cluster.outbound|80||service-go.default.svc.cluster.local.upstream_rq_pending_total: 551
+</code></pre>
+<p>实验部署了两个版本的service-go服务实例，每个版本一个Pod，每个Pod 的并发数为10，所以总的最大并发数就为20。从压测结果可以看出，当并发 逐渐增大时，服务不可用的响应码(503)所占比例逐渐升高。但是从结果 看，熔断器并不是非常准确地拦截了高于设置并发值的请求，Istio允许有部 分请求遗漏。</p>
+<h2 id="超时">超时</h2>
+<p>Istio通过设置VirtualService中的timeout字段来指定服务的调用超时时间。</p>
+<pre><code class="language-shell"> 1 apiVersion: networking.istio.io/v1alpha3
+ 2 kind: VirtualService
+ 3 metadata:
+ 4   name: service-node
+ 5 spec:
+ 6   hosts:
+ 7   - service-node
+ 8   http:
+ 9   - route:
+10     - destination:
+11       host: service-node
+12     timeout: 500ms
+</code></pre>
+<p>第12行指定服务的调用时间不能超过500毫秒，当调用service-node服务 时，如果超过500毫秒请求还没有完成，就直接给调用方返回超时错误。</p>
+<h2 id="实验-3">【实验】</h2>
+<h3 id="部署service-node服务">部署service-node服务</h3>
+<h3 id="启动用于并发测试的pod-2">启动用于并发测试的Pod</h3>
+<pre><code class="language-shell">[root@master istio-zhangpx]# kubectl apply  -f fortio.yaml
+pod/fortio created
+</code></pre>
+<h3 id="创建service-node服务的超时规则">创建service-node服务的超时规则</h3>
+<pre><code class="language-shell">[root@master resilience]# kubectl apply -f virtual-service-node-timeout.yaml
+virtualservice.networking.istio.io/service-node created
+[root@master resilience]# cat virtual-service-node-timeout.yaml
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: service-node
+spec:
+  hosts:
+  - service-node
+  http:
+  - route:
+    - destination:
+        host: service-node
+</code></pre>
+<h3 id="访问service-node服务">访问service-node服务</h3>
+<pre><code class="language-shell">#10
+[root@master resilience]# kubectl exec fortio -c fortio /usr/local/bin/fortio -- load -c 10 -qps 0 -n 100 -loglevel Error http://10.106.43.22/env
+08:44:12 I logger.go:97&gt; Log level is now 4 Error (was 2 Info)
+Fortio 1.0.1 running at 0 queries per second, 4-&gt;4 procs, for 100 calls: http://10.106.43.22/env
+Aggregated Function Time : count 100 avg 0.24311258 +/- 0.2365 min 0.003130159 max 0.502191677 sum 24.3112576
+# target 50% 0.1
+# target 75% 0.50058
+# target 90% 0.501547
+# target 99% 0.502127
+# target 99.9% 0.502185
+Sockets used: 43 (for perfect keepalive, would be 10)
+Code 200 : 61 (61.0 %)
+Code 504 : 39 (39.0 %)
+All done 100 calls (plus 0 warmup) 243.113 ms avg, 34.4 qps
+#20
+[root@master resilience]# kubectl exec fortio -c fortio /usr/local/bin/fortio -- load -c 20 -qps 0 -n 200 -loglevel Error http://10.106.43.22/env
+08:44:56 I logger.go:97&gt; Log level is now 4 Error (was 2 Info)
+Fortio 1.0.1 running at 0 queries per second, 4-&gt;4 procs, for 200 calls: http://10.106.43.22/env
+Aggregated Function Time : count 200 avg 0.25803487 +/- 0.24 min 0.003265586 max 0.502642035 sum 51.6069741
+# target 50% 0.15
+# target 75% 0.50105
+# target 90% 0.502005
+# target 99% 0.502578
+# target 99.9% 0.502636
+Sockets used: 105 (for perfect keepalive, would be 20)
+Code 200 : 102 (51.0 %)
+Code 504 : 98 (49.0 %)
+All done 200 calls (plus 0 warmup) 258.035 ms avg, 56.8 qps
+#30
+[root@master resilience]# kubectl exec fortio -c fortio /usr/local/bin/fortio -- load -c 30 -qps 0 -n 300 -loglevel Error http://10.106.43.22/env
+08:45:25 I logger.go:97&gt; Log level is now 4 Error (was 2 Info)
+Fortio 1.0.1 running at 0 queries per second, 4-&gt;4 procs, for 300 calls: http://10.106.43.22/env
+Aggregated Function Time : count 300 avg 0.28440591 +/- 0.2172 min 0.003072818 max 0.50334661 sum 85.321773
+# target 50% 0.359375
+# target 75% 0.501306
+# target 90% 0.50253
+# target 99% 0.503265
+# target 99.9% 0.503338
+Sockets used: 145 (for perfect keepalive, would be 30)
+Code 200 : 165 (55.0 %)
+Code 504 : 135 (45.0 %)
+All done 300 calls (plus 0 warmup) 284.406 ms avg, 66.6 qps
+</code></pre>
+<p>当并发逐渐增大时，service-node服务的响应时间逐渐增大，服务请求响 应超时的响应码(504)所占比例逐渐升高。这说明我们配置的服务超时时 间已经生效。</p>
+<h2 id="重试">重试</h2>
+<p>Istio通过设置VirtualService中的retries字段来指定服务的重试机制。</p>
+<pre><code class="language-shell"> 1 apiVersion: networking.istio.io/v1alpha3
+ 2 kind: VirtualService
+ 3 metadata:
+ 4   name: service-node
+ 5 spec:
+ 6   hosts:
+ 7   - service-node
+ 8   http:
+ 9   - route:
+10     - destination:
+11         host: service-node
+12     retries:
+13       attempts: 3
+14       perTryTimeout: 2s
+</code></pre>
+<p>第12~14行定义了重试规则，当调用service-node服务时，如果服务出 错，就需要进行重试，最多可以重试3次，每次调用超时为2秒，每次重试的 时间间隔由Istio决定，重试时间间隔一般会大于25毫秒。</p>
+<h3 id="创建并发测试的pod">创建并发测试的Pod</h3>
+<pre><code class="language-shell">[root@master istio-zhangpx]# kubectl apply  -f fortio.yaml
+pod/fortio created
+</code></pre>
+<h3 id="部署httpbin服务">部署httpbin服务</h3>
+<pre><code class="language-shell">[root@master istio-zhangpx]# kubectl apply  -f httpbin.yaml
+service/httpbin created
+deployment.apps/httpbin created
+[root@master route]# cat virtual-service-httpbin.yaml
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: httpbin
+spec:
+  hosts:
+  - httpbin
+  http:
+  - route:
+    - destination:
+        port:
+          number: 8000
+        host: httpbin
+</code></pre>
+<h3 id="创建httpbin服务路由规则">创建httpbin服务路由规则</h3>
+<pre><code class="language-shell">[root@master route]# kubectl apply  -f virtual-service-httpbin.yaml
+virtualservice.networking.istio.io/httpbin created
+</code></pre>
+<h3 id="访问httpbin服务">访问httpbin服务</h3>
+<pre><code class="language-shell">[root@master route]# kubectl exec fortio -c fortio /usr/local/bin/fortio -- load -curl http://httpbin:8000/status/200
+HTTP/1.1 200 OK
+server: envoy
+date: Wed, 23 Oct 2019 09:58:52 GMT
+content-type: text/html; charset=utf-8
+access-control-allow-origin: *
+access-control-allow-credentials: true
+content-length: 0
+x-envoy-upstream-service-time: 2
+[root@master resilience]# kubectl exec fortio -c fortio /usr/local/bin/fortio -- load -c 10 -qps 0 -n 100 -loglevel Error  http://httpbin:8000/status/200%2C20050
+01:56:55 I logger.go:97&gt; Log level is now 4 Error (was 2 Info)
+Fortio 1.0.1 running at 0 queries per second, 4-&gt;4 procs, for 100 calls: http://httpbin:8000/status/200%2C20050
+Aggregated Function Time : count 100 avg 0.053129175 +/- 0.04357 min 0.004270189 max 0.101564066 sum 5.31291754
+# target 50% 0.02
+# target 75% 0.0953191
+# target 90% 0.0985106
+# target 99% 0.101043
+# target 99.9% 0.101512
+Sockets used: 57 (for perfect keepalive, would be 10)
+Code 200 : 47 (47.0 %)
+Code 503 : 53 (53.0 %)
+All done 100 calls (plus 0 warmup) 53.129 ms avg, 186.9 qps
+</code></pre>
+<h3 id="创建httpbin服务重试路由规则">创建httpbin服务重试路由规则</h3>
+<pre><code class="language-shell">[root@master resilience]# kubectl apply  -f virtual-service-httpbin-retry.yaml
+virtualservice.networking.istio.io/httpbin configured
+[root@master resilience]# cat  virtual-service-httpbin-retry.yaml
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: httpbin
+spec:
+  hosts:
+  - httpbin
+  http:
+  - route:
+    - destination:
+        port:
+          number: 8000
+        host: httpbin
+    retries:
+      attempts: 3
+      perTryTimeout: 2s
+</code></pre>
+<h3 id="访问httpbin服务-1">访问httpbin服务</h3>
+<pre><code class="language-shell">[root@master resilience]# kubectl exec fortio -c fortio /usr/local/bin/fortio -- load -c 10 -qps 0 -n 100 -loglevel Error  http://httpbin:8000/status/200%2C20050
+01:57:09 I logger.go:97&gt; Log level is now 4 Error (was 2 Info)
+Fortio 1.0.1 running at 0 queries per second, 4-&gt;4 procs, for 100 calls: http://httpbin:8000/status/200%2C20050
+Aggregated Function Time : count 100 avg 0.067420229 +/- 0.06541 min 0.00162314 max 0.299920551 sum 6.74202289
+# target 50% 0.0666667
+# target 75% 0.0970588
+# target 90% 0.17
+# target 99% 0.27496
+# target 99.9% 0.297425
+Sockets used: 41 (for perfect keepalive, would be 10)
+Code 200 : 68 (68.0 %)
+Code 503 : 32 (32.0 %)
+All done 100 calls (plus 0 warmup) 67.420 ms avg, 100.3 qps
+</code></pre>
+<p>从上面的测试结果可以看出，当没有开启服务重试时，服务有大概1/2的 请求失败，当开启服务重试之后，服务请求失败减少。</p>
+<h2 id="限流">限流</h2>
+<p>Istio提供两种限流的实现:基于内存限流和基于Redis的限流。基于内存 的限流方式适用于只部署一个Mixer的集群，而且由于使用内存存储的数据 来限流，Mixer重启后限流数据会丢失。因此在生产环境，建议使用基于 Redis的限流方式，这种方式可存储限流数据。在Istio中，服务被限流的请求 会得到429(Too Many Requests)响应码。</p>
+<p>限流的配置分为客户端和Mixer端两个部分。</p>
+<p>客户端配置:</p>
+<p>·QuotaSpec定义了Quota实例和对应的每次请求消耗的配额数。</p>
+<p>·QuotaSpecBinding将QuotaSpec与一个或多个服务相关联绑定，只有被 关联绑定的服务限流才会生效。</p>
+<p>Mixer端配置: ·quota实例定义了Mixer如何区别度量一个请求的限流配额，用来描述</p>
+<p>请求数据收集的维度。</p>
+<p>·memquota/redisquota适配器定义了memquota/redisquota的配置，根据 quota实例定义的请求数据收集维度来区分并定义一个或多个限流配额。</p>
+<p>·rule规则定义了quota实例应该何时分发给memquota/redisquota适配器处理。</p>
+<h3 id="基于内存的限流">基于内存的限流</h3>
+<pre><code class="language-shell"> 1 apiVersion: &quot;config.istio.io/v1alpha2&quot;
+ 2 kind: quota
+ 3 metadata:
+ 4   name: requestcount
+ 5   namespace: istio-system
+ 6 spec:
+ 7   dimensions:
+ 8     source: request.headers[&quot;x-forwarded-for&quot;] | &quot;unknown&quot;
+ 9     destination: destination.labels[&quot;app&quot;] | destination.service.name | &quot;unknown&quot;
+10     destinationVersion: destination.labels[&quot;version&quot;] | &quot;unknown&quot;
+11 ---
+12 apiVersion: &quot;config.istio.io/v1alpha2&quot;
+13 kind: memquota
+14 metadata:
+15   name: handler
+16   namespace: istio-system
+17 spec:
+18   quotas:
+19   - name: requestcount.quota.istio-system
+20     maxAmount: 500
+21     validDuration: 1s
+22     overrides:
+23     - dimensions:
+24         destination: service-go
+25       maxAmount: 50
+26       validDuration: 1s
+27     - dimensions:
+28         destination: service-node
+29         source: &quot;10.28.11.20&quot;
+30       maxAmount: 50
+31       validDuration: 1s
+32     - dimensions:
+33         destination: service-node
+34       maxAmount: 20
+35       validDuration: 1s
+36     - dimensions:
+37         destination: service-python
+38       maxAmount: 2
+39       validDuration: 5s
+40 ---
+41 apiVersion: config.istio.io/v1alpha2
+42 kind: rule
+43 metadata:
+44   name: quota
+45   namespace: istio-system
+46 spec:
+47   actions:
+48   - handler: handler.memquota
+49     instances:
+50     - requestcount.quota
+51 ---
+52 apiVersion: config.istio.io/v1alpha2
+53 kind: QuotaSpec
+54 metadata:
+55   name: request-count
+56   namespace: istio-system
+57 spec:
+58   rules:
+59   - quotas:
+60     - charge: 1
+61       quota: requestcount
+62 ---
+63 apiVersion: config.istio.io/v1alpha2
+64 kind: QuotaSpecBinding
+65 metadata:
+66   name: request-count
+67   namespace: istio-system
+68 spec:
+69   quotaSpecs:
+70   - name: request-count
+71     namespace: istio-system
+72   services:
+73   - name: service-go
+74     namespace: default
+75   - name: service-node
+76     namespace: default
+77   - name: service-python
+78     namespace: default
+</code></pre>
+<p>第1~10行定义了名为requestcount的quota实例，获取请求的source、destination、destinationVersion值供memquota适配器来区分请求的限流配额。 取值规则如下:</p>
+<p>·source获取请求的x-forwarded-for请求头的值作为source的取值，不存在 时，source取值&quot;unknown&quot;。</p>
+<p>·destination获取请求的目标服务标签中的app标签的值，不存在时，取 目标服务的service.name字段值，否则destination取值&quot;unknown&quot;。</p>
+<p>·destinationVersion获取请求目标服务标签中的version标签的值，不存在 时，destinationVersion取值&quot;unknown&quot;。</p>
+<p>第12~39行定义了名为handler的memquota适配器。19行中的name字段值 为上面定义的quota实例名称。第20行定义了默认的限流配额为500。第21行定义默认的限流计算周期为1s，即默认情况下每秒最高500个请求。第23~39 行为具体的限流配置。第23~26行定义了当destination是service-go时，每秒不 能高于50个请求。第27~31行定义了当destination为service-node且source 为&quot;10.28.11.20&quot;时，每秒不能高于50个请求。第32~35行定义了当destination 为service-node时，每秒不能高于20个请求。第36~39行定义了当destination为service-python时，每5秒内不能高于2个请求。</p>
+<p>第41~50行定义了名为quota的rule规则，由于没有指定条件，会把所有相 关联的服务请求都分发给memquota适配器处理。</p>
+<p>第52~61行定义了名为request-count的QuotaSpec，指定了名为 requestcount的quota实例每次消耗一个配额。</p>
+<p>第63~78行定义了名为request-count的QuotaSpecBinding，把default命名空 间的service-go、service-node、service-python服务与名为request-count的 QuotaSpec关联起来。</p>
+<p>在memquota适配器配置的所有限流规则中，执行限流时会从第一条限流 规则开始匹配。当遇到第一条匹配的规则后，后面的规则不再匹配。如果没 有匹配到任何具体的规则，则使用默认的规则。所以第27~31行定义的限流 规则不能与第32~35行定义的限流规则交换位置，如果交换位置就会导致第 27~31行定义的限流规则永远不会被匹配到，所以配置限流规则的时候，越 具体的匹配规则应该放在越靠前的位置，否则可能会出现达不到预期的限流 效果。</p>
+<p>quota实例具体可以使用获取哪些值用于区分请求，可以参考官方文 档[1]。</p>
+<h3 id="基于redis的限流">基于Redis的限流</h3>
+<pre><code class="language-shell"> 1 apiVersion: &quot;config.istio.io/v1alpha2&quot;
+ 2 kind: quota
+ 3 metadata:
+ 4   name: requestcount
+ 5   namespace: istio-system
+ 6 spec:
+ 7   dimensions:
+ 8     source: request.headers[&quot;x-forwarded-for&quot;] | &quot;unknown”
+ 9     destination: destination.labels[&quot;app&quot;] | destination.workload.name | &quot;unknown&quot;
+10     destinationVersion: destination.labels[&quot;version&quot;] | &quot;unknown&quot;
+11 ---
+12 apiVersion: &quot;config.istio.io/v1alpha2&quot;
+13 kind: redisquota
+14 metadata:
+15   name: handler
+16   namespace: istio-system
+17 spec:
+18   redisServerUrl: redis-ratelimit.istio-system:6379
+19   connectionPoolSize: 10
+20   quotas:
+21   - name: requestcount.quota.istio-system
+22     maxAmount: 500
+23     validDuration: 1s
+24     bucketDuration: 500ms
+25     rateLimitAlgorithm: ROLLING_WINDOW
+26     overrides:
+27     - dimensions:
+28         destination: service-go
+29       maxAmount: 50
+30     - dimensions:
+31         destination: service-node
+32         source: &quot;10.28.11.20&quot;
+33       maxAmount: 50
+34     - dimensions:
+35         destination: service-node
+36       maxAmount: 20
+37     - dimensions:
+38         destination: service-python
+39       maxAmount: 2
+40 ---
+41 apiVersion: config.istio.io/v1alpha2
+42 kind: rule
+43 metadata:
+44   name: quota
+45   namespace: istio-system
+46 spec:
+47   actions:
+48   - handler: handler.redisquota
+49     instances:
+50     - requestcount.quota
+51 ---
+52 apiVersion: config.istio.io/v1alpha2
+53 kind: QuotaSpec
+54 metadata:
+55   name: request-count
+56   namespace: istio-system
+57 spec:
+58   rules:
+59   - quotas:
+60     - charge: 1
+61       quota: requestcount
+62 ---
+63 apiVersion: config.istio.io/v1alpha2
+64 kind: QuotaSpecBinding
+65 metadata:
+66   name: request-count
+67   namespace: istio-system
+68 spec:
+69   quotaSpecs:
+70   - name: request-count
+71     namespace: istio-system
+72   services:
+73   - name: service-go
+74     namespace: default
+75   - name: service-node
+76     namespace: default
+77   - name: service-python
+78     namespace: default
+</code></pre>
+<p>第12~39行定义了名为handler的redisquota适配器，第18行定义了Redis的 连接地址，19行定义了Redis的连接池大小。</p>
+<p>第22行定义了默认配额为500，23行定义了默认限流周期为1秒，即默认 情况下每秒最高500个请求。</p>
+<p>第25行定义了使用的限流算法有两种:FIXED_WINDOW和 ROLLING_WINDOW，其中，FIXED_WINDOW为默认的算法:</p>
+<p>·FIXED_WINDOW算法可以设置请求速率峰值高达2倍。</p>
+<p>·ROLLING_WINDOW算法可以提高精确度，这也会额外消耗Redis的 资源。</p>
+<p>第27~39行定义了具体的限流规则，与memquota不同，这里不允许再单独为限流规则设置限流周期，只能使用默认的限流周期。 其余部分的配置与memquota的限流配置一样。下面举例说明限流方法。</p>
+<p>(1)基于条件的限流 如下配置表示只对cookie中不存在user的请求做限流:</p>
+<pre><code class="language-shell">apiVersion: config.istio.io/v1alpha2
+kind: rule
+metadata:
+  name: quota
+  namespace: istio-system
+spec:
+  match: match(request.headers[&quot;cookie&quot;], &quot;user=*&quot;) == false
+  actions:
+  - handler: handler.memquota
+    instances:
+    - requestcount.quota
+</code></pre>
+<p>(2)对所有服务限流 如下的配置表示对所有服务进行限流。</p>
+<pre><code class="language-shell">apiVersion: config.istio.io/v1alpha2
+kind: QuotaSpecBinding
+metadata:
+  name: request-count
+  namespace: istio-system
+spec:
+  quotaSpecs:
+  - name: request-count
+    namespace: istio-system
+  services:
+    - service: '*”
+
+</code></pre>
+<h2 id="实验-4">【实验】</h2>
+<p>本次实验使用基于内存的memquota适配器来进行服务限流测试。如果使 用基于Redis的redisquota适配器进行实验，可能会由于实验环境机器性能问题，导致Mixer访问Redis出现错误，进而导致请求速率还没有到达设置值时 就出现被限流的情况，影响实验结果的准确性。</p>
+<h3 id="部署其他服务">部署其他服务</h3>
+<pre><code class="language-shell">[root@master resilience]# kubectl get pods
+NAME                                 READY   STATUS    RESTARTS   AGE
+dns-test                             2/2     Running   0          40h
+fortio                               2/2     Running   0          18h
+httpbin-5846c9cfdb-x4lzn             2/2     Running   0          17h
+service-go-v1-76b6d56f5c-lwsw6       2/2     Running   0          23h
+service-go-v2-5c44655889-n2wld       2/2     Running   0          40h
+service-js-v1-7f9f5b64db-zbcbc       2/2     Running   0          40h
+service-js-v2-5d876bb99d-r5lxm       2/2     Running   0          40h
+service-lua-v1-598fb964d5-btwtx      2/2     Running   0          40h
+service-lua-v2-5b8986dd5c-tprv9      2/2     Running   0          40h
+service-node-v1-5976d5c9dc-t9sqz     2/2     Running   0          40h
+service-node-v2-687c58bfb7-6hz9w     2/2     Running   0          40h
+service-python-v1-5d85945565-v5ghf   2/2     Running   0          40h
+service-python-v2-8496d567cc-tqrbb   2/2     Running   0          40h
+</code></pre>
+<h3 id="启动用于并发测试的pod-3">启动用于并发测试的Pod</h3>
+<h3 id="创建限流规则">创建限流规则</h3>
+<pre><code class="language-shell">[root@master resilience]# kubectl apply  -f quota-mem-ratelimit.yaml
+quota.config.istio.io/requestcount created
+memquota.config.istio.io/handler created
+rule.config.istio.io/quota created
+quotaspec.config.istio.io/request-count created
+quotaspecbinding.config.istio.io/request-count created
+</code></pre>
+<h3 id="访问service-go服务测试限流是否生效">访问service-go服务，测试限流是否生效</h3>
+<pre><code class="language-shell">[root@master resilience]# kubectl exec fortio -c fortio /usr/local/bin/fortio -- load -curl http://service-go/env
+HTTP/1.1 200 OK
+content-type: application/json; charset=utf-8
+date: Thu, 24 Oct 2019 02:54:40 GMT
+content-length: 19
+x-envoy-upstream-service-time: 2
+server: envoy
+[root@master resilience]# kubectl exec fortio -c fortio /usr/local/bin/fortio -- load -qps 30 -n 300 -loglevel Error http://service-go/env
+02:55:25 I logger.go:97&gt; Log level is now 4 Error (was 2 Info)
+Fortio 1.0.1 running at 30 queries per second, 4-&gt;4 procs, for 300 calls: http://service-go/env
+Aggregated Function Time : count 300 avg 0.0025047047 +/- 0.001293 min 0.001049477 max 0.012517881 sum 0.751411396
+# target 50% 0.00228261
+# target 75% 0.00338889
+# target 90% 0.00380556
+# target 99% 0.00575
+# target 99.9% 0.0124402
+Sockets used: 4 (for perfect keepalive, would be 4)
+Code 200 : 300 (100.0 %)
+All done 300 calls (plus 0 warmup) 2.505 ms avg, 30.0 qps
+[root@master resilience]# kubectl exec fortio -c fortio /usr/local/bin/fortio -- load -qps 50 -n 500 -loglevel Error http://service-go/env
+02:56:19 I logger.go:97&gt; Log level is now 4 Error (was 2 Info)
+Fortio 1.0.1 running at 50 queries per second, 4-&gt;4 procs, for 500 calls: http://service-go/env
+Aggregated Function Time : count 500 avg 0.0023509151 +/- 0.001267 min 0.000948138 max 0.012192552 sum 1.17545754
+# target 50% 0.00215029
+# target 75% 0.00287283
+# target 90% 0.0036092
+# target 99% 0.008
+# target 99.9% 0.0121444
+Sockets used: 4 (for perfect keepalive, would be 4)
+Code 200 : 500 (100.0 %)
+All done 500 calls (plus 0 warmup) 2.351 ms avg, 50.0 qps
+[root@master resilience]# kubectl exec fortio -c fortio /usr/local/bin/fortio -- load -qps 60 -n 600 -loglevel Error http://service-go/env
+02:56:48 I logger.go:97&gt; Log level is now 4 Error (was 2 Info)
+Fortio 1.0.1 running at 60 queries per second, 4-&gt;4 procs, for 600 calls: http://service-go/env
+Aggregated Function Time : count 600 avg 0.0022226785 +/- 0.00116 min 0.00082232 max 0.010279713 sum 1.33360709
+# target 50% 0.00211053
+# target 75% 0.0029
+# target 90% 0.00369608
+# target 99% 0.006
+# target 99.9% 0.0101119
+Sockets used: 11 (for perfect keepalive, would be 4)
+Code 200 : 593 (98.8 %)
+Code 429 : 7 (1.2 %)
+All done 600 calls (plus 0 warmup) 2.223 ms avg, 60.0 qps
+</code></pre>
+<h3 id="访问service-node服务测试限流是否生效">访问service-node服务，测试限流是否生效</h3>
+<pre><code class="language-shell">[root@master resilience]# kubectl exec fortio -c fortio /usr/local/bin/fortio -- load -qps 20 -n 200 -loglevel Error http://service-node/env
+02:59:00 I logger.go:97&gt; Log level is now 4 Error (was 2 Info)
+Fortio 1.0.1 running at 20 queries per second, 4-&gt;4 procs, for 200 calls: http://service-node/env
+Aggregated Function Time : count 200 avg 0.0086483754 +/- 0.00752 min 0.000890251 max 0.07393496 sum 1.72967508
+# target 50% 0.00775
+# target 75% 0.0111176
+# target 90% 0.013875
+# target 99% 0.03
+# target 99.9% 0.073148
+Sockets used: 50 (for perfect keepalive, would be 4)
+Code 200 : 153 (76.5 %)
+Code 429 : 47 (23.5 %)
+All done 200 calls (plus 0 warmup) 8.648 ms avg, 20.0 qps
+[root@master resilience]# kubectl exec fortio -c fortio /usr/local/bin/fortio -- load -qps 60 -n 600 -loglevel Error http://service-node/env
+02:57:34 I logger.go:97&gt; Log level is now 4 Error (was 2 Info)
+Fortio 1.0.1 running at 60 queries per second, 4-&gt;4 procs, for 600 calls: http://service-node/env
+Aggregated Sleep Time : count 596 avg 0.047352691 +/- 0.0443 min -0.253263279 max 0.06624087 sum 28.2222036
+# range, mid point, percentile, count
+&gt;= -0.253263 &lt;= -0.001 , -0.127132 , 7.89, 47
+&gt; -0.001 &lt;= 0 , -0.0005 , 8.22, 2
+&gt; 0 &lt;= 0.001 , 0.0005 , 8.39, 1
+&gt; 0.001 &lt;= 0.002 , 0.0015 , 8.56, 1
+&gt; 0.006 &lt;= 0.007 , 0.0065 , 8.72, 1
+&gt; 0.007 &lt;= 0.008 , 0.0075 , 8.89, 1
+&gt; 0.008 &lt;= 0.009 , 0.0085 , 9.40, 3
+&gt; 0.009 &lt;= 0.01 , 0.0095 , 9.90, 3
+&gt; 0.01 &lt;= 0.011 , 0.0105 , 10.07, 1
+&gt; 0.011 &lt;= 0.013 , 0.012 , 10.23, 1
+&gt; 0.013 &lt;= 0.015 , 0.014 , 10.57, 2
+&gt; 0.024 &lt;= 0.029 , 0.0265 , 11.24, 4
+&gt; 0.029 &lt;= 0.034 , 0.0315 , 12.42, 7
+&gt; 0.034 &lt;= 0.039 , 0.0365 , 13.42, 6
+&gt; 0.039 &lt;= 0.044 , 0.0415 , 14.26, 5
+&gt; 0.044 &lt;= 0.049 , 0.0465 , 15.94, 10
+&gt; 0.049 &lt;= 0.059 , 0.054 , 38.09, 132
+&gt; 0.059 &lt;= 0.0662409 , 0.0626204 , 100.00, 369
+# target 50% 0.0603932
+WARNING 7.89% of sleep were falling behind
+Aggregated Function Time : count 600 avg 0.01284756 +/- 0.03235 min 0.000734024 max 0.320265092 sum 7.70853615
+# target 50% 0.00485
+# target 75% 0.00958065
+# target 90% 0.018
+# target 99% 0.2
+# target 99.9% 0.308106
+Sockets used: 250 (for perfect keepalive, would be 4)
+Code 200 : 351 (58.5 %)
+Code 429 : 249 (41.5 %)
+All done 600 calls (plus 0 warmup) 12.848 ms avg, 59.7 qps
+
+
+
+[root@master resilience]# kubectl exec fortio -c fortio /usr/local/bin/fortio -- load -qps 20 -n 200 -loglevel Error  -H &quot;x-forwarded-for:10.28.11.20&quot;   http://service-node/env
+03:05:25 I logger.go:97&gt; Log level is now 4 Error (was 2 Info)
+Fortio 1.0.1 running at 20 queries per second, 4-&gt;4 procs, for 200 calls: http://service-node/env
+Aggregated Function Time : count 200 avg 0.015222247 +/- 0.02629 min 0.003340092 max 0.232048522 sum 3.04444947
+# target 50% 0.0088125
+# target 75% 0.0131613
+# target 90% 0.018
+# target 99% 0.15
+# target 99.9% 0.225639
+Sockets used: 4 (for perfect keepalive, would be 4)
+Code 200 : 200 (100.0 %)
+All done 200 calls (plus 0 warmup) 15.222 ms avg, 20.0 qps
+[root@master resilience]# kubectl exec fortio -c fortio /usr/local/bin/fortio -- load -qps 30 -n 300 -loglevel Error  -H &quot;x-forwarded-for:10.28.11.20&quot;   http://service-node/env
+03:07:24 I logger.go:97&gt; Log level is now 4 Error (was 2 Info)
+Fortio 1.0.1 running at 30 queries per second, 4-&gt;4 procs, for 300 calls: http://service-node/env
+Aggregated Function Time : count 300 avg 0.010125638 +/- 0.01243 min 0.003113515 max 0.175624729 sum 3.03769129
+# target 50% 0.0089375
+# target 75% 0.0111613
+# target 90% 0.0136522
+# target 99% 0.075
+# target 99.9% 0.170937
+Sockets used: 4 (for perfect keepalive, would be 4)
+Code 200 : 300 (100.0 %)
+All done 300 calls (plus 0 warmup) 10.126 ms avg, 30.0 qps
+[root@master resilience]# kubectl exec fortio -c fortio /usr/local/bin/fortio -- load -qps 50 -n 500 -loglevel Error  -H &quot;x-forwarded-for:10.28.11.20&quot;   http://service-node/env
+03:06:28 I logger.go:97&gt; Log level is now 4 Error (was 2 Info)
+Fortio 1.0.1 running at 50 queries per second, 4-&gt;4 procs, for 500 calls: http://service-node/env
+Aggregated Sleep Time : count 496 avg 0.038869249 +/- 0.07214 min -0.352821007 max 0.078669616 sum 19.2791477
+# range, mid point, percentile, count
+&gt;= -0.352821 &lt;= -0.001 , -0.176911 , 16.94, 84
+&gt; 0.006 &lt;= 0.007 , 0.0065 , 17.54, 3
+&gt; 0.007 &lt;= 0.008 , 0.0075 , 17.74, 1
+&gt; 0.008 &lt;= 0.009 , 0.0085 , 18.15, 2
+&gt; 0.009 &lt;= 0.01 , 0.0095 , 18.55, 2
+&gt; 0.01 &lt;= 0.011 , 0.0105 , 18.75, 1
+&gt; 0.011 &lt;= 0.013 , 0.012 , 18.95, 1
+&gt; 0.013 &lt;= 0.015 , 0.014 , 19.35, 2
+&gt; 0.015 &lt;= 0.017 , 0.016 , 19.56, 1
+&gt; 0.017 &lt;= 0.019 , 0.018 , 19.76, 1
+&gt; 0.019 &lt;= 0.024 , 0.0215 , 20.97, 6
+&gt; 0.024 &lt;= 0.029 , 0.0265 , 21.77, 4
+&gt; 0.029 &lt;= 0.034 , 0.0315 , 22.18, 2
+&gt; 0.034 &lt;= 0.039 , 0.0365 , 22.78, 3
+&gt; 0.039 &lt;= 0.044 , 0.0415 , 23.59, 4
+&gt; 0.044 &lt;= 0.049 , 0.0465 , 23.99, 2
+&gt; 0.049 &lt;= 0.059 , 0.054 , 26.41, 12
+&gt; 0.059 &lt;= 0.069 , 0.064 , 38.51, 60
+&gt; 0.069 &lt;= 0.0786696 , 0.0738348 , 100.00, 305
+# target 50% 0.0708071
+WARNING 16.94% of sleep were falling behind
+Aggregated Function Time : count 500 avg 0.024316166 +/- 0.04509 min 0.001699694 max 0.299135109 sum 12.1580828
+# target 50% 0.00867742
+# target 75% 0.01256
+# target 90% 0.086
+# target 99% 0.225
+# target 99.9% 0.292993
+Sockets used: 7 (for perfect keepalive, would be 4)
+Code 200 : 497 (99.4 %)
+Code 429 : 3 (0.6 %)
+All done 500 calls (plus 0 warmup) 24.316 ms avg, 49.9 qps
+[root@master resilience]# kubectl exec fortio -c fortio /usr/local/bin/fortio -- load -qps 60 -n 600 -loglevel Error  -H &quot;x-forwarded-for:10.28.11.20&quot;   http://service-node/env
+03:03:57 I logger.go:97&gt; Log level is now 4 Error (was 2 Info)
+Fortio 1.0.1 running at 60 queries per second, 4-&gt;4 procs, for 600 calls: http://service-node/env
+Aggregated Sleep Time : count 596 avg -0.74796054 +/- 0.6631 min -2.123624694 max 0.065316148 sum -445.78448
+# range, mid point, percentile, count
+&gt;= -2.12362 &lt;= -0.001 , -1.06231 , 86.41, 515
+&gt; 0 &lt;= 0.001 , 0.0005 , 86.74, 2
+&gt; 0.004 &lt;= 0.005 , 0.0045 , 86.91, 1
+&gt; 0.017 &lt;= 0.019 , 0.018 , 87.08, 1
+&gt; 0.019 &lt;= 0.024 , 0.0215 , 87.42, 2
+&gt; 0.024 &lt;= 0.029 , 0.0265 , 89.60, 13
+&gt; 0.029 &lt;= 0.034 , 0.0315 , 90.27, 4
+&gt; 0.049 &lt;= 0.059 , 0.054 , 93.96, 22
+&gt; 0.059 &lt;= 0.0653161 , 0.0621581 , 100.00, 36
+# target 50% -0.897128
+WARNING 86.41% of sleep were falling behind
+Aggregated Function Time : count 600 avg 0.07008629 +/- 0.08778 min 0.001043715 max 0.397395549 sum 42.0517738
+# target 50% 0.011
+# target 75% 0.1
+# target 90% 0.194286
+# target 99% 0.356771
+# target 99.9% 0.393333
+Sockets used: 8 (for perfect keepalive, would be 4)
+Code 200 : 596 (99.3 %)
+Code 429 : 4 (0.7 %)
+All done 600 calls (plus 0 warmup) 70.086 ms avg, 51.6 qps
+</code></pre>
+<h3 id="访问service-python服务测试限流是否生效">访问service-python服务，测试限流是否生效</h3>
+<pre><code class="language-shell">[root@master resilience]# kubectl exec fortio -c fortio /usr/local/bin/fortio -- load -qps 1 -n 10 -loglevel Error http://service-python/env
+03:10:09 I logger.go:97&gt; Log level is now 4 Error (was 2 Info)
+Fortio 1.0.1 running at 1 queries per second, 4-&gt;4 procs, for 10 calls: http://service-python/env
+Aggregated Function Time : count 10 avg 0.039110848 +/- 0.1002 min 0.001331989 max 0.338871402 sum 0.391108482
+# target 50% 0.00333333
+# target 75% 0.0045
+# target 90% 0.03
+# target 99% 0.334984
+# target 99.9% 0.338483
+Sockets used: 9 (for perfect keepalive, would be 4)
+Code 200 : 2 (20.0 %)
+Code 429 : 8 (80.0 %)
+All done 10 calls (plus 0 warmup) 39.111 ms avg, 0.6 qps
+</code></pre>
+<p>从上面的实验结果，可以得出如下的结论:</p>
+<p>·对于service-go服务，当qps低于50时，请求几乎全部正常通过，当qps 大于50时，会有部分请求得到429的响应码，这说明我们针对service-go服务配置的限流规则已经生效。</p>
+<p>·对于service-node服务，普通调用时，当qps大于20时，就会出现部分请 求得到429响应码。但是当添加&quot;x-forwarded-for:10.28.11.20&quot;请求头时，只有 qps大于50时，才会出现部分请求得到429响应码，这说明我们针对service- node服务配置的两条限流规则都已经生效。</p>
+<p>·对于service-python服务，我们限定每5秒只允许2次请求的限制，当以 每秒1qps请求时，10个请求只有3个请求通过，其他请求均得到429响应码。 这说明我们针对service-python服务配置的限流规则也已经生效。</p>
+<p>注意：</p>
+<p>Istio通过quota实现限流，但是限流控制并不是非常精确，可能会存 在部分误差，使用时需要注意。</p>
+                    </div>
+                    
+                    
+
+                    
+
+
+
+                    
+<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
+    <div>
+        
+        <span class="block font-bold">上一页</span>
+        <a href="https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/9-istio%E6%9C%8D%E5%8A%A1%E8%B7%AF%E7%94%B1%E7%9B%B8%E5%85%B3%E7%9A%84%E5%8A%9F%E8%83%BD/" class="block">Istio服务路由相关的功能</a>
+        
+    </div>
+    <div class="md:text-right mt-4 md:mt-0">
+        
+        <span class="block font-bold">下一页</span>
+        <a href="https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/11-%E8%AE%A9%E6%9C%8D%E5%8A%A1%E6%95%85%E9%9A%9C%E6%A3%80%E6%B5%8B%E6%9B%B4%E5%AE%B9%E6%98%93/" class="block">让服务故障检测更容易</a>
+        
+    </div>
+</div>
+
+                    
+
+
+
+                </div>
+                
+                <div class="hidden lg:block lg:w-1/4">
+                    
+                    <div class="sticky top-16 z-10 hidden lg:block px-6 py-4  bg-secondary-bg pt-16 -mt-16 ">
+    <span class="text-lg font-semibold">本页内容</span>
+</div>
+<div class="sticky-toc hidden lg:block px-6 pb-6  pt-10 -mt-10 border-l ">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#负载均衡">负载均衡</a>
+      <ul>
+        <li><a href="#简单负载均衡">简单负载均衡</a></li>
+        <li><a href="#一致性哈希负载均衡">一致性哈希负载均衡</a></li>
+      </ul>
+    </li>
+    <li><a href="#实验">【实验】</a>
+      <ul>
+        <li><a href="#创建测试pod">创建测试Pod</a></li>
+        <li><a href="#创建service-go服务的路由规则">创建service-go服务的路由规则</a></li>
+        <li><a href="#创建一致性哈希负载均衡规则">创建一致性哈希负载均衡规则</a></li>
+        <li><a href="#访问service-go服务">访问service-go服务</a></li>
+        <li><a href="#总结">总结</a></li>
+      </ul>
+    </li>
+    <li><a href="#连接池">连接池</a>
+      <ul>
+        <li><a href="#tcp连接池">TCP连接池</a></li>
+        <li><a href="#http连接池">HTTP连接池</a></li>
+      </ul>
+    </li>
+    <li><a href="#实验-1">【实验】</a>
+      <ul>
+        <li><a href="#启动用于并发测试的pod">启动用于并发测试的Pod</a></li>
+        <li><a href="#创建service-go服务的路由规则-1">创建service-go服务的路由规则</a></li>
+        <li><a href="#创建连接池规则">创建连接池规则</a></li>
+        <li><a href="#并发访问服务">并发访问服务</a></li>
+      </ul>
+    </li>
+    <li><a href="#健康检测">健康检测</a></li>
+    <li><a href="#熔断">熔断</a></li>
+    <li><a href="#实验-2">【实验】</a>
+      <ul>
+        <li><a href="#启动用于并发测试的pod-1">启动用于并发测试的Pod</a></li>
+        <li><a href="#创建service-go服务的路由规则-2">创建service-go服务的路由规则</a></li>
+        <li><a href="#创建熔断规则">创建熔断规则</a></li>
+        <li><a href="#并发访问服务-1">并发访问服务</a></li>
+      </ul>
+    </li>
+    <li><a href="#超时">超时</a></li>
+    <li><a href="#实验-3">【实验】</a>
+      <ul>
+        <li><a href="#部署service-node服务">部署service-node服务</a></li>
+        <li><a href="#启动用于并发测试的pod-2">启动用于并发测试的Pod</a></li>
+        <li><a href="#创建service-node服务的超时规则">创建service-node服务的超时规则</a></li>
+        <li><a href="#访问service-node服务">访问service-node服务</a></li>
+      </ul>
+    </li>
+    <li><a href="#重试">重试</a>
+      <ul>
+        <li><a href="#创建并发测试的pod">创建并发测试的Pod</a></li>
+        <li><a href="#部署httpbin服务">部署httpbin服务</a></li>
+        <li><a href="#创建httpbin服务路由规则">创建httpbin服务路由规则</a></li>
+        <li><a href="#访问httpbin服务">访问httpbin服务</a></li>
+        <li><a href="#创建httpbin服务重试路由规则">创建httpbin服务重试路由规则</a></li>
+        <li><a href="#访问httpbin服务-1">访问httpbin服务</a></li>
+      </ul>
+    </li>
+    <li><a href="#限流">限流</a>
+      <ul>
+        <li><a href="#基于内存的限流">基于内存的限流</a></li>
+        <li><a href="#基于redis的限流">基于Redis的限流</a></li>
+      </ul>
+    </li>
+    <li><a href="#实验-4">【实验】</a>
+      <ul>
+        <li><a href="#部署其他服务">部署其他服务</a></li>
+        <li><a href="#启动用于并发测试的pod-3">启动用于并发测试的Pod</a></li>
+        <li><a href="#创建限流规则">创建限流规则</a></li>
+        <li><a href="#访问service-go服务测试限流是否生效">访问service-go服务，测试限流是否生效</a></li>
+        <li><a href="#访问service-node服务测试限流是否生效">访问service-node服务，测试限流是否生效</a></li>
+        <li><a href="#访问service-python服务测试限流是否生效">访问service-python服务，测试限流是否生效</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        enableStickyToc();
+    });
+</script>
+                    
+                </div>
+                
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        hljs.initHighlightingOnLoad();
+        changeSidebarHeight();
+        switchDocToc();
+    })
+</script>
+
+
+
+
+
+
+
+
+
+      </div>
+    </div>
+    
+  </main>
+  <footer class="pl-scrollbar">
+    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2021 <a href="https://hellocloudnative.github.io/">Pengxuan Zhang</a> 
+ &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div></div>
+  </footer>
+</body>
+
+</html>
