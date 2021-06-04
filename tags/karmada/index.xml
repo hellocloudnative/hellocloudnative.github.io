@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>文章 on 云原生研究院</title>
-    <link>https://hellocloudnative.github.io/posts/</link>
-    <description>Recent content in 文章 on 云原生研究院</description>
+    <title>karmada on 云原生研究院</title>
+    <link>https://hellocloudnative.github.io/tags/karmada/</link>
+    <description>Recent content in karmada on 云原生研究院</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>&amp;copy; 2021 &lt;a href=&#34;https://hellocloudnative.github.io/&#34;&gt;Pengxuan Zhang&lt;/a&gt; 
-</copyright><atom:link href="https://hellocloudnative.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+</copyright>
+    <lastBuildDate>Tue, 25 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://hellocloudnative.github.io/tags/karmada/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
       <link>https://hellocloudnative.github.io/posts/0-20210525-%E4%BA%91%E8%AE%A1%E7%AE%97%E9%A2%86%E5%9F%9F-%E5%9F%BA%E4%BA%8Ekarmada%E5%BC%95%E6%93%8E%E7%9A%84%E5%A4%9A%E4%BA%91%E5%AE%B9%E5%99%A8%E7%BC%96%E6%8E%92-%E6%8A%80%E6%9C%AF%E8%B0%83%E7%A0%94%E6%8A%A5%E5%91%8A-%E5%BC%A0%E9%B9%8F%E7%92%87/</link>
@@ -25,15 +26,6 @@
   二． 现状 图2.1 企业云服务使用情况 根据最新的调查报告显示（如图2.1），超过 93%的企业正同时使用多个云厂商的服务。云原生技术和云市场不断成熟，多云、多集群部署已经成为常态，未来将是编程式多云管理服务的时代。而业务部署到多云或多集群，它其实是分几个阶段的:
 典型阶段 1：多云多地部署，统一管理运维，减少重复劳动（如图2.2）
 图2.2 阶段一 第一个阶段，我们认为是多地部署统一运维管理，可以理解为是多个互操作的孤岛，互操作意味着在不同的环境，不同的云上，所用软件的技术栈是一套标准化的，在进行公有云、公有云 1、公有云 2 互相切换时，操作命令所输入的命令请求都是一样的，但其之间没有任何业务相关性或业务相关性非常弱，此时去做统一的应用交付，比如部署运维，要么手动执行重复的命令或者脚本化，或者最简单的用一套 CI/CD 的系统堆上去即可。因为在这个阶段大部分的业务相对来说比较固定，部署在哪个公有云、哪个数据中心，哪个机房，不需要太多的动态性和变化性。</description>
-    </item>
-    
-    <item>
-      <title>迁移新站后的第一篇博客</title>
-      <link>https://hellocloudnative.github.io/posts/hello_world/</link>
-      <pubDate>Mon, 24 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://hellocloudnative.github.io/posts/hello_world/</guid>
-      <description>我有幸从事云计算研究工作，此站为了方便记录与分享云计算研究过程。</description>
     </item>
     
   </channel>

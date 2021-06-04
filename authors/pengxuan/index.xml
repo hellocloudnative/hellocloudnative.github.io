@@ -9,6 +9,25 @@
     <copyright>&amp;copy; 2021 &lt;a href=&#34;https://hellocloudnative.github.io/&#34;&gt;Pengxuan Zhang&lt;/a&gt; 
 </copyright><atom:link href="https://hellocloudnative.github.io/authors/pengxuan/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title></title>
+      <link>https://hellocloudnative.github.io/posts/0-20210525-%E4%BA%91%E8%AE%A1%E7%AE%97%E9%A2%86%E5%9F%9F-%E5%9F%BA%E4%BA%8Ekarmada%E5%BC%95%E6%93%8E%E7%9A%84%E5%A4%9A%E4%BA%91%E5%AE%B9%E5%99%A8%E7%BC%96%E6%8E%92-%E6%8A%80%E6%9C%AF%E8%B0%83%E7%A0%94%E6%8A%A5%E5%91%8A-%E5%BC%A0%E9%B9%8F%E7%92%87/</link>
+      <pubDate>Tue, 25 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://hellocloudnative.github.io/posts/0-20210525-%E4%BA%91%E8%AE%A1%E7%AE%97%E9%A2%86%E5%9F%9F-%E5%9F%BA%E4%BA%8Ekarmada%E5%BC%95%E6%93%8E%E7%9A%84%E5%A4%9A%E4%BA%91%E5%AE%B9%E5%99%A8%E7%BC%96%E6%8E%92-%E6%8A%80%E6%9C%AF%E8%B0%83%E7%A0%94%E6%8A%A5%E5%91%8A-%E5%BC%A0%E9%B9%8F%E7%92%87/</guid>
+      <description>typora-copy-images-to: ../Downloads
+ 基于karmada的多云容器编排 [TOC]
+相关术语    缩写 全称 描述     Kind Kubernetes In Docker 使用 Docker 容器作为 Node 并将 Kubernetes 部署至其中的一个工具   karmada Kubernetes Armada 是一个Kubernetes管理系统，可让您跨多个Kubernetes群集和云运行您的云原生应用程序，而无需更改应用程序。通过使用Kubernetes原生API并提供高级调度功能，Karmada可以实现真正的开放式多云Kubernetes    一． 问题   单一的集群无法适应现企业业务
+虽然现在Kubernetes已经发展到v1.20，但是关于单集群承载能力一直没有变化。可见提高单集群负载能力并不是社区的发展方向。如果我们的业务规模超过了5000台，那么企业不得不考虑多个集群
+  企业趋向于混合云或多云架构逐渐增多
+比如企业是一个全球化的公司，提供Global服务。或像新浪微博一样，自建数据中心 + 阿里云，阿里云用于服务弹性流量。另外公有云并没有想象中的海量资源。比如公有云的头部客户特殊情况需要大量机器的时候，需要提前和公有云申请。为了避免被单家供应商锁定，或是出于成本等考虑，企业选择了多云架构，也决定了公司需要多个集群。
+  不把鸡蛋放到一个篮子里
+即使前面两条都未满足，那么我们是否要把所有的工作负载部署到一个集群？如果集群控制面出现故障，那么所有的服务都会受到影响。也许大家认为Kubernetes的控制面本身就是高可用的（三个api-server），不会有整个控制层不可用的可能。其实则不然，我们在生产环境中，已经处理很多次类似故障了。如果一个应用（一般指需要调用api-server接口的应用）在大量地调用api-server，会导致api-server接连挂掉，最终不可用。直到找到故障应用，并把故障应用删除。所以在生产环境中，一是需要严格控制访问api-server的权限，二是需要做好测试，三是可以考虑业务应用和基础设施分开部署。其实&amp;quot;选择单集群 or 多集群&amp;quot;和&amp;quot;选择一台超算 or 多台普通机器&amp;quot;类似。后来分布式计算的发展说明大家选择了多个普通机器。
+  二． 现状 图2.1 企业云服务使用情况 根据最新的调查报告显示（如图2.1），超过 93%的企业正同时使用多个云厂商的服务。云原生技术和云市场不断成熟，多云、多集群部署已经成为常态，未来将是编程式多云管理服务的时代。而业务部署到多云或多集群，它其实是分几个阶段的:
+典型阶段 1：多云多地部署，统一管理运维，减少重复劳动（如图2.2）
+图2.2 阶段一 第一个阶段，我们认为是多地部署统一运维管理，可以理解为是多个互操作的孤岛，互操作意味着在不同的环境，不同的云上，所用软件的技术栈是一套标准化的，在进行公有云、公有云 1、公有云 2 互相切换时，操作命令所输入的命令请求都是一样的，但其之间没有任何业务相关性或业务相关性非常弱，此时去做统一的应用交付，比如部署运维，要么手动执行重复的命令或者脚本化，或者最简单的用一套 CI/CD 的系统堆上去即可。因为在这个阶段大部分的业务相对来说比较固定，部署在哪个公有云、哪个数据中心，哪个机房，不需要太多的动态性和变化性。</description>
+    </item>
+    
+    <item>
       <title>迁移新站后的第一篇博客</title>
       <link>https://hellocloudnative.github.io/posts/hello_world/</link>
       <pubDate>Mon, 24 May 2021 00:00:00 +0000</pubDate>
