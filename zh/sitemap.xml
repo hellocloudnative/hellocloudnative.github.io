@@ -41,11 +41,8 @@
     <loc>https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/12-%E8%AE%A9%E6%9C%8D%E5%8A%A1%E9%80%9A%E4%BF%A1%E6%9B%B4%E5%AE%89%E5%85%A8%E5%8F%AF%E6%8E%A7/</loc>
     <lastmod>2019-10-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hellocloudnative.github.io/posts/0-20210525-%E4%BA%91%E8%AE%A1%E7%AE%97%E9%A2%86%E5%9F%9F-%E5%9F%BA%E4%BA%8Ekarmada%E5%BC%95%E6%93%8E%E7%9A%84%E5%A4%9A%E4%BA%91%E5%AE%B9%E5%99%A8%E7%BC%96%E6%8E%92-%E6%8A%80%E6%9C%AF%E8%B0%83%E7%A0%94%E6%8A%A5%E5%91%8A-%E5%BC%A0%E9%B9%8F%E7%92%87/</loc>
-    <lastmod>2021-05-25T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://hellocloudnative.github.io/authors/</loc>
-    <lastmod>2021-05-31T11:23:32+08:00</lastmod>
+    <lastmod>2021-06-10T09:43:20+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -58,10 +55,10 @@
                 />
   </url><url>
     <loc>https://hellocloudnative.github.io/tags/karmada/</loc>
-    <lastmod>2021-05-25T00:00:00+00:00</lastmod>
+    <lastmod>2021-06-10T09:43:20+08:00</lastmod>
   </url><url>
     <loc>https://hellocloudnative.github.io/</loc>
-    <lastmod>2021-05-31T11:23:32+08:00</lastmod>
+    <lastmod>2021-06-10T09:43:20+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -74,7 +71,10 @@
                 />
   </url><url>
     <loc>https://hellocloudnative.github.io/series/%E4%BA%91%E5%8E%9F%E7%94%9F%E7%B3%BB%E5%88%97/</loc>
-    <lastmod>2021-05-25T00:00:00+00:00</lastmod>
+    <lastmod>2021-06-10T09:43:20+08:00</lastmod>
+  </url><url>
+    <loc>https://hellocloudnative.github.io/posts/0-karmada/</loc>
+    <lastmod>2021-06-10T09:43:20+08:00</lastmod>
   </url><url>
     <loc>https://hellocloudnative.github.io/series/%E4%B8%AA%E4%BA%BA%E6%97%A5%E8%AE%B0%E7%B3%BB%E5%88%97/</loc>
     <lastmod>2021-05-31T11:23:32+08:00</lastmod>
