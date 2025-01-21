@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html
-  lang=""
+  lang="zh"
   dir="ltr"
   
 ><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<title>云原生研习社</title>
+<title>文章 | 云原生研习社</title>
 
 <meta name="generator" content="Hugo Eureka 0.9.3" />
 <link rel="stylesheet" href="https://hellocloudnative.github.io/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
@@ -79,14 +79,34 @@
 
 
 
-<meta property="og:title" content="云原生研习社" />
+
+<script type="application/ld+json">
+{
+    "@context":"https://schema.org",
+    "@type":"ItemList",
+    "itemListElement":[{
+            "@type":"ListItem",
+            "position":  1 ,
+            "name": "基于karmada引擎的多云容器编排",
+            "description": "Guide to emoji usage in Hugo",
+            "url": "https://hellocloudnative.github.io/zh/posts/0-karmada/"
+        },{
+            "@type":"ListItem",
+            "position":  2 ,
+            "name": "迁移新站后的第一篇博客",
+            "description": "Guide to emoji usage in Hugo",
+            "url": "https://hellocloudnative.github.io/zh/posts/hello_world/"
+        }
+    ]
+}
+</script><meta property="og:title" content="文章 | 云原生研习社" />
 <meta property="og:type" content="website" />
 
 
 <meta property="og:image" content="https://hellocloudnative.github.io/images/icon.png">
 
 
-<meta property="og:url" content="https://hellocloudnative.github.io/en/series/" />
+<meta property="og:url" content="https://hellocloudnative.github.io/zh/posts/" />
 
 
 
@@ -98,9 +118,7 @@
 
 
 
-
-
-<meta property="og:locale:alternate" content="zh" />
+<meta property="og:locale" content="zh" />
 
 
 
@@ -114,10 +132,10 @@
 
 
 
-<meta property="article:section" content="series" />
+<meta property="article:section" content="posts" />
 
 
-<link rel="alternate" type="application/rss+xml" href="https://hellocloudnative.github.io/en/series/index.xml" title="云原生研习社" />
+<link rel="alternate" type="application/rss+xml" href="https://hellocloudnative.github.io/zh/posts/index.xml" title="云原生研习社" />
 
 
   <body class="flex min-h-screen flex-col">
@@ -131,7 +149,7 @@
     }
 </script>
 <nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
-    <a href="/en/" class="me-6 text-primary-text text-xl font-bold">云原生研习社</a>
+    <a href="/zh/" class="me-6 text-primary-text text-xl font-bold">云原生研习社</a>
     <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
         <i class="fas fa-bars"></i>
     </button>
@@ -139,12 +157,12 @@
     <div id="target"
         class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
         <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
-            <a href="/en/authors/pengxuan/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">About</a>
-            <a href="/en/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Posts</a>
-            <a href="/en/categories/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Categories</a>
-            <a href="/en/series/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">Series</a>
-            <a href="/en/tags/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Tags</a>
-            <a href="/en/docs/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Docs</a>
+            <a href="/zh/authors/pengxuan/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">关于我</a>
+            <a href="/zh/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">文章</a>
+            <a href="/zh/categories/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">分类</a>
+            <a href="/zh/series/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">系列</a>
+            <a href="/zh/tags/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">标签</a>
+            <a href="/zh/docs/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">文档</a>
         </div>
 
         <div class="flex">
@@ -156,22 +174,9 @@
                 </div>
                 <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
                     id='lightDarkOptions'>
-                    <span class="px-4 py-1 hover:text-eureka" name="Light">Light</span>
-                    <span class="px-4 py-1 hover:text-eureka" name="Dark">Dark</span>
-                    <span class="px-4 py-1 hover:text-eureka" name="Auto">Auto</span>
-                </div>
-            </div>
-            <div class="relative pt-4 ps-4 md:pt-0">
-                <div class="cursor-pointer hover:text-eureka" id="languageMode">
-                    <i class="fas fa-globe"></i>
-                    <span class="ps-1"></span>
-                </div>
-                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open-lang">
-                </div>
-                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
-                    id='languageOptions'>
-                    <a class="px-4 py-1 hover:text-eureka" href="https://hellocloudnative.github.io/en/series/"></a>
-                    <a class="px-4 py-1 hover:text-eureka" href="https://hellocloudnative.github.io/zh/series/">简体中文</a>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
                 </div>
             </div>
         </div>
@@ -201,7 +206,6 @@
     document.addEventListener('DOMContentLoaded', () => {
         getcolorscheme();
         switchBurger();
-        switchLanguage()
     });
 </script>
 </div>
@@ -210,13 +214,118 @@
         <div class="pl-scrollbar">
           <div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8">
   <article class="prose mx-6 my-8">
-  <h1>Series</h1>
+  <h1>文章</h1>
   
 </article>
 
-  <div class="bg-secondary-bg rounded px-6 py-8">
-    
+  <div class="bg-secondary-bg rounded px-6">
+    <div class="overflow-hidden divide-y">
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="prose">
+  <a href="https://hellocloudnative.github.io/zh/posts/0-karmada/" class="no-underline">
+    <h3 class="mt-0">基于karmada引擎的多云容器编排</h3>
+  </a>
+  
+    Guide to emoji usage in Hugo
+  
+
+  
+    <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >2021-05-25</span
+    >
   </div>
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>14分钟阅读时长</span>
+  </div>
+
+  
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-th-list me-1"></i>
+      
+        <a href="https://hellocloudnative.github.io/zh/series/%E4%BA%91%E5%8E%9F%E7%94%9F%E7%B3%BB%E5%88%97/" class="hover:text-eureka"
+          >云原生系列</a
+        >
+      
+    </div>
+  
+</div>
+
+  
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="prose">
+  <a href="https://hellocloudnative.github.io/zh/posts/hello_world/" class="no-underline">
+    <h3 class="mt-0">迁移新站后的第一篇博客</h3>
+  </a>
+  
+    Guide to emoji usage in Hugo
+  
+
+  
+    <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >2021-05-24</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>1分钟阅读时长</span>
+  </div>
+
+  
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-th-list me-1"></i>
+      
+        <a href="https://hellocloudnative.github.io/zh/series/%E4%B8%AA%E4%BA%BA%E6%97%A5%E8%AE%B0%E7%B3%BB%E5%88%97/" class="hover:text-eureka"
+          >个人日记系列</a
+        >
+      
+    </div>
+  
+</div>
+
+  
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+</div>
+
+
+  </div>
+  
 
           </div>
         </div>

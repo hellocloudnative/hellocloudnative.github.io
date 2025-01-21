@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>云原生系列 on 云原生研习社</title>
+    <link>https://hellocloudnative.github.io/zh/series/%E4%BA%91%E5%8E%9F%E7%94%9F%E7%B3%BB%E5%88%97/</link>
+    <description>Recent content in 云原生系列 on 云原生研习社</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>&amp;copy; 2021 &lt;a href=&#34;https://hellocloudnative.github.io/&#34;&gt;Pengxuan Zhang&lt;/a&gt; 
+</copyright>
+    <lastBuildDate>Tue, 25 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://hellocloudnative.github.io/zh/series/%E4%BA%91%E5%8E%9F%E7%94%9F%E7%B3%BB%E5%88%97/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>基于karmada引擎的多云容器编排</title>
+      <link>https://hellocloudnative.github.io/zh/posts/0-karmada/</link>
+      <pubDate>Tue, 25 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://hellocloudnative.github.io/zh/posts/0-karmada/</guid>
+      <description>&lt;p&gt;4 月 25 日，在华为开发者大会 2021（Cloud）上，华为云 CTO 张宇昕宣布云原生多云容器编排项目 Karmada 正式开源。Karmada项目融入华为及工商银行、小红书、中国一汽等各企业在多云管理领域的丰富积累，为开发者提供详实有效的实践指导与帮助，未来还计划将该项目捐赠给云原生计算基金会 CNCF。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

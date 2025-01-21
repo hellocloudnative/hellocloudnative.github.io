@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Istio入门与实战 on 云原生研习社</title>
+    <link>https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/</link>
+    <description>Recent content in Istio入门与实战 on 云原生研习社</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>&amp;copy; 2021 &lt;a href=&#34;https://hellocloudnative.github.io/&#34;&gt;Pengxuan Zhang&lt;/a&gt; 
+</copyright>
+    <lastBuildDate>Sat, 12 Oct 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>istio的安装部署</title>
+      <link>https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/1-istio%E7%9A%84%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/</link>
+      <pubDate>Sat, 12 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/1-istio%E7%9A%84%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/</guid>
+      <description>&lt;p&gt;最小化安装部署istio&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>服务使用Istio的要求</title>
+      <link>https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/2-%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8istio%E7%9A%84%E8%A6%81%E6%B1%82/</link>
+      <pubDate>Sat, 12 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/2-%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8istio%E7%9A%84%E8%A6%81%E6%B1%82/</guid>
+      <description>&lt;p&gt;为了让服务成为服务网格的一部分，部署在Kubernetes中的Service和Pod&lt;/p&gt;
+&lt;p&gt;资源必须要满足如下一些要求。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>常用资源类型</title>
+      <link>https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/3-%E5%B8%B8%E7%94%A8%E8%B5%84%E6%BA%90%E7%B1%BB%E5%9E%8B/</link>
+      <pubDate>Sat, 12 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/3-%E5%B8%B8%E7%94%A8%E8%B5%84%E6%BA%90%E7%B1%BB%E5%9E%8B/</guid>
+      <description>&lt;p&gt;常用的资源类型主要有流量控制、请求配额、mTLS认证策略、RBAC访问权限。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>常用的kubectl命令</title>
+      <link>https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/4-%E5%B8%B8%E7%94%A8%E7%9A%84kubectl%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Sat, 12 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/4-%E5%B8%B8%E7%94%A8%E7%9A%84kubectl%E5%91%BD%E4%BB%A4/</guid>
+      <description>&lt;p&gt;由于istioctl的子命令create、get、replace、delete已经全部废弃，不再建&lt;/p&gt;
+&lt;p&gt;议使用，所以对资源的创建、更新、获取、删除，推荐使用kubectl来完成。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>常用的istioctl命令</title>
+      <link>https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/5-%E5%B8%B8%E7%94%A8%E7%9A%84istioctl%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Sat, 12 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/5-%E5%B8%B8%E7%94%A8%E7%9A%84istioctl%E5%91%BD%E4%BB%A4/</guid>
+      <description>&lt;h2 id=&#34;通用参数说明&#34;&gt;通用参数说明&lt;/h2&gt;</description>
+    </item>
+    
+    <item>
+      <title>Istio注入</title>
+      <link>https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/6-istio%E6%B3%A8%E5%85%A5/</link>
+      <pubDate>Sat, 12 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/6-istio%E6%B3%A8%E5%85%A5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>微服务应用的部署</title>
+      <link>https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/7-%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%BA%94%E7%94%A8%E7%9A%84%E9%83%A8%E7%BD%B2/</link>
+      <pubDate>Sat, 12 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/7-%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%BA%94%E7%94%A8%E7%9A%84%E9%83%A8%E7%BD%B2/</guid>
+      <description>&lt;p&gt;其中，service-js服务是指由Vue/React实现的前端页面，当用户访问前端 Web页面时，会看到一个静态页面，当用户点击相应的按钮时，前端页面会 通过浏览器异步请求后端service-python服务提供的API接口，service-python 调用后端其他服务完成用户的请求，并把结果合并处理之后发送给前端浏览 器，当前端页面收到请求的响应数据时会渲染出新的页面呈现给用户。service-node是中间层服务，调用底层服务service-go，整合数据响应。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>在Istio中部署微服务</title>
+      <link>https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/8-%E5%9C%A8istio%E4%B8%AD%E9%83%A8%E7%BD%B2%E5%BE%AE%E6%9C%8D%E5%8A%A1/</link>
+      <pubDate>Sat, 12 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/8-%E5%9C%A8istio%E4%B8%AD%E9%83%A8%E7%BD%B2%E5%BE%AE%E6%9C%8D%E5%8A%A1/</guid>
+      <description>&lt;p&gt;在前面的实验中，服务部署完成之后，可以单独访问service-js服务的前 端静态页面，也可以单独访问service-python实现的API接口，但是仍然不能 实现两者相互配合调用，展现整个服务调用链情况。本节就带你体验一下 Istio的简单路由功能，并了解整个微服务的调用流程，对于本节使用的Istio 路由配置文件，不必太过关注细节，这些功能会在后续章节中详细说明。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Istio服务路由相关的功能</title>
+      <link>https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/9-istio%E6%9C%8D%E5%8A%A1%E8%B7%AF%E7%94%B1%E7%9B%B8%E5%85%B3%E7%9A%84%E5%8A%9F%E8%83%BD/</link>
+      <pubDate>Sat, 12 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/9-istio%E6%9C%8D%E5%8A%A1%E8%B7%AF%E7%94%B1%E7%9B%B8%E5%85%B3%E7%9A%84%E5%8A%9F%E8%83%BD/</guid>
+      <description>&lt;p&gt;流量路由管理是Istio最重要的功能。我们可以通过路由规则轻松地把请 求流量导入不同的服务版本中，可以很容易地实现A/B测试、&amp;gt;灰度发布这类 需要复杂技术才能实现的功能。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>让服务更具弹性</title>
+      <link>https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/10-%E8%AE%A9%E6%9C%8D%E5%8A%A1%E6%9B%B4%E5%85%B7%E5%BC%B9%E6%80%A7/</link>
+      <pubDate>Sat, 12 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/10-%E8%AE%A9%E6%9C%8D%E5%8A%A1%E6%9B%B4%E5%85%B7%E5%BC%B9%E6%80%A7/</guid>
+      <description>&lt;p&gt;如何借助Istio提供的功能，让我们的服务更具弹性。主要包括 配置服务的负载均衡策略、连接池、健康检测、熔断、超时、重试、限流 等。通过上述这些配置，可以让我们服务在遇到故障时更具弹性。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>让服务故障检测更容易</title>
+      <link>https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/11-%E8%AE%A9%E6%9C%8D%E5%8A%A1%E6%95%85%E9%9A%9C%E6%A3%80%E6%B5%8B%E6%9B%B4%E5%AE%B9%E6%98%93/</link>
+      <pubDate>Sat, 12 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/11-%E8%AE%A9%E6%9C%8D%E5%8A%A1%E6%95%85%E9%9A%9C%E6%A3%80%E6%B5%8B%E6%9B%B4%E5%AE%B9%E6%98%93/</guid>
+      <description>&lt;p&gt;为了提高服务的稳定性，我们可以通过让服务调用失败或者增加服务的 响应时间等方式，来主动模拟服务故障的场景，这种给服务注入故障来测试 服务稳定性的行为称为故障注入(Fault Injection)，也称为混沌工程(Chaos Engineering)。我们可以随机地给服务注入故障，观察服务的表现，检测服 务的稳定性;故障的范围可大可小，小到给部分服务增加错误或者时延，大 到给整个机房断电，来检测整个应用的稳定性。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>让服务通信更安全可控</title>
+      <link>https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/12-%E8%AE%A9%E6%9C%8D%E5%8A%A1%E9%80%9A%E4%BF%A1%E6%9B%B4%E5%AE%89%E5%85%A8%E5%8F%AF%E6%8E%A7/</link>
+      <pubDate>Sat, 12 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/12-%E8%AE%A9%E6%9C%8D%E5%8A%A1%E9%80%9A%E4%BF%A1%E6%9B%B4%E5%AE%89%E5%85%A8%E5%8F%AF%E6%8E%A7/</guid>
+      <description>&lt;p&gt;在Istio中，我们可 以使用Denier适配器实现简单的服务访问控制，使用黑白名单更进一步控制 服务间的访问权限，使用RBAC实现复杂的接口、函数级别的访问权限控 制。Istio还提供了双向的TLS加密身份认证，以及基于JWT的终端用户的认 证，也可以将两者结合使用。Istio极大地增强了服务间的安全性。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

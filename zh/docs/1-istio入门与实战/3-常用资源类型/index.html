@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html
+  lang="zh"
+  dir="ltr"
+  
+><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>常用资源类型 | Istio入门与实战 | 云原生研习社</title>
+
+<meta name="generator" content="Hugo Eureka 0.9.3" />
+<link rel="stylesheet" href="https://hellocloudnative.github.io/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
+<script defer src="https://hellocloudnative.github.io/js/eureka.min.e30461307d4134a93cbbd7301a29631abc285b8d3df327389368cd910c20926df5759064caf0f8ba686f65edcbdff5ee.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto&#43;Serif&#43;SC:wght@400;600;700&amp;display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js"
+   crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js"
+     crossorigin></script>
+<link rel="stylesheet" href="https://hellocloudnative.github.io/css/highlightjs.min.2958991528e43eb6fc9b8c4f2b8e052f79c4010718e1d1e888a777620e9ee63021c2c57ec7417a3108019bb8c41943e6.css" media="print" onload="this.media='all';this.onload=null">
+
+
+<script defer type="text/javascript" src="https://hellocloudnative.github.io/js/fontawesome.min.d985ac16c7535cb80993ed54c495ca11e688d0c0dc6d5b42dfe36f85a5f1e3544f45c0d2c4b6941eaaec6084da6f19e0.js"></script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+   integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" 
+  integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+   integrity="sha384-&#43;XBljXPPiv&#43;OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js" 
+  integrity="sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0"  crossorigin></script>
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://hellocloudnative.github.io/images/icon_hu567c00f0881afc0330ccceee033e1285_28734_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://hellocloudnative.github.io/images/icon_hu567c00f0881afc0330ccceee033e1285_28734_180x180_fill_box_center_3.png">
+
+<meta name="description"
+  content="常用资源类型">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"文档",
+      "item":"https://hellocloudnative.github.io/zh/docs/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"Istio入门与实战",
+      "item":"https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/"},{
+      "@type": "ListItem",
+      "position": 3 ,
+      "name":"常用资源类型",
+      "item":"https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/3-%E5%B8%B8%E7%94%A8%E8%B5%84%E6%BA%90%E7%B1%BB%E5%9E%8B/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/3-%E5%B8%B8%E7%94%A8%E8%B5%84%E6%BA%90%E7%B1%BB%E5%9E%8B/"
+    },
+    "headline": "常用资源类型 | Istio入门与实战 | 云原生研习社","datePublished": "2019-10-12T00:00:00+00:00",
+    "dateModified": "2019-10-12T00:00:00+00:00",
+    "wordCount":  1663 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "Pengxuan Zhang",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://hellocloudnative.github.io/images/icon.png"
+        }
+        },
+    "description": "常用资源类型"
+}
+</script><meta property="og:title" content="常用资源类型 | Istio入门与实战 | 云原生研习社" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="https://hellocloudnative.github.io/images/icon.png">
+
+
+<meta property="og:url" content="https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/3-%E5%B8%B8%E7%94%A8%E8%B5%84%E6%BA%90%E7%B1%BB%E5%9E%8B/" />
+
+
+
+<meta property="og:description" content="常用资源类型" />
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="云原生研习社" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2019-10-12T00:00:00&#43;00:00" />
+
+
+<meta property="article:modified_time" content="2019-10-12T00:00:00&#43;00:00" />
+
+
+
+<meta property="article:section" content="docs" />
+
+
+
+
+
+  <body class="flex min-h-screen flex-col">
+    <header
+      class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"
+    >
+      <div class="mx-auto w-full max-w-screen-xl"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/zh/" class="me-6 text-primary-text text-xl font-bold">云原生研习社</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/zh/authors/pengxuan/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">关于我</a>
+            <a href="/zh/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">文章</a>
+            <a href="/zh/categories/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">分类</a>
+            <a href="/zh/series/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">系列</a>
+            <a href="/zh/tags/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">标签</a>
+            <a href="/zh/docs/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">文档</a>
+        </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+    </header>
+    <main class="grow pt-16">
+        <div class="pl-scrollbar">
+          <div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8">
+
+
+<div class="lg:pt-12">
+    <div class="flex flex-col md:flex-row bg-secondary-bg rounded">
+        <div class="md:w-1/4 lg:w-1/5 border-e">
+            <div class="sticky top-16 pt-6">
+                
+
+
+
+
+
+
+
+
+
+
+<div id="sidebar-title" class="md:hidden mx-4 px-2 pt-4 pb-2 md:border-b text-tertiary-text md:text-primary-text">
+    <span class="font-semibold">目录</span>
+    <i class='fas fa-caret-right ms-1'></i>
+</div>
+
+<div id="sidebar-toc"
+    class="hidden md:block overflow-y-auto mx-6 md:mx-0 pe-6 pt-2 md:max-h-doc-sidebar bg-primary-bg md:bg-transparent">
+    <div class="flex flex-wrap ms-4 -me-2 p-2 bg-secondary-bg md:bg-primary-bg rounded">
+        <a class=" hover:text-eureka"
+            href="https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/">Istio入门与实战</a>
+        
+        
+        
+
+
+    </div>
+    
+<ul class="ps-6">
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/1-istio%E7%9A%84%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/">istio的安装部署</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/2-%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8istio%E7%9A%84%E8%A6%81%E6%B1%82/">服务使用Istio的要求</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" text-eureka  hover:text-eureka"
+                href="https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/3-%E5%B8%B8%E7%94%A8%E8%B5%84%E6%BA%90%E7%B1%BB%E5%9E%8B/">常用资源类型</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/4-%E5%B8%B8%E7%94%A8%E7%9A%84kubectl%E5%91%BD%E4%BB%A4/">常用的kubectl命令</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/5-%E5%B8%B8%E7%94%A8%E7%9A%84istioctl%E5%91%BD%E4%BB%A4/">常用的istioctl命令</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/6-istio%E6%B3%A8%E5%85%A5/">Istio注入</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/7-%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%BA%94%E7%94%A8%E7%9A%84%E9%83%A8%E7%BD%B2/">微服务应用的部署</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/8-%E5%9C%A8istio%E4%B8%AD%E9%83%A8%E7%BD%B2%E5%BE%AE%E6%9C%8D%E5%8A%A1/">在Istio中部署微服务</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/9-istio%E6%9C%8D%E5%8A%A1%E8%B7%AF%E7%94%B1%E7%9B%B8%E5%85%B3%E7%9A%84%E5%8A%9F%E8%83%BD/">Istio服务路由相关的功能</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/10-%E8%AE%A9%E6%9C%8D%E5%8A%A1%E6%9B%B4%E5%85%B7%E5%BC%B9%E6%80%A7/">让服务更具弹性</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/11-%E8%AE%A9%E6%9C%8D%E5%8A%A1%E6%95%85%E9%9A%9C%E6%A3%80%E6%B5%8B%E6%9B%B4%E5%AE%B9%E6%98%93/">让服务故障检测更容易</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/12-%E8%AE%A9%E6%9C%8D%E5%8A%A1%E9%80%9A%E4%BF%A1%E6%9B%B4%E5%AE%89%E5%85%A8%E5%8F%AF%E6%8E%A7/">让服务通信更安全可控</a>
+        </div>
+        
+    </li>
+    
+    
+</ul>
+
+</div>
+
+
+
+
+
+            </div>
+
+        </div>
+        <div class="w-full md:w-3/4 lg:w-4/5 pb-8 pt-2 md:pt-8">
+            <div class="flex">
+                <div class="w-full lg:w-3/4 px-6">
+                    <article class="prose">
+  <h1 class="mb-4">常用资源类型</h1>
+
+  <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >2019-10-12</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>4分钟阅读时长</span>
+  </div>
+
+  
+
+  
+</div>
+
+
+  
+  
+
+  <p>常用的资源类型主要有流量控制、请求配额、mTLS认证策略、RBAC访问权限。</p>
+<h2 id="流量控制">流量控制</h2>
+<p>流量控制资源有:DestinationRule、VirtualService、Gateway、 ServiceEntry、EnvoyFilter，主要用于控制服务的路由，控制集群出入口的流 量等功能。下面分别介绍。</p>
+<h3 id="destinationrule">DestinationRule</h3>
+<p>DestinationRule定义了流量路由规则匹配后流量的访问策略。在这些策 略中可以定义负载均衡、连接池大小，以及负载均衡池中不健康实例的探测 和实例的摘除规则等。示例如下:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">networking.istio.io/v1alpha3 </span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">DestinationRule</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">reviews-destination </span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">host</span>: <span style="color:#ae81ff">reviews.prod.svc.cluster.local </span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">subsets</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">v1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">labels</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">version</span>: <span style="color:#ae81ff">v1</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">v2 </span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">labels</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">version</span>: <span style="color:#ae81ff">v2</span>
+</span></span></code></pre></div><p><img src="https://zpx.hellocloudnative.io/2019-10-12-094655.png" alt="image-20191012174653836"></p>
+<h3 id="virtualservice">VirtualService</h3>
+<p>VirtualService定义了一系列的流量路由规则，将流量路由到指定的目标</p>
+<p>服务或者目标服务的子版本。示例如下:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">networking.istio.io/v1alpha3</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">VirtualService</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">reviews-route </span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">hosts</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">reviews.prod.svc.cluster.local </span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">http</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">match</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">uri</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">prefix</span>: <span style="color:#e6db74">&#34;/wpcatalog&#34;</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">uri</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">prefix</span>: <span style="color:#e6db74">&#34;/consumercatalog&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">rewrite</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">uri</span>: <span style="color:#e6db74">&#34;/newcatalog&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">route</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">destination</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">host</span>: <span style="color:#ae81ff">reviews.prod.svc.cluster.local</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">subset</span>: <span style="color:#ae81ff">v2</span>
+</span></span><span style="display:flex;"><span>- <span style="color:#f92672">route</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">destination</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">host</span>: <span style="color:#ae81ff">reviews.prod.svc.cluster.local </span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">subset</span>: <span style="color:#ae81ff">v1</span>
+</span></span></code></pre></div><h3 id="gateway">Gateway</h3>
+<p>Gateway用于配置服务网格流量的边界负载均衡器，负责接收进入服务 网格和流出服务网格的HTTP/TCP连接。用于定义一系列应该开放的端口及 其协议。示例如下:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">networking.istio.io/v1alpha3 </span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Gateway</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">bookinfo-gateway </span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">selector</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">istio</span>: <span style="color:#ae81ff">ingressgateway</span> <span style="color:#75715e"># use istio default controller</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">servers</span>: 
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">port</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">number</span>: <span style="color:#ae81ff">80</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#ae81ff">http</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">protocol</span>: <span style="color:#ae81ff">HTTP</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">hosts</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#e6db74">&#34;*&#34;</span>
+</span></span></code></pre></div><h3 id="serviceentry">ServiceEntry</h3>
+<ul>
+<li>ServiceEntry用于添加额外的注册条目到Istio内部的注册中心，以此来满 足服务网格里自动发现的服务访问或者路由到这些手动指定的服务，这可以把外部服务导入网格内部。示例如下:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">networking.istio.io/v1alpha3 </span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ServiceEntry</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">external-svc-mongocluster </span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">hosts</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">mymongodb.somedomain</span> <span style="color:#75715e"># not used </span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">addresses</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">192.192.192.192</span><span style="color:#ae81ff">/24</span> <span style="color:#75715e"># VIPs </span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">number</span>: <span style="color:#ae81ff">27018</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">mongodb</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">protocol</span>: <span style="color:#ae81ff">MONGO </span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">location</span>: <span style="color:#ae81ff">MESH_INTERNAL </span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">resolution</span>: <span style="color:#ae81ff">STATIC </span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">endpoints</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">address</span>: <span style="color:#ae81ff">2.2.2.2</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">address</span>: <span style="color:#ae81ff">3.3.3.3</span>
+</span></span></code></pre></div><h3 id="envoyfilter">EnvoyFilter</h3>
+<p>EnvoyFilter描述了Envoy代理特有的过滤配置，这些配置可用于定制 Envoy代理，改变Istio配置的Envoy代理的行为。使用这个特性时要非常的小 心，因为错误的配置可能会破坏整个服务网格的稳定性。示例如下:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">networking.istio.io/v1alpha3 </span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">EnvoyFilter</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">httpbin</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">workloadLabels</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">app</span>: <span style="color:#ae81ff">httpbin</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">filters</span>:
+</span></span><span style="display:flex;"><span>- <span style="color:#f92672">listenerMatch</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">portNumber</span>: <span style="color:#ae81ff">8000</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">listenerType</span>: <span style="color:#ae81ff">SIDECAR_INBOUND </span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">filterName</span>: <span style="color:#ae81ff">envoy.lua </span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">filterType</span>: <span style="color:#ae81ff">HTTP</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">filterConfig</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">inlineCode</span>: |<span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      function envoy_on_request(request_handle)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        request_handle:headers():add(&#34;X-Foo&#34;, &#34;bar&#34;) 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      end
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      function envoy_on_response(response_handle)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        body_size = response_handle:body():length() 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        response_handle:headers():add(&#34;X-Response-Body-Size&#34;, tostring(body_size))</span>      
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">end</span>
+</span></span></code></pre></div><h2 id="请求配额">请求配额</h2>
+<p>请求配额可以对服务请求进行限流配置:</p>
+<p>·Quota——指定用于配额限制的数据维度。可以理解为需要从请求中 提取的信息及其提取规则，如:源地址、目标地址、目标版本等。示例如 下:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#e6db74">&#34;config.istio.io/v1alpha2&#34;</span> 
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">quota</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>     <span style="color:#f92672">name</span>: <span style="color:#ae81ff">requestcount</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">istio-system </span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">dimensions</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">source</span>: <span style="color:#ae81ff">request.headers[&#34;x-forwarded-for&#34;] | &#34;unknown&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">destination</span>: <span style="color:#ae81ff">destination.labels[&#34;app&#34;] | destination.service | &#34;unknown&#34; </span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">destinationVersion</span>: <span style="color:#ae81ff">destination.labels[&#34;version&#34;] | &#34;unknown&#34;</span>
+</span></span></code></pre></div><p>·Redisquota——基于Redis实现的具体Quota，使用Quota定义的规则进行 数据维度提取，指定具体的维度来进行配额。</p>
+<p>·Memquota——基于内存实现的具体Quota，使用Quota定义的规则进行 数据维度提取，指定具体的维度来进行配额。</p>
+<p>·Quotaspec——定义指定Quota配额标准，例如:每次请求计数加1，或 者每次请求计数加2，可以方便地用于限流、计费等场景。</p>
+<p>·Quotaspecbinding——把Quotaspec和具体的Service相绑定。</p>
+<p>·Rule——把配置的Instance对象传递给Handler来处理，在配额功能中使 用时，负责绑定Quota和具体Quota实现，把Quota对象传递给具体的Quota进行处理。</p>
+<h2 id="mtls认证策略">mTLS认证策略</h2>
+<p>mTLS认证策略包括:MeshPolicy、Policy，主要用于服务间的流量加密</p>
+<p>和认证。</p>
+<h3 id="meshpolicy">MeshPolicy</h3>
+<p>MeshPolicy定义了全局的mTLS认证策略，这个资源的定义只能有一个实 例。示例如下:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">authentication.istio.io/v1alpha1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">MeshPolicy</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">default</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">peers</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">mtls</span>: {}
+</span></span></code></pre></div><h3 id="policy">Policy</h3>
+<p>Policy用于配置命名空间或者服务的mTLS认证策略。示例如下:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">authentication.istio.io/v1alpha1 </span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Policy</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">service-go </span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">targets</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">service-go </span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">peers</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">mtls</span>: {}
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">networking.istio.io/v1alpha3 </span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">DestinationRule</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">service-go </span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">host</span>: <span style="color:#e6db74">&#34;service-go.default.svc.cluster.local&#34;</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">trafficPolicy</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">tls</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">mode</span>: <span style="color:#ae81ff">ISTIO_MUTUAL</span>
+</span></span></code></pre></div><h2 id="rbac访问权限">RBAC访问权限</h2>
+<p>RBAC访问权限包括:ServiceRole、ServiceRoleBinding、RbacConfig，</p>
+<p>主要用于服务间的细粒度访问控制。 (1)ServiceRole</p>
+<p>ServiceRole用于定义一系列的服务访问控制权限，示例如下:</p>
+<h3 id="servicerole">ServiceRole</h3>
+<p>ServiceRole用于定义一系列的服务访问控制权限，示例如下:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#e6db74">&#34;rbac.istio.io/v1alpha1&#34;</span> 
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ServiceRole</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">products-viewer</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">default</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">rules</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">services</span>: [<span style="color:#e6db74">&#34;products.svc.cluster.local&#34;</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">methods</span>: [<span style="color:#e6db74">&#34;GET&#34;</span>, <span style="color:#e6db74">&#34;HEAD&#34;</span>] 
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">constraints</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">key</span>: <span style="color:#e6db74">&#34;destination.labels[version]&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">value</span>: [<span style="color:#e6db74">&#34;v1&#34;</span>, <span style="color:#e6db74">&#34;v2&#34;</span>]
+</span></span></code></pre></div><h3 id="servicerolebinding">ServiceRoleBinding</h3>
+<p>ServiceRoleBinding给ServiceRole分配一系列的授权对象，示例如下:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#e6db74">&#34;rbac.istio.io/v1alpha1&#34;</span> 
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ServiceRoleBinding</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">test-binding-products</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">default</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">subjects</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">user</span>: <span style="color:#ae81ff">alice@yahoo.com</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">properties</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">source.namespace</span>: <span style="color:#e6db74">&#34;abc&#34;</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">roleRef</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ServiceRole</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">&#34;products-viewer</span>
+</span></span></code></pre></div><h3 id="rbacconfig">RbacConfig</h3>
+<p>RbacConfig定义全局配置，用来控制Istio RBAC的行为，这个资源的定 义只能有一个实例，示例如下:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">rbac.istio.io/v1alpha1 </span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">RbacConfig</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">default</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">mode</span>: <span style="color:#e6db74">&#39;ON_WITH_INCLUSION&#39;</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">inclusion</span>:
+</span></span><span style="display:flex;"><span>	  <span style="color:#f92672">namespaces</span>: 
+</span></span><span style="display:flex;"><span>	  - <span style="color:#ae81ff">default</span>
+</span></span></code></pre></div>
+</article>
+
+                    
+                    
+                    
+
+                    
+
+
+
+                    
+  <div
+    class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"
+  >
+    <div>
+      
+        <span class="text-primary-text block font-bold"
+          >上一页</span
+        >
+        <a href="https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/2-%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8istio%E7%9A%84%E8%A6%81%E6%B1%82/" class="block">服务使用Istio的要求</a>
+      
+    </div>
+    <div class="mt-4 md:mt-0 md:text-right">
+      
+        <span class="text-primary-text block font-bold">下一页</span>
+        <a href="https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/4-%E5%B8%B8%E7%94%A8%E7%9A%84kubectl%E5%91%BD%E4%BB%A4/" class="block">常用的kubectl命令</a>
+      
+    </div>
+  </div>
+
+
+                    
+
+
+
+                </div>
+                
+                <div class="hidden lg:block lg:w-1/4">
+                    
+                    <div
+  class="
+    bg-secondary-bg
+   prose sticky top-16 z-10 hidden px-6 py-4 lg:block"
+>
+  <h3>本页内容</h3>
+</div>
+<div
+  class="sticky-toc 
+    border-s
+   hidden px-6 pb-6 lg:block"
+>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#流量控制">流量控制</a>
+      <ul>
+        <li><a href="#destinationrule">DestinationRule</a></li>
+        <li><a href="#virtualservice">VirtualService</a></li>
+        <li><a href="#gateway">Gateway</a></li>
+        <li><a href="#serviceentry">ServiceEntry</a></li>
+        <li><a href="#envoyfilter">EnvoyFilter</a></li>
+      </ul>
+    </li>
+    <li><a href="#请求配额">请求配额</a></li>
+    <li><a href="#mtls认证策略">mTLS认证策略</a>
+      <ul>
+        <li><a href="#meshpolicy">MeshPolicy</a></li>
+        <li><a href="#policy">Policy</a></li>
+      </ul>
+    </li>
+    <li><a href="#rbac访问权限">RBAC访问权限</a>
+      <ul>
+        <li><a href="#servicerole">ServiceRole</a></li>
+        <li><a href="#servicerolebinding">ServiceRoleBinding</a></li>
+        <li><a href="#rbacconfig">RbacConfig</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    enableStickyToc();
+  });
+</script>
+
+                    
+                </div>
+                
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        
+        hljs.highlightAll();
+        changeSidebarHeight();
+        switchDocToc();
+    })
+</script>
+
+
+
+
+
+
+
+
+
+          </div>
+        </div>
+      
+    </main>
+    <footer class="pl-scrollbar">
+      <div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2021 <a href="https://hellocloudnative.github.io/">Pengxuan Zhang</a> 
+ &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div></div>
+    </footer>
+  </body>
+</html>

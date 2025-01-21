@@ -2,47 +2,47 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/1-istio%E7%9A%84%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/</loc>
+    <loc>https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/1-istio%E7%9A%84%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/</loc>
     <lastmod>2019-10-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hellocloudnative.github.io/authors/pengxuan/</loc>
-    <lastmod>2025-01-21T13:21:13+08:00</lastmod>
+    <loc>https://hellocloudnative.github.io/zh/authors/pengxuan/</loc>
+    <lastmod>2025-01-21T13:22:23+08:00</lastmod>
   </url><url>
-    <loc>https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/2-%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8istio%E7%9A%84%E8%A6%81%E6%B1%82/</loc>
+    <loc>https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/2-%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8istio%E7%9A%84%E8%A6%81%E6%B1%82/</loc>
     <lastmod>2019-10-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/3-%E5%B8%B8%E7%94%A8%E8%B5%84%E6%BA%90%E7%B1%BB%E5%9E%8B/</loc>
+    <loc>https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/3-%E5%B8%B8%E7%94%A8%E8%B5%84%E6%BA%90%E7%B1%BB%E5%9E%8B/</loc>
     <lastmod>2019-10-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/4-%E5%B8%B8%E7%94%A8%E7%9A%84kubectl%E5%91%BD%E4%BB%A4/</loc>
+    <loc>https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/4-%E5%B8%B8%E7%94%A8%E7%9A%84kubectl%E5%91%BD%E4%BB%A4/</loc>
     <lastmod>2019-10-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/5-%E5%B8%B8%E7%94%A8%E7%9A%84istioctl%E5%91%BD%E4%BB%A4/</loc>
+    <loc>https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/5-%E5%B8%B8%E7%94%A8%E7%9A%84istioctl%E5%91%BD%E4%BB%A4/</loc>
     <lastmod>2019-10-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/6-istio%E6%B3%A8%E5%85%A5/</loc>
+    <loc>https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/6-istio%E6%B3%A8%E5%85%A5/</loc>
     <lastmod>2019-10-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/7-%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%BA%94%E7%94%A8%E7%9A%84%E9%83%A8%E7%BD%B2/</loc>
+    <loc>https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/7-%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%BA%94%E7%94%A8%E7%9A%84%E9%83%A8%E7%BD%B2/</loc>
     <lastmod>2019-10-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/8-%E5%9C%A8istio%E4%B8%AD%E9%83%A8%E7%BD%B2%E5%BE%AE%E6%9C%8D%E5%8A%A1/</loc>
+    <loc>https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/8-%E5%9C%A8istio%E4%B8%AD%E9%83%A8%E7%BD%B2%E5%BE%AE%E6%9C%8D%E5%8A%A1/</loc>
     <lastmod>2019-10-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/9-istio%E6%9C%8D%E5%8A%A1%E8%B7%AF%E7%94%B1%E7%9B%B8%E5%85%B3%E7%9A%84%E5%8A%9F%E8%83%BD/</loc>
+    <loc>https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/9-istio%E6%9C%8D%E5%8A%A1%E8%B7%AF%E7%94%B1%E7%9B%B8%E5%85%B3%E7%9A%84%E5%8A%9F%E8%83%BD/</loc>
     <lastmod>2019-10-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/10-%E8%AE%A9%E6%9C%8D%E5%8A%A1%E6%9B%B4%E5%85%B7%E5%BC%B9%E6%80%A7/</loc>
+    <loc>https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/10-%E8%AE%A9%E6%9C%8D%E5%8A%A1%E6%9B%B4%E5%85%B7%E5%BC%B9%E6%80%A7/</loc>
     <lastmod>2019-10-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/11-%E8%AE%A9%E6%9C%8D%E5%8A%A1%E6%95%85%E9%9A%9C%E6%A3%80%E6%B5%8B%E6%9B%B4%E5%AE%B9%E6%98%93/</loc>
+    <loc>https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/11-%E8%AE%A9%E6%9C%8D%E5%8A%A1%E6%95%85%E9%9A%9C%E6%A3%80%E6%B5%8B%E6%9B%B4%E5%AE%B9%E6%98%93/</loc>
     <lastmod>2019-10-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/12-%E8%AE%A9%E6%9C%8D%E5%8A%A1%E9%80%9A%E4%BF%A1%E6%9B%B4%E5%AE%89%E5%85%A8%E5%8F%AF%E6%8E%A7/</loc>
+    <loc>https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/12-%E8%AE%A9%E6%9C%8D%E5%8A%A1%E9%80%9A%E4%BF%A1%E6%9B%B4%E5%AE%89%E5%85%A8%E5%8F%AF%E6%8E%A7/</loc>
     <lastmod>2019-10-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hellocloudnative.github.io/authors/</loc>
-    <lastmod>2025-01-21T13:21:13+08:00</lastmod>
+    <loc>https://hellocloudnative.github.io/zh/authors/</loc>
+    <lastmod>2025-01-21T13:22:23+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -51,20 +51,20 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://hellocloudnative.github.io/authors/"
+                href="https://hellocloudnative.github.io/zh/authors/"
                 />
   </url><url>
-    <loc>https://hellocloudnative.github.io/tags/karmada/</loc>
-    <lastmod>2025-01-21T13:21:13+08:00</lastmod>
+    <loc>https://hellocloudnative.github.io/zh/tags/karmada/</loc>
+    <lastmod>2025-01-21T13:22:23+08:00</lastmod>
   </url><url>
-    <loc>https://hellocloudnative.github.io/posts/0-karmada/</loc>
-    <lastmod>2025-01-21T13:21:13+08:00</lastmod>
+    <loc>https://hellocloudnative.github.io/zh/posts/0-karmada/</loc>
+    <lastmod>2025-01-21T13:22:23+08:00</lastmod>
   </url><url>
-    <loc>https://hellocloudnative.github.io/series/%E4%BA%91%E5%8E%9F%E7%94%9F%E7%B3%BB%E5%88%97/</loc>
-    <lastmod>2025-01-21T13:21:13+08:00</lastmod>
+    <loc>https://hellocloudnative.github.io/zh/series/%E4%BA%91%E5%8E%9F%E7%94%9F%E7%B3%BB%E5%88%97/</loc>
+    <lastmod>2025-01-21T13:22:23+08:00</lastmod>
   </url><url>
-    <loc>https://hellocloudnative.github.io/</loc>
-    <lastmod>2025-01-21T13:21:13+08:00</lastmod>
+    <loc>https://hellocloudnative.github.io/zh/</loc>
+    <lastmod>2025-01-21T13:22:23+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -73,20 +73,20 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://hellocloudnative.github.io/"
+                href="https://hellocloudnative.github.io/zh/"
                 />
   </url><url>
-    <loc>https://hellocloudnative.github.io/series/%E4%B8%AA%E4%BA%BA%E6%97%A5%E8%AE%B0%E7%B3%BB%E5%88%97/</loc>
-    <lastmod>2025-01-21T13:21:13+08:00</lastmod>
+    <loc>https://hellocloudnative.github.io/zh/series/%E4%B8%AA%E4%BA%BA%E6%97%A5%E8%AE%B0%E7%B3%BB%E5%88%97/</loc>
+    <lastmod>2025-01-21T13:22:23+08:00</lastmod>
   </url><url>
-    <loc>https://hellocloudnative.github.io/posts/hello_world/</loc>
-    <lastmod>2025-01-21T13:21:13+08:00</lastmod>
+    <loc>https://hellocloudnative.github.io/zh/posts/hello_world/</loc>
+    <lastmod>2025-01-21T13:22:23+08:00</lastmod>
   </url><url>
-    <loc>https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/</loc>
+    <loc>https://hellocloudnative.github.io/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/</loc>
     <lastmod>2019-10-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hellocloudnative.github.io/tags/</loc>
-    <lastmod>2025-01-21T13:21:13+08:00</lastmod>
+    <loc>https://hellocloudnative.github.io/zh/tags/</loc>
+    <lastmod>2025-01-21T13:22:23+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -95,11 +95,11 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://hellocloudnative.github.io/tags/"
+                href="https://hellocloudnative.github.io/zh/tags/"
                 />
   </url><url>
-    <loc>https://hellocloudnative.github.io/categories/</loc>
-    <lastmod>2025-01-21T13:21:13+08:00</lastmod>
+    <loc>https://hellocloudnative.github.io/zh/categories/</loc>
+    <lastmod>2025-01-21T13:22:23+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -108,17 +108,17 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://hellocloudnative.github.io/categories/"
+                href="https://hellocloudnative.github.io/zh/categories/"
                 />
   </url><url>
-    <loc>https://hellocloudnative.github.io/docs/</loc>
-    <lastmod>2025-01-21T13:21:13+08:00</lastmod>
+    <loc>https://hellocloudnative.github.io/zh/docs/</loc>
+    <lastmod>2025-01-21T13:22:23+08:00</lastmod>
   </url><url>
-    <loc>https://hellocloudnative.github.io/posts/</loc>
-    <lastmod>2025-01-21T13:21:13+08:00</lastmod>
+    <loc>https://hellocloudnative.github.io/zh/posts/</loc>
+    <lastmod>2025-01-21T13:22:23+08:00</lastmod>
   </url><url>
-    <loc>https://hellocloudnative.github.io/series/</loc>
-    <lastmod>2025-01-21T13:21:13+08:00</lastmod>
+    <loc>https://hellocloudnative.github.io/zh/series/</loc>
+    <lastmod>2025-01-21T13:22:23+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -127,7 +127,7 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://hellocloudnative.github.io/series/"
+                href="https://hellocloudnative.github.io/zh/series/"
                 />
   </url>
 </urlset>
