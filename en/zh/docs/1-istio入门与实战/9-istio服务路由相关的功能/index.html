@@ -1,0 +1,1636 @@
+<!DOCTYPE html>
+<html
+  lang=""
+  dir="ltr"
+  
+><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>Istio服务路由相关的功能 | 云原生研习社</title>
+
+<meta name="generator" content="Hugo Eureka 0.9.3" />
+<link rel="stylesheet" href="https://hellocloudnative.github.io/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
+<script defer src="https://hellocloudnative.github.io/js/eureka.min.e30461307d4134a93cbbd7301a29631abc285b8d3df327389368cd910c20926df5759064caf0f8ba686f65edcbdff5ee.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto&#43;Serif&#43;SC:wght@400;600;700&amp;display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js"
+   crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js"
+     crossorigin></script>
+<link rel="stylesheet" href="https://hellocloudnative.github.io/css/highlightjs.min.2958991528e43eb6fc9b8c4f2b8e052f79c4010718e1d1e888a777620e9ee63021c2c57ec7417a3108019bb8c41943e6.css" media="print" onload="this.media='all';this.onload=null">
+
+
+<script defer type="text/javascript" src="https://hellocloudnative.github.io/js/fontawesome.min.7b735802cbde01152678cc4a867f0b4bb0597876e29adfcaf1e5b5e99d39d7af87f348fdfd91c7eaf9ed7dc1eece7c61.js"></script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+   integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" 
+  integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+   integrity="sha384-&#43;XBljXPPiv&#43;OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js" 
+  integrity="sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0"  crossorigin></script>
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://hellocloudnative.github.io/images/icon_hu567c00f0881afc0330ccceee033e1285_28734_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://hellocloudnative.github.io/images/icon_hu567c00f0881afc0330ccceee033e1285_28734_180x180_fill_box_center_3.png">
+
+<meta name="description"
+  content="Istio服务路由相关的功能">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Zhs",
+      "item":"https://hellocloudnative.github.io/en/zh/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"文档",
+      "item":"https://hellocloudnative.github.io/en/zh/docs/"},{
+      "@type": "ListItem",
+      "position": 3 ,
+      "name":"Istio入门与实战",
+      "item":"https://hellocloudnative.github.io/en/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/"},{
+      "@type": "ListItem",
+      "position": 4 ,
+      "name":"Istio服务路由相关的功能",
+      "item":"https://hellocloudnative.github.io/en/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/9-istio%E6%9C%8D%E5%8A%A1%E8%B7%AF%E7%94%B1%E7%9B%B8%E5%85%B3%E7%9A%84%E5%8A%9F%E8%83%BD/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://hellocloudnative.github.io/en/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/9-istio%E6%9C%8D%E5%8A%A1%E8%B7%AF%E7%94%B1%E7%9B%B8%E5%85%B3%E7%9A%84%E5%8A%9F%E8%83%BD/"
+    },
+    "headline": "Istio服务路由相关的功能 | 云原生研习社","datePublished": "2019-10-12T00:00:00+00:00",
+    "dateModified": "2019-10-12T00:00:00+00:00",
+    "wordCount":  3077 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "Pengxuan Zhang",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://hellocloudnative.github.io/images/icon.png"
+        }
+        },
+    "description": "Istio服务路由相关的功能"
+}
+</script><meta property="og:title" content="Istio服务路由相关的功能 | 云原生研习社" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="https://hellocloudnative.github.io/images/icon.png">
+
+
+<meta property="og:url" content="https://hellocloudnative.github.io/en/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/9-istio%E6%9C%8D%E5%8A%A1%E8%B7%AF%E7%94%B1%E7%9B%B8%E5%85%B3%E7%9A%84%E5%8A%9F%E8%83%BD/" />
+
+
+
+<meta property="og:description" content="Istio服务路由相关的功能" />
+
+
+
+
+
+
+<meta property="og:site_name" content="云原生研习社" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2019-10-12T00:00:00&#43;00:00" />
+
+
+<meta property="article:modified_time" content="2019-10-12T00:00:00&#43;00:00" />
+
+
+
+<meta property="article:section" content="zh" />
+
+
+
+
+
+  <body class="flex min-h-screen flex-col">
+    <header
+      class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"
+    >
+      <div class="mx-auto w-full max-w-screen-xl"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/en/" class="me-6 text-primary-text text-xl font-bold">云原生研习社</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/en/authors/pengxuan/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">About</a>
+            <a href="/en/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Posts</a>
+            <a href="/en/categories/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Categories</a>
+            <a href="/en/series/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Series</a>
+            <a href="/en/tags/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Tags</a>
+            <a href="/en/docs/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Docs</a>
+        </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">Light</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">Dark</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">Auto</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+    </header>
+    <main class="grow pt-16">
+        <div class="pl-scrollbar">
+          <div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8">
+  
+  
+  <div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12">
+    <div
+      class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
+    >
+      <article class="prose">
+  <h1 class="mb-4">Istio服务路由相关的功能</h1>
+
+  <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >2019-10-12</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>15 min read</span>
+  </div>
+
+  
+
+  
+</div>
+
+
+  
+  
+
+  <p>流量路由管理是Istio最重要的功能。我们可以通过路由规则轻松地把请 求流量导入不同的服务版本中，可以很容易地实现A/B测试、&gt;灰度发布这类 需要复杂技术才能实现的功能。</p>
+<p>Istio的流量路由管理如图7-1所示。</p>
+<p>Envoy代理会根据路由规则把请求转发到相应服务实例的Pod上，默认情 况下Enovy代理会把流量以轮询的方式转到后端服务实例的Pod上。通过设置 路由规则，我们可以把对服务的请求流量按百分比转发到不同的版本上。如 图7-1的上半部分所示，把Service A请求Service B的流量进行拆分，95%的流 量路由到生产环境正在使用的版本，5%的流量路由到新的实验版本。</p>
+<p>Envoy代理还可以提取请求的信息，根据请求的相关信息来拆分流量， 如图7-1的下半部分所示，我们可以根据服务的请求头User-agent把来自 Android和iPhone用户请求转发到不同的服务版本，把iPhone用户流量导入到 实验版本中的。</p>
+<p><img src="https://zpx.hellocloudnative.io/2019-10-21-023446.png" alt="image-20191021103444448"></p>
+<p>通过规则配置API，用户可配置路由规则，Pilot将用户配置的路由规则 转换为Envoy代理需要的配置格式，并分发给Envoy代理。此处用户配置的规 则是:对于http://serviceb.example.com的访问，99%的流量转发到v1.5版本， 1%的流量转发到v2.0-alpha版本。这是为了把线上流量引入测试待上线的版 本。</p>
+<p>用户通过Pilot提供的路由规则管理API来创建、更新、删除路由规则， 当路由规则发生改变时，Pilot会把路由规则下发到每一个Envoy代理上，由</p>
+<p>于Envoy会拦截服务间的所有流量，Envoy代理根据这些路由规则来决定服务 的请求应该发送到哪一个后端服务实例Pod上，而这些对服务调用方来说是 完全透明的，服务调用方不需要做出任何改变。</p>
+<p>请求进入服务网格后的数据流向如图7-3所示。</p>
+<p>Ingress gateway是外部访问网格内服务的流量入口，所有外部请求流量 都会经过这里。Ingress gateway类似于Kubernetes的Ingress Controller的实现， 但是Ingress gateway并不直接使用Kubernetes的Ingress规则，在Istio中需要单 独配置Ingress gateway。正由于有独立于Kubernetes的Ingress，所以它比 Kubernetes的Ingress提供了更多的功能特性，比如，它可以使用服务路由管 理功能。Egress gateway是一个可选的组件，它可以作为网格内服务访问外部 服务的流量出口，使用它可以方便地管理网格内服务调用外部服务的行为， 也可以方便地使用服务路由管理等功能。</p>
+<p><img src="https://zpx.hellocloudnative.io/2019-10-21-035545.png" alt="image-20191021115542960"></p>
+<p><img src="https://zpx.hellocloudnative.io/2019-10-21-035637.png" alt="image-20191021115635380"></p>
+<p>外部请求通过Ingress gateway进入网格内部，然后被路由到网格内部的 具体服务上，服务之间相互调用配合来完成用户的请求，最后由Ingress gateway把请求的响应数据返回给外部调用方。当网格中的服务需要访问外部  服务时，可以直接通过跟随服务一起部署的Envoy代理来访问外部服务，也 可以通过统一部署的Egress gateway来访问外部服务。</p>
+<h2 id="管理集群的入口流量">管理集群的入口流量</h2>
+<p>主动进入服务网格的流量称为入口流量，这是获取服务的入口，所有外 部的请求流量都会最先经过这里，这里是外部流量与内部服务通信的入口。 在Istio中这个入口称为Ingress gateway，它是一个边界负载均衡器，负责接收 外部的请求流量，并按相应的规则转发到网格内部服务上。Istio使用一个叫 Gateway的资源对象来管理服务网格的入口。</p>
+<pre><code class="language-shell">[root@master route]#cat gateway-js-v1-default.yaml
+     1	apiVersion: networking.istio.io/v1alpha3
+     2	kind: Gateway
+     3	metadata:
+     4	  name: istio-lab-gateway
+     5	spec:
+     6	  selector:
+     7	    istio: ingressgateway # use Istio default gateway implementation
+     8	  servers:
+     9	  - port:
+    10	      number: 80
+    11	      name: http
+    12	      protocol: HTTP
+    13	    hosts:
+    14	    - &quot;*&quot;
+    15	---
+    16	apiVersion: networking.istio.io/v1alpha3
+    17	kind: DestinationRule
+    18	metadata:
+    19	  name: service-js
+    20	spec:
+    21	  host: service-js
+    22	  subsets:
+    23	  - name: v1
+    24	    labels:
+    25	      version: v1
+    26	  - name: v2
+    27	    labels:
+    28	      version: v2
+    29	---
+    30	apiVersion: networking.istio.io/v1alpha3
+    31	kind: VirtualService
+    32	metadata:
+    33	  name: istio-lab
+    34	spec:
+    35	  hosts:
+    36	  - &quot;*&quot;
+    37	  gateways:
+    38	  - istio-lab-gateway
+    39	  http:
+    40	  - match:
+    41	    - uri:
+    42	        prefix: /env
+    43	    route:
+    44	    - destination:
+    45	        host: service-python
+    46	  - route:
+    47	    - destination:
+    48	        host: service-js
+    49	        subset: v1
+</code></pre>
+<p>第1~14行定义了名为istio-lab-gateway的Gateway，监听80端口并接收 HTTP协议的请求，由于hosts使用*，所以任何域名的请求都会被接受。第 6~7行选择了包含标签名为Istio、值为ingressgateway的Ingress gateway，这是 Istio默认实现的Ingress gateway，本书介绍的两种部署方式都包含了该组件。</p>
+<p>第16~28行定义了名为service-js的DestinationRule，指定了service-js有两 个版本的服务，根据version标签的值来区分服务的实例版本。</p>
+<p>第30~49行定义了名为istio-lab的VirtualService，指定了与名为istio-lab- gateway的Gateway绑定，它接受任何域名的请求流量。当请求的URI以/env为 前缀时，请求转发到service-python服务上，其他请求都转发到service-js服务 的v1版本上。字段host的值完整地址为service-js.default.svc.cluster.local，当规 则配置与要请求的服务在同一个命名空间时，可以只简写成Service的名称。 由于我们没有在metadata的定义中设置namespace字段来指定命名空间，默认 情况下，在default命名空间中创建规则。</p>
+<p><strong>注意：</strong></p>
+<p>上述Gateway中，我们配置监听80端口，其实是监听容器的80端 口，如果你使用的是云平台的LoadBalancer，那么会直接监听在LoadBalancer 的80端口。由于我们的实验是在本地虚拟机环境进行，只能使用NodePort方 式，NodePort监听的31380端口对应于容器中80端口，也就是我们在Gateway上配置的端口。</p>
+<h2 id="把请求路由到服务的指定版本">把请求路由到服务的指定版本</h2>
+<p>当服务有多个版本，而我们只希望把流量全部转发到某个特定版本，这时候可以使用如下的方式配置路由规则:</p>
+<pre><code class="language-shell">[root@master route]# cat   -n  virtual-service-lua-v1.yaml
+     1	apiVersion: networking.istio.io/v1alpha3
+     2	kind: DestinationRule
+     3	metadata:
+     4	  name: service-lua
+     5	spec:
+     6	  host: service-lua
+     7	  subsets:
+     8	  - name: v1
+     9	    labels:
+    10	      version: v1
+    11	  - name: v2
+    12	    labels:
+    13	      version: v2
+    14	---
+    15	apiVersion: networking.istio.io/v1alpha3
+    16	kind: VirtualService
+    17	metadata:
+    18	  name: service-lua
+    19	spec:
+    20	  hosts:
+    21	  - service-lua
+    22	  http:
+    23	  - route:
+    24	    - destination:
+    25	        host: service-lua
+    26	        subset: v1
+</code></pre>
+<p>第1~13行定义了名为service-lua的DestinationRule，version标签用于区分 service-lua服务的实例版本，host字段表示要访问的后端的服务名称，一般为 Kubernetes中定义的Service名称。字段host的值完整地址为service- lua.default.svc.cluster.local，当路由规则配置与要请求的服务在同一个命名空 间时，可以只简写成Service的名称。</p>
+<p>第15~26行定义名为service-lua的VirtualService，表示对service-lua服务的 所有请求转发到v1版本，此处的v1为DestinationRule中定义的名为v1的</p>
+<p>subset，hosts字段表示接收请求的域名，一般为Kubernetes中定义的Service名 称。host字段的值与对应DestinationRule中的host字段值保持一致。</p>
+<h2 id="实验">【实验】</h2>
+<h3 id="创建gateway和service-js的路由规则">创建Gateway和service-js的路由规则</h3>
+<pre><code class="language-shell">[root@master route]# kubectl apply  -f gateway-js-v1-default.yaml
+</code></pre>
+<h3 id="创建service-lua的指定版本路由规则">创建service-lua的指定版本路由规则</h3>
+<pre><code>[root@master route]# kubectl apply  -f virtual-service-lua-v1.yaml
+</code></pre>
+<h3 id="浏览器访问">浏览器访问</h3>
+<p><img src="https://zpx.hellocloudnative.io/2019-10-21-064439.png" alt="image-20191021144437706"></p>
+<p>多次点击“发射”，你会看到service-lua服务只会请求到v1版本。</p>
+<h3 id="根据服务版本权重拆分流量">根据服务版本权重拆分流量</h3>
+<p>默认情况下，当服务有多个版本时，请求流量会以轮询方式发送给多个 版本，我们可以把流量按百分比分配给多个服务版本，来实现服务的逐渐过 渡升级。我们可以使用如下的方式配置路由规则:</p>
+<pre><code class="language-shell">[root@master route]# cat -n  virtual-service-node-v1-v2.yaml
+     1	apiVersion: networking.istio.io/v1alpha3
+     2	kind: DestinationRule
+     3	metadata:
+     4	  name: service-node
+     5	spec:
+     6	  host: service-node
+     7	  subsets:
+     8	  - name: v1
+     9	    labels:
+    10	      version: v1
+    11	  - name: v2
+    12	    labels:
+    13	      version: v2
+    14	---
+    15	apiVersion: networking.istio.io/v1alpha3
+    16	kind: VirtualService
+    17	metadata:
+    18	  name: service-node
+    19	spec:
+    20	  hosts:
+    21	  - service-node
+    22	  http:
+    23	  - route:
+    24	    - destination:
+    25	        host: service-node
+    26	        subset: v1
+    27	      weight: 20
+    28	    - destination:
+    29	        host: service-node
+    30	        subset: v2
+    31	      weight: 80
+</code></pre>
+<p>通过上面的配置，我们把service-node服务的v2版本权重设置为80，而把 v1版本的权重设置为20。这样设置权重比值之后，对service-node服务的请 求，会有80%的概率被路由到v2版本，只有20%的概率被路由到v1版本。</p>
+<h2 id="实验-1">【实验】</h2>
+<h3 id="创建gateway和service-js的路由规则-1">创建Gateway和service-js的路由规则:</h3>
+<pre><code class="language-shell">[root@master route]# kubectl apply  -f gateway-js-v1-default.yaml
+</code></pre>
+<h3 id="创建service-lua的指定版本路由规则-1">创建service-lua的指定版本路由规则:</h3>
+<pre><code>[root@master route]# kubectl apply  -f virtual-service-node-v1-v2.yaml
+</code></pre>
+<h3 id="浏览器访问-1">浏览器访问</h3>
+<p>多次点击“发射”按 钮，你会看到service-node服务请求大概率会路由到v2版本，只有少部分请求 会落到v1版本上。</p>
+<h3 id="根据请求信息路由到服务的不同版本">根据请求信息路由到服务的不同版本</h3>
+<p>有时候我们希望根据请求的信息(如请求头、请求地址、请求协议等) 来决定请求的路由规则[1]。根据请求的URI以及请求头来转发请求的配置规 则示例如下:</p>
+<pre><code class="language-shell">[root@master route]# cat -n gateway-js-react-v1-v2.yaml
+     1	apiVersion: networking.istio.io/v1alpha3
+     2	kind: VirtualService
+     3	metadata:
+     4	  name: istio-lab
+     5	spec:
+     6	  hosts:
+     7	  - &quot;*&quot;
+     8	  gateways:
+     9	  - istio-lab-gateway
+    10	  http:
+    11	  - match:
+    12	    - uri:
+    13	        prefix: /env
+    14	      headers:
+    15	        app-client:
+    16	          regex: &quot;react&quot;
+    17	    route:
+    18	    - destination:
+    19	        host: service-python
+    20	        subset: v1
+    21	  - match:
+    22	    - uri:
+    23	        prefix: /env
+    24	    route:
+    25	    - destination:
+    26	        host: service-python
+    27	        subset: v2
+    28	  - route:
+    29	    - destination:
+    30	        host: service-js
+    31	        subset: v1
+</code></pre>
+<p>第12~28行定义了两个match路由规则，第一个match规则表示当服务请 求的URI是以/env开头，并且包含app-client值为react的请求头时，请求转发到 服务service-python的v1版本上。第二个match规则表示当服务请求的URI是 以/env开头时，请求转发到服务service-python的v2版本上。由于请求路由匹 配规则是从上到下，当匹配到第一个规则时就进入请求转发阶段，所以这两个match规则的顺序不能相互调换。 第15行使用的headers下定义的请求头字段必须使用小写字母，并且只能使用连字符连接，比如:x-request-id、app-client。 第29~32行定义了默认的路由规则，当请求不满足上述的两个match路由规则时，把请求转发到默认路由。</p>
+<h2 id="排查思路">排查思路</h2>
+<p>listener—&gt;route—&gt;cluster—&gt;endpoint</p>
+<h3 id="检查-ingress-gateway-里访问-service-python-的路由">检查 ingress gateway 里访问 service-python 的路由</h3>
+<pre><code class="language-shell">[root@master route]# istioctl proxy-config listeners -n default   service-python-v1-5d85945565-2vx4f
+ADDRESS            PORT      TYPE
+10.0.2.28          80        TCP
+10.100.188.27      443       TCP
+10.96.147.29       42422     TCP
+10.97.170.162      80        TCP
+10.104.219.211     8081      TCP
+10.96.224.114      3000      TCP
+10.101.29.107      443       TCP
+10.108.181.230     5473      TCP
+10.103.178.100     80        TCP
+10.101.35.247      443       TCP
+10.108.240.240     15011     TCP
+10.99.73.212       31400     TCP
+10.110.164.157     44134     TCP
+10.111.21.236      80        TCP
+10.106.86.249      443       TCP
+10.99.73.212       443       TCP
+10.99.73.212       853       TCP
+10.96.0.1          443       TCP
+10.96.0.10         53        TCP
+10.99.73.212       15011     TCP
+10.99.73.212       8060      TCP
+10.111.176.33      80        TCP
+10.107.64.241      80        TCP
+10.109.255.52      9090      TCP
+10.105.8.106       443       TCP
+0.0.0.0            15004     HTTP
+0.0.0.0            15030     HTTP
+0.0.0.0            8080      HTTP
+0.0.0.0            9091      HTTP
+0.0.0.0            8060      HTTP
+0.0.0.0            8000      HTTP
+0.0.0.0            15031     HTTP
+0.0.0.0            9080      HTTP
+0.0.0.0            9093      HTTP
+0.0.0.0            15010     HTTP
+0.0.0.0            80        HTTP
+0.0.0.0            15001     TCP
+[root@master route]# istioctl  proxy-config route   istio-ingressgateway-856c7c6b7d-jcmb6 -n istio-system   -o json
+[
+    {
+        &quot;name&quot;: &quot;http.80&quot;,
+        &quot;virtualHosts&quot;: [
+            {
+                &quot;name&quot;: &quot;*:80&quot;,
+                &quot;domains&quot;: [
+                    &quot;*&quot;,
+                    &quot;*:80&quot;
+                ],
+                &quot;routes&quot;: [
+                    {
+                        &quot;match&quot;: {
+                            &quot;prefix&quot;: &quot;/env&quot;,
+                            &quot;headers&quot;: [
+                                {
+                                    &quot;name&quot;: &quot;app-client&quot;,
+                                    &quot;regexMatch&quot;: &quot;react&quot;
+                                }
+                            ]
+                        },
+                        &quot;route&quot;: {
+                            &quot;cluster&quot;: &quot;outbound|80|v1|service-python.default.svc.cluster.local&quot;,
+                            &quot;timeout&quot;: &quot;0.000s&quot;,
+                            &quot;maxGrpcTimeout&quot;: &quot;0.000s&quot;
+                        },
+                        &quot;decorator&quot;: {
+                            &quot;operation&quot;: &quot;service-python.default.svc.cluster.local:80/env*&quot;
+                        },
+                        &quot;perFilterConfig&quot;: {
+                            &quot;mixer&quot;: {
+                                &quot;forward_attributes&quot;: {
+                                    &quot;attributes&quot;: {
+                                        &quot;destination.service&quot;: {
+                                            &quot;string_value&quot;: &quot;service-python.default.svc.cluster.local&quot;
+                                        },
+                                        &quot;destination.service.host&quot;: {
+                                            &quot;string_value&quot;: &quot;service-python.default.svc.cluster.local&quot;
+                                        },
+                                        &quot;destination.service.name&quot;: {
+                                            &quot;string_value&quot;: &quot;service-python&quot;
+                                        },
+                                        &quot;destination.service.namespace&quot;: {
+                                            &quot;string_value&quot;: &quot;default&quot;
+                                        },
+                                        &quot;destination.service.uid&quot;: {
+                                            &quot;string_value&quot;: &quot;istio://default/services/service-python&quot;
+                                        }
+                                    }
+                                },
+                                &quot;mixer_attributes&quot;: {
+                                    &quot;attributes&quot;: {
+                                        &quot;destination.service&quot;: {
+                                            &quot;string_value&quot;: &quot;service-python.default.svc.cluster.local&quot;
+                                        },
+                                        &quot;destination.service.host&quot;: {
+                                            &quot;string_value&quot;: &quot;service-python.default.svc.cluster.local&quot;
+                                        },
+                                        &quot;destination.service.name&quot;: {
+                                            &quot;string_value&quot;: &quot;service-python&quot;
+                                        },
+                                        &quot;destination.service.namespace&quot;: {
+                                            &quot;string_value&quot;: &quot;default&quot;
+                                        },
+                                        &quot;destination.service.uid&quot;: {
+                                            &quot;string_value&quot;: &quot;istio://default/services/service-python&quot;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    {
+                        &quot;match&quot;: {
+                            &quot;prefix&quot;: &quot;/env&quot;
+                        },
+                        &quot;route&quot;: {
+                            &quot;cluster&quot;: &quot;outbound|80|v2|service-python.default.svc.cluster.local&quot;,
+                            &quot;timeout&quot;: &quot;0.000s&quot;,
+                            &quot;maxGrpcTimeout&quot;: &quot;0.000s&quot;
+                        },
+                        &quot;decorator&quot;: {
+                            &quot;operation&quot;: &quot;service-python.default.svc.cluster.local:80/env*&quot;
+                        },
+                        &quot;perFilterConfig&quot;: {
+                            &quot;mixer&quot;: {
+                                &quot;forward_attributes&quot;: {
+                                    &quot;attributes&quot;: {
+                                        &quot;destination.service&quot;: {
+                                            &quot;string_value&quot;: &quot;service-python.default.svc.cluster.local&quot;
+                                        },
+                                        &quot;destination.service.host&quot;: {
+                                            &quot;string_value&quot;: &quot;service-python.default.svc.cluster.local&quot;
+                                        },
+                                        &quot;destination.service.name&quot;: {
+                                            &quot;string_value&quot;: &quot;service-python&quot;
+                                        },
+                                        &quot;destination.service.namespace&quot;: {
+                                            &quot;string_value&quot;: &quot;default&quot;
+                                        },
+                                        &quot;destination.service.uid&quot;: {
+                                            &quot;string_value&quot;: &quot;istio://default/services/service-python&quot;
+                                        }
+                                    }
+                                },
+                                &quot;mixer_attributes&quot;: {
+                                    &quot;attributes&quot;: {
+                                        &quot;destination.service&quot;: {
+                                            &quot;string_value&quot;: &quot;service-python.default.svc.cluster.local&quot;
+                                        },
+                                        &quot;destination.service.host&quot;: {
+                                            &quot;string_value&quot;: &quot;service-python.default.svc.cluster.local&quot;
+                                        },
+                                        &quot;destination.service.name&quot;: {
+                                            &quot;string_value&quot;: &quot;service-python&quot;
+                                        },
+                                        &quot;destination.service.namespace&quot;: {
+                                            &quot;string_value&quot;: &quot;default&quot;
+                                        },
+                                        &quot;destination.service.uid&quot;: {
+                                            &quot;string_value&quot;: &quot;istio://default/services/service-python&quot;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    {
+                        &quot;match&quot;: {
+                            &quot;prefix&quot;: &quot;/&quot;
+                        },
+                        &quot;route&quot;: {
+                            &quot;cluster&quot;: &quot;outbound|80|v1|service-js.default.svc.cluster.local&quot;,
+                            &quot;timeout&quot;: &quot;0.000s&quot;,
+                            &quot;maxGrpcTimeout&quot;: &quot;0.000s&quot;
+                        },
+                        &quot;decorator&quot;: {
+                            &quot;operation&quot;: &quot;service-js.default.svc.cluster.local:80/*&quot;
+                        },
+                        &quot;perFilterConfig&quot;: {
+                            &quot;mixer&quot;: {
+                                &quot;forward_attributes&quot;: {
+                                    &quot;attributes&quot;: {
+                                        &quot;destination.service&quot;: {
+                                            &quot;string_value&quot;: &quot;service-js.default.svc.cluster.local&quot;
+                                        },
+                                        &quot;destination.service.host&quot;: {
+                                            &quot;string_value&quot;: &quot;service-js.default.svc.cluster.local&quot;
+                                        },
+                                        &quot;destination.service.name&quot;: {
+                                            &quot;string_value&quot;: &quot;service-js&quot;
+                                        },
+                                        &quot;destination.service.namespace&quot;: {
+                                            &quot;string_value&quot;: &quot;default&quot;
+                                        },
+                                        &quot;destination.service.uid&quot;: {
+                                            &quot;string_value&quot;: &quot;istio://default/services/service-js&quot;
+                                        }
+                                    }
+                                },
+                                &quot;mixer_attributes&quot;: {
+                                    &quot;attributes&quot;: {
+                                        &quot;destination.service&quot;: {
+                                            &quot;string_value&quot;: &quot;service-js.default.svc.cluster.local&quot;
+                                        },
+                                        &quot;destination.service.host&quot;: {
+                                            &quot;string_value&quot;: &quot;service-js.default.svc.cluster.local&quot;
+                                        },
+                                        &quot;destination.service.name&quot;: {
+                                            &quot;string_value&quot;: &quot;service-js&quot;
+                                        },
+                                        &quot;destination.service.namespace&quot;: {
+                                            &quot;string_value&quot;: &quot;default&quot;
+                                        },
+                                        &quot;destination.service.uid&quot;: {
+                                            &quot;string_value&quot;: &quot;istio://default/services/service-js&quot;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        ],
+        &quot;validateClusters&quot;: false
+    },
+    {
+        &quot;virtualHosts&quot;: [
+            {
+                &quot;name&quot;: &quot;backend&quot;,
+                &quot;domains&quot;: [
+                    &quot;*&quot;
+                ],
+                &quot;routes&quot;: [
+                    {
+                        &quot;match&quot;: {
+                            &quot;prefix&quot;: &quot;/stats/prometheus&quot;
+                        },
+                        &quot;route&quot;: {
+                            &quot;cluster&quot;: &quot;prometheus_stats&quot;
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]
+
+
+
+</code></pre>
+<p><img src="https://zpx.hellocloudnative.io/2019-10-21-090345.png" alt="image-20191021170343390"></p>
+<p><img src="https://zpx.hellocloudnative.io/2019-10-21-090358.png" alt="image-20191021170355513"></p>
+<p><img src="https://zpx.hellocloudnative.io/2019-10-21-090408.png" alt="image-20191021170406048"></p>
+<pre><code class="language-shell">[root@master route]#  istioctl proxy-config cluster $(kubectl get pod -l app=service-python  -o jsonpath='{.items[0].metadata.name}') --fqdn=service-python.default.svc.cluster.local
+SERVICE FQDN                                 PORT     SUBSET     DIRECTION     TYPE
+service-python.default.svc.cluster.local     80       -          inbound       STATIC
+service-python.default.svc.cluster.local     80       -          outbound      EDS
+[root@master route]# istioctl proxy-config cluster $(kubectl get pod -l app=istio-ingressgateway -n istio-system  -o jsonpath='{.items[0].metadata.name}') --fqdn=service-python.default.svc.cluster.local -n istio-system
+SERVICE FQDN                                 PORT     SUBSET     DIRECTION     TYPE
+service-python.default.svc.cluster.local     80       -          outbound      EDS
+
+#为空
+[root@master route]# istioctl proxy-config endpoint $(kubectl get pod -l app=service-python -o jsonpath='{.items[0].metadata.name}') --cluster &quot;outbound|80|v1|service-python.default.svc.cluster.local&quot;
+
+
+</code></pre>
+<h3 id="查看-destinationrules">查看 destinationrules</h3>
+<pre><code class="language-shell">[root@master route]# kubectl get destinationrules
+NAME             AGE
+service-js       49m
+
+#原来少创建了规则
+[root@master route]# cat   gateway-js-react-v1-v2.yaml
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: service-python
+spec:
+  host: service-python
+  subsets:
+  - name: v1
+    labels:
+      version: v1
+  - name: v2
+    labels:
+      version: v2
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: istio-lab
+spec:
+  hosts:
+  - &quot;*&quot;
+  gateways:
+  - istio-lab-gateway
+  http:
+  - match:
+    - uri:
+        prefix: /env
+      headers:
+        app-client:
+          regex: &quot;react&quot;
+    route:
+    - destination:
+        host: service-python
+        subset: v1
+  - match:
+    - uri:
+        prefix: /env
+    route:
+    - destination:
+        host: service-python
+        subset: v2
+  - route:
+    - destination:
+        host: service-js
+        subset: v1
+[root@master route]# istioctl proxy-config endpoint $(kubectl get pod -l app=istio-ingressgateway  -n istio-system   -o jsonpath='{.items[0].metadata.name}') --cluster &quot;outbound|80|v1|service-python.default.svc.cluster.local&quot;  -n istio-system
+ENDPOINT         STATUS      CLUSTER
+10.0.2.28:80     HEALTHY     outbound|80|v1|service-python.default.svc.cluster.local
+
+</code></pre>
+<p><img src="https://zpx.hellocloudnative.io/2019-10-21-095120.png" alt="image-20191021175118539"></p>
+<p>多次点击“发射”按 钮，你会看到service-python服务的请求会一直落到v1版本。这是由于使用React框架实现的service-js服务的v1版本请求service-python服务时都携带了字 段名为app-client、值为react的请求头，所以根据上述的路由规则，对于 service-python服务的请求都会落到v1版本。</p>
+<h2 id="流量镜像">流量镜像</h2>
+<p>有时候当我们需要将服务的新版本上线时，虽然我们已经在线下经过测 试，但是并没有经过生产环境的真实流量验证，对服务的性能和是否有bug 并没有太大的把握，我们希望通过线上的真实流量来验证一下新版本服务， 经过生产环境流量验证无误之后，再把生产环境的流量切换到新版本的服务 上。在此种场景下，我们就可以使用Istio提供的流量镜像功能，实时复制线 上真实的请求流量到我们的新版本服务上，验证新版本的服务。下面以 service-go服务为例:</p>
+<pre><code class="language-shell">[root@master route]# cat  -n  virtual-service-go-v1-mirror-v2.yaml
+     1	apiVersion: networking.istio.io/v1alpha3
+     2	kind: DestinationRule
+     3	metadata:
+     4	  name: service-go
+     5	spec:
+     6	  host: service-go
+     7	  subsets:
+     8	  - name: v1
+     9	    labels:
+    10	      version: v1
+    11	  - name: v2
+    12	    labels:
+    13	      version: v2
+    14	---
+    15	apiVersion: networking.istio.io/v1alpha3
+    16	kind: VirtualService
+    17	metadata:
+    18	  name: service-go
+    19	spec:
+    20	  hosts:
+    21	  - service-go
+    22	  http:
+    23	  - route:
+    24	    - destination:
+    25	        host: service-go
+    26	        subset: v1
+    27	    mirror:
+    28	      host: service-go
+    29	      subset: v2
+</code></pre>
+<p>第24~26行定义了默认路由，表明把所有请求service-go服务的流量都路 由到v1版本。第27~29行的定义表明，把所有请求service-go服务的流量都镜像路由到 v2版本上。</p>
+<h2 id="实验-2">【实验】</h2>
+<h3 id="创建一个测试pod">创建一个测试pod</h3>
+<pre><code class="language-shell">[root@master istio-zhangpx]# kubectl apply  -f dns-test.yaml
+pod/dns-test created
+</code></pre>
+<h3 id="创建service-go服务的路由规则">创建service-go服务的路由规则</h3>
+<pre><code class="language-shell">[root@master route]# kubectl apply  -f virtual-service-go-v1-mirror-v2.yaml
+destinationrule.networking.istio.io/service-go created
+virtualservice.networking.istio.io/service-go created
+</code></pre>
+<h3 id="打开一个新的终端查看service-go-v2实例的日志信息">打开一个新的终端查看service-go-v2实例的日志信息</h3>
+<pre><code class="language-shell">[root@master route]# kubectl  logs -f  service-go-v2-5c44655889-j4gwv -c service-go
+</code></pre>
+<h3 id="测试访问service-go服务">测试访问service-go服务</h3>
+<pre><code class="language-shell">[root@master istio-zhangpx]# kubectl exec dns-test -c dns-test -- curl -s http://10.108.198.6/env
+{&quot;message&quot;:&quot;go v1&quot;}
+</code></pre>
+<p>多次执行上述命令，访问service-go服务。你只会访问到service-go服务的 v1版本，但是在service-go服务的v2版本的Pod上，你可以查看到如下所示的 请求日志，这说明对service-go服务的v1版本的请求被镜像到了v2版本中</p>
+<p><img src="https://zpx.hellocloudnative.io/2019-10-21-102735.png" alt="image-20191021182733761"></p>
+<h2 id="管理集群的出口流量">管理集群的出口流量</h2>
+<p>默认情况下，服务网格中的服务无法访问外部的服务。要想访问外部服 务，可以创建ServiceEntry对象，把外部服务注册到服务网格的注册中心，这 样，网格中的服务就可以访问外部服务了。同时，可以配合VirtualService更 好地控制网格内服务访问外部服务的行为。本节介绍通过ServiceEntry来导入 外部服务，让服务网格中的服务也可以访问外部的服务的方法[1]。也可以使 用Egress gateway配合ServiceEntry统一管理集群的出口流量;此外，还可以 通过修改Istio的部署配置文件，直接放开所有对外部服务的访问流量。</p>
+<h3 id="使用serviceentry导入网格外部服务">使用ServiceEntry导入网格外部服务</h3>
+<h4 id="配置访问http协议的外部服务">配置访问HTTP协议的外部服务</h4>
+<pre><code class="language-shell">[root@master route]# cat -n service-entry-httpbin.yaml
+     1	apiVersion: networking.istio.io/v1alpha3
+     2	kind: ServiceEntry
+     3	metadata:
+     4	  name: httpbin-ext
+     5	spec:
+     6	  hosts:
+     7	  - httpbin.org
+     8	  ports:
+     9	  - number: 80
+    10	    name: http
+    11	    protocol: HTTP
+    12	  resolution: DNS
+    13	  location: MESH_EXTERNAL
+    14	---
+    15	apiVersion: networking.istio.io/v1alpha3
+    16	kind: VirtualService
+    17	metadata:
+    18	  name: httpbin-ext
+    19	spec:
+    20	  hosts:
+    21	    - httpbin.org
+    22	  http:
+    23	  - timeout: 3s
+    24	    route:
+    25	      - destination:
+    26	          host: httpbin.org
+</code></pre>
+<p>第1~13行定义了名为httpbin-ext的ServiceEntry。</p>
+<p>第6~7行定义的hosts字段指定了要访问的外部服务的DNS域名，可以使 用泛域名匹配，如*.httpbin.org。如果是非HTTP协议的流量，会使用ports和 addresses字段的定义来区分目标地址。</p>
+<p>第8~9行定义了要访问的外部服务的端口和协议。</p>
+<p>第12行定义的resolution字段定义了外部服务的解析方式，取值包括 DNS、STATIC、NONE，一般情况下使用DNS方式，设置为STATIC时需要 在endpoints中配置IP地址，当应用程序自己负责解析时，使用NONE方式。</p>
+<p>第13行定义的location字段表示服务所处的位置，取值可以为 MESH_EXTERNAL和MESH_INTERNAL两种，MESH_EXTERNAL一般用于 导入外部服务，并不作为网格的一部分，通常服务以API的方式提供使用。 MESH_INTERNAL一般用于把网格外的服务作为网络中的一部分，这个配置 会影响Istio对服务的mTLS认证及策略的实施等。当网格内的服务与网格外的 服务通信时，mTLS认证会被关闭，策略的实施也会由客户端实施，而不是 由服务端实施。</p>
+<p>第15~26行定义了同名的VirtualService，进一步配合ServiceEntry实现更 好地控制网格内服务访问外部服务的行为。hosts字段中的值httpbin.org表示 网格内服务访问时使用的域名，route里的host字段应设置为在ServiceEntry定 义中hosts字段指定的域名。</p>
+<h4 id="配置访问https协议的外部服务">配置访问HTTPS协议的外部服务</h4>
+<p>导入baidu.com服务示例:</p>
+<pre><code class="language-shell">[root@master route]# cat  -n  service-entry-baidu.yaml
+     1	apiVersion: networking.istio.io/v1alpha3
+     2	kind: ServiceEntry
+     3	metadata:
+     4	  name: baidu-ext
+     5	spec:
+     6	  hosts:
+     7	  - www.baidu.com
+     8	  ports:
+     9	  - number: 443
+    10	    name: https
+    11	    protocol: HTTPS
+    12	  resolution: DNS
+    13	  location: MESH_EXTERNAL
+    14	---
+    15	apiVersion: networking.istio.io/v1alpha3
+    16	kind: VirtualService
+    17	metadata:
+    18	  name: baidu-ext
+    19	spec:
+    20	  hosts:
+    21	    - www.baidu.com
+    22	  http:
+    23	  - timeout: 3s
+    24	    route:
+    25	      - destination:
+    26	          host: www.baidu.com
+</code></pre>
+<p>与上述导入HTTP协议的外部服务定义基本一致，只是协议字段变成 HTTPS协议，并且减少了对应的VirtualService的定义。HTTPS协议的服务也 可以配置VirtualService进行更细致的流量管理，与HTTP协议的使用方法基本 一致。</p>
+<h2 id="使用egress-gateway统一管理访问外部服务的流量">使用Egress gateway统一管理访问外部服务的流量</h2>
+<p>配置Egress gateway示例:</p>
+<pre><code class="language-shell">[root@master route]# cat -n  gateway-egress.yaml
+     1	apiVersion: networking.istio.io/v1alpha3
+     2	kind: Gateway
+     3	metadata:
+     4	 name: istio-egressgateway
+     5	spec:
+     6	 selector:
+     7	   istio: egressgateway
+     8	 servers:
+     9	 - port:
+    10	     number: 80
+    11	     name: http
+    12	     protocol: HTTP
+    13	   hosts:
+    14	   - &quot;*&quot;
+    15	 - port:
+    16	     number: 443
+    17	     name: tls
+    18	     protocol: TLS
+    19	   tls:
+    20	     mode: PASSTHROUGH
+    21	   hosts:
+    22	   - &quot;*&quot;
+</code></pre>
+<p>第6~7行选择Istio部署时默认创建的egressgateway作为网格访问外部服务 的流量出口。</p>
+<p>第9~14行定义了一个支持HTTP协议的网关出口。</p>
+<p>第15~22行定义了一个支持HTTPS协议的网关出口。tls字段中的mode模 式指定为PASSTHROUGH，表示不进行TLS终止，也就是说，服务通过 Egress gateway直接访问HTTPS协议的外部服务。</p>
+<h3 id="配置通过egress-gateway访问外部http协议服务">配置通过Egress gateway访问外部HTTP协议服务</h3>
+<p>导入httpbin.org服务示例:</p>
+<pre><code class="language-shell">[root@master route]# cat -n service-entry-egress-httpbin.yaml
+     1	apiVersion: networking.istio.io/v1alpha3
+     2	kind: ServiceEntry
+     3	metadata:
+     4	  name: external-svc-httpbin
+     5	spec:
+     6	  hosts:
+     7	  - httpbin.org
+     8	  location: MESH_EXTERNAL
+     9	  ports:
+    10	  - number: 80
+    11	    name: http
+    12	    protocol: HTTP
+    13	  resolution: DNS
+    14	---
+    15	apiVersion: networking.istio.io/v1alpha3
+    16	kind: VirtualService
+    17	metadata:
+    18	  name: gateway-routing-http-httpbin
+    19	spec:
+    20	  hosts:
+    21	  - httpbin.org
+    22	  gateways:
+    23	  - mesh
+    24	  - istio-egressgateway
+    25	  http:
+    26	  - match:
+    27	    - port: 80
+    28	      gateways:
+    29	      - mesh
+    30	    route:
+    31	    - destination:
+    32	        host: istio-egressgateway.istio-system.svc.cluster.local
+    33	  - match:
+    34	    - port: 80
+    35	      gateways:
+    36	      - istio-egressgateway
+    37	    route:
+    38	    - destination:
+    39	        host: httpbin.org
+</code></pre>
+<p>第26~32行的路由规则定义表明，对于网格内部请求httpbin.org的流量， 全部转发到istio-egressgateway外部网关服务上。</p>
+<p>第33~39行的路由规则定义表明，对于不是网格内部访问httpbin.org的流 量，也就是说，对于从istio-egressgateway外部网关中请求httpbin.org的流量， 全部转发到ServiceEntry中定义的httpbin.org地址上。</p>
+<h3 id="配置通过egress-gateway访问外部https协议服务">配置通过Egress gateway访问外部HTTPS协议服务</h3>
+<p>导入baidu.com服务示例:</p>
+<pre><code class="language-shell">[root@master route]# cat -n service-entry-egress-baidu.yaml
+     1	apiVersion: networking.istio.io/v1alpha3
+     2	kind: ServiceEntry
+     3	metadata:
+     4	  name: external-svc-baidu
+     5	spec:
+     6	  hosts:
+     7	  - www.baidu.com
+     8	  location: MESH_EXTERNAL
+     9	  ports:
+    10	  - number: 443
+    11	    name: tls
+    12	    protocol: TLS
+    13	  resolution: DNS
+    14	---
+    15	apiVersion: networking.istio.io/v1alpha3
+    16	kind: VirtualService
+    17	metadata:
+    18	  name: gateway-routing-https-baidu
+    19	spec:
+    20	  hosts:
+    21	  - www.baidu.com
+    22	  gateways:
+    23	  - mesh
+    24	  - istio-egressgateway
+    25	  tls:
+    26	  - match:
+    27	    - port: 443
+    28	      gateways:
+    29	      - mesh
+    30	      sni_hosts:
+    31	      - www.baidu.com
+    32	    route:
+    33	    - destination:
+    34	        host: istio-egressgateway.istio-system.svc.cluster.local
+    35	  - match:
+    36	    - port: 443
+    37	      gateways:
+    38	      - istio-egressgateway
+    39	      sni_hosts:
+    40	      - www.baidu.com
+    41	    route:
+    42	    - destination:
+    43	        host: www.baidu.com
+</code></pre>
+<p>路由规则的配置方式与配置HTTP协议的路由规则基本一致，只是换成 了tls的相关配置。</p>
+<h3 id="网格内服务直接调用外部所有服务">网格内服务直接调用外部所有服务</h3>
+<p>在Istio的部署配置中，可以指定服务网格只拦截指定IP段的流量，这 样，当服务访问网格内的服务时，流量经过Envoy代理;而访问网格外部的 服务时，Envoy代理将不再拦截流量，完全由调用方自己来处理流量。如果 使用这种方式来开放网格内服务调用外部服务，你将不再能享受到服务网格 带来的服务路由相关的功能，比如重试、超时、熔断等。所以不到万不得已 的时候，请不要使用这种方式。下面展示了实验部署的Istio集群开启此 功能的步骤[2]。</p>
+<p>找到/usr/local/istio/install/kubernetes/istio-demo.yaml文件的10503行左右的</p>
+<p>配置行或者istio-mini.yaml文件的326行，修改成如下的形式:</p>
+<pre><code class="language-shell">“- &quot;[[ annotation .ObjectMeta `traffic.sidecar.istio.io/includeOutboundIPRanges`  &quot;10.244.0.0/16,10.96.0.0/12&quot;  ]]”
+</code></pre>
+<p>10.244.0.0/16是kube-controller-manager中配置的cluster-cidr的参数值，也 就是Pod的IP地址段。10.96.0.0/12是kube-apiserver中配置的service-cluster-ip- range的参数值，也就是Service的IP地址段。</p>
+<p>如上配置表明，网格只拦截10.244.0.0/16和10.96.0.0/12网段的流量，其 他网段的流量全部放行，由应用自己处理。</p>
+<p>应用配置文件：</p>
+<pre><code class="language-shell">$ kubectl apply -f /usr/local/istio/install/kubernetes/istio-mini.yaml
+</code></pre>
+<p>部署用于测试的Pod，新配置的规则只对新创建的Pod生效：</p>
+<pre><code class="language-shell">$ kubectl apply -f kubernetes/dns-test.yaml
+</code></pre>
+<p>4）访问服务：</p>
+<pre><code class="language-shell">$ kubectl exec dns-test -c dns-test -- curl -s http://httpbin.org/user-agent
+</code></pre>
+<h3 id="总结">总结</h3>
+<p>默认情况下，网格内服务是不能访问任何外部服务的，当前可以使用如下三种方式来满足网格内服务调用外部服务的需求:</p>
+<p>(1)使用ServiceEntry，让每一个Envoy代理都可以访问特定外部服务。</p>
+<p>(2)使用Egress gateway管理出口流量，统一管理对外部服务的调用出口。</p>
+<p>(3)配置Istio直接开放对任何外部服务的调用，调用外部服务的流量由网 格内服务自行管理。</p>
+<p>第一种方式适用于集群中每台服务器都能和外部互通的网络环境。第二 种方式适用于集群中存在边界服务器，或者集群中只有部分节点能与外部网 络互通，所有外部流量都经过此服务器的情况。当然使用第二种方式也可以 只是为了使用Egress gateway对网格的出口流量进行统一管理。第三种方式是 最直接、暴力的方式，也是最不推荐的方式，因为使用这种方式的流量不经过网格，所有流量全部由网格内的服务自行处理，此时出口流量就不能享受 到网格带来的路由管理等功能了，而且这也会降低服务网格的安全性。</p>
+<h2 id="实现服务ab测试">实现服务A/B测试</h2>
+<p>通过Istio提供的服务路由功能，我们可以根据请求的信息轻松实现A/B 测试。本节演示根据用户使用的浏览器来展示不同版本的Web界面。当用户 使用Firefox浏览器访问时，会得到Vue版本实现的前端界面;当用户使用其 他浏览器访问时，会得到React版本实现的前端界面。配置示例如下:</p>
+<pre><code class="language-shell">[root@master route]# cat -n   gateway-js-user-agent-v1-v2.yaml
+     1	apiVersion: networking.istio.io/v1alpha3
+     2	kind: Gateway
+     3	metadata:
+     4	  name: istio-lab-gateway
+     5	spec:
+     6	  selector:
+     7	    istio: ingressgateway # use Istio default gateway implementation
+     8	  servers:
+     9	  - port:
+    10	      number: 80
+    11	      name: http
+    12	      protocol: HTTP
+    13	    hosts:
+    14	    - &quot;*&quot;
+    15	---
+    16	apiVersion: networking.istio.io/v1alpha3
+    17	kind: DestinationRule
+    18	metadata:
+    19	  name: service-js
+    20	spec:
+    21	  host: service-js
+    22	  subsets:
+    23	  - name: v1
+    24	    labels:
+    25	      version: v1
+    26	  - name: v2
+    27	    labels:
+    28	      version: v2
+    29	---
+    30	apiVersion: networking.istio.io/v1alpha3
+    31	kind: VirtualService
+    32	metadata:
+    33	  name: istio-lab
+    34	spec:
+    35	  hosts:
+    36	  - &quot;*&quot;
+    37	  gateways:
+    38	  - istio-lab-gateway
+    39	  http:
+    40	  - match:
+    41	    - uri:
+    42	        prefix: /env
+    43	    route:
+    44	    - destination:
+    45	        host: service-python
+    46	  - match:
+    47	    - uri:
+    48	        prefix: /
+    49	      headers:
+    50	        user-agent:
+    51	          regex: &quot;.*?(Firefox).*?&quot;
+    52	    route:
+    53	    - destination:
+    54	        host: service-js
+    55	        subset: v2
+    56	  - route:
+    57	    - destination:
+    58	        host: service-js
+    59	        subset: v1
+</code></pre>
+<p>第46~55行定义的路由规则表明，当用户的请求携带的user-agent请求头 正则匹配Firefox时，转发请求到sevice-js服务的v2版本。</p>
+<p>第56~59行定义了默认的路由规则，当上面的条件都不符合时，把请求 转发到sevice-js服务的v1版本。</p>
+<p>通过上面的路由规则就会实现，当用户使用Chrome浏览器访问时，会得 到React版本实现的前端界面;当用户使用Firefox浏览器访问时，会得到Vue 版本实现的前端界面。这样就轻松实现用户界面的A/B版本测试。</p>
+<h2 id="实验-3">【实验】</h2>
+<h3 id="创建ab测试路由规则">创建A/B测试路由规则</h3>
+<pre><code class="language-shell">[root@master route]# kubectl  apply  -f  gateway-js-user-agent-v1-v2.yaml
+gateway.networking.istio.io/istio-lab-gateway unchanged
+destinationrule.networking.istio.io/service-js unchanged
+virtualservice.networking.istio.io/istio-lab configured
+</code></pre>
+<h3 id="浏览器访问-2">浏览器访问</h3>
+<p>通过浏览器访问地址http://192.168.1.69:31380/，并多次点击“发射”按钮。</p>
+<p>Chrome浏览器访问</p>
+<p><img src="https://zpx.hellocloudnative.io/2019-10-22-035017.png" alt="image-20191022115015750"></p>
+<p>Firefox浏览器访问</p>
+<p><img src="https://zpx.hellocloudnative.io/2019-10-22-034959.png" alt="image-20191022114958531"></p>
+<h2 id="实现服务灰度发布">实现服务灰度发布</h2>
+<p>灰度发布又叫金丝雀发布，通过Istio提供的服务路由功能可以轻松实现 灰度发布。当我们的服务需要上线新版本时，可以先只把部分流量引入到新 版本，等到确认新版本没有问题时，再把全部流量切换到新版本上。通过调 节服务版本路由的权重，就可以达到上述目的。当然，为了不浪费资源，对 服务的新版本我们只需要部署很少的实例，然后确认服务没有问题后，再增 加新版本的服务实例，减少旧版本的服务实例。</p>
+<p>对service-go服务实行灰度发布，使用的路由规则配置文件如下:</p>
+<pre><code class="language-yaml">apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: service-go
+spec:
+  host: service-go
+  subsets:
+  - name: v1
+    labels:
+      version: v1
+  - name: v2
+    labels:
+      version: v2
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: service-go
+spec:
+  hosts:
+  - service-go
+  http:
+  - route:
+    - destination:
+        host: service-go
+        subset: v1
+      weight: 70
+    - destination:
+        host: service-go
+        subset: v2
+      weight: 30
+</code></pre>
+<h2 id="实验-4">【实验】</h2>
+<h3 id="删除service-go服务的v2版本的pod">删除service-go服务的v2版本的Pod</h3>
+<pre><code class="language-shell">[root@master route]# kubectl delete deployments. service-go-v2
+</code></pre>
+<h3 id="为了模拟真实环境我们提前把service-go服务扩容到5个实例也就-是5个pod使用如下方式增加实例个数">为了模拟真实环境，我们提前把service-go服务扩容到5个实例，也就 是5个Pod，使用如下方式增加实例个数:</h3>
+<pre><code class="language-shell">[root@master route]# kubectl scale  deployment  service-go-v1 --replicas=5
+deployment.extensions/service-go-v1 scaled
+[root@master route]# kubectl get pods
+NAME                                 READY   STATUS    RESTARTS   AGE
+dns-test                             2/2     Running   0          3h16m
+service-go-v1-76b6d56f5c-2dz8h       2/2     Running   0          28h
+service-go-v1-76b6d56f5c-659hp       2/2     Running   0          105s
+service-go-v1-76b6d56f5c-6pzsr       2/2     Running   0          104s
+service-go-v1-76b6d56f5c-748lp       2/2     Running   0          104s
+service-go-v1-76b6d56f5c-lh2ph       2/2     Running   0          104s
+service-js-v1-7f9f5b64db-p8gt2       2/2     Running   0          28h
+service-js-v2-5d876bb99d-s7xsl       2/2     Running   0          28h
+service-lua-v1-598fb964d5-r49h2      2/2     Running   0          28h
+service-lua-v2-5b8986dd5c-cw58r      2/2     Running   0          28h
+service-node-v1-5976d5c9dc-9zct4     2/2     Running   0          28h
+service-node-v2-687c58bfb7-vwcm6     2/2     Running   0          28h
+service-python-v1-5d85945565-2vx4f   2/2     Running   0          28h
+service-python-v2-8496d567cc-xmf8l   2/2     Running   0          28h
+service-redis-v1-99f747fb8-r5spg     2/2     Running   0          28h
+</code></pre>
+<h3 id="创建用于测试的pod">创建用于测试的Pod</h3>
+<pre><code class="language-shell">[root@master route]#kubectl apply -f kubernetes/dns-test.yaml
+</code></pre>
+<h3 id="模拟生产环境流量全部转发到服务service-go的v1版本">模拟生产环境，流量全部转发到服务service-go的v1版本</h3>
+<pre><code class="language-shell">[root@master route]# cat virtual-service-go-v1.yaml
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: service-go
+spec:
+  host: service-go
+  subsets:
+  - name: v1
+    labels:
+      version: v1
+  - name: v2
+    labels:
+      version: v2
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: service-go
+spec:
+  hosts:
+  - service-go
+  http:
+  - route:
+    - destination:
+        host: service-go
+        subset: v1
+[root@master route]# kubectl apply -f  virtual-service-go-v1.yaml
+destinationrule.networking.istio.io/service-go created
+virtualservice.networking.istio.io/service-go created
+</code></pre>
+<h3 id="访问service-go服务此时所有的请求只会落到v1版本上">访问service-go服务，此时所有的请求只会落到v1版本上</h3>
+<pre><code class="language-shell">[root@master route]# kubectl exec dns-test -c dns-test -- curl -s http://10.108.198.6/env
+{&quot;message&quot;:&quot;go v1&quot;}
+</code></pre>
+<h3 id="部署新版本服务此时只创建两个v2版本的service-go服务实例用来">部署新版本服务，此时只创建两个v2版本的service-go服务实例用来</h3>
+<pre><code class="language-shell">[root@master istio-zhangpx]# kubectl get pods
+NAME                                 READY   STATUS    RESTARTS   AGE
+dns-test                             2/2     Running   0          3h25m
+service-go-v1-76b6d56f5c-2dz8h       2/2     Running   0          28h
+service-go-v1-76b6d56f5c-4xzg7       2/2     Running   0          18s
+service-go-v1-76b6d56f5c-8nxdk       2/2     Running   0          18s
+service-go-v1-76b6d56f5c-c2l42       2/2     Running   0          18s
+service-go-v1-76b6d56f5c-x8nsg       2/2     Running   0          18s
+service-go-v2-5c44655889-6cnkq       2/2     Running   0          111s
+service-go-v2-5c44655889-99plx       2/2     Running   0          43s
+service-js-v1-7f9f5b64db-p8gt2       2/2     Running   0          28h
+service-js-v2-5d876bb99d-s7xsl       2/2     Running   0          28h
+service-lua-v1-598fb964d5-r49h2      2/2     Running   0          28h
+service-lua-v2-5b8986dd5c-cw58r      2/2     Running   0          28h
+service-node-v1-5976d5c9dc-9zct4     2/2     Running   0          28h
+service-node-v2-687c58bfb7-vwcm6     2/2     Running   0          28h
+service-python-v1-5d85945565-2vx4f   2/2     Running   0          28h
+service-python-v2-8496d567cc-xmf8l   2/2     Running   0          28h
+service-redis-v1-99f747fb8-r5spg     2/2     Running   0          28h
+</code></pre>
+<h3 id="给service-go服务v2版本分配30流量">给service-go服务v2版本分配30%流量:</h3>
+<pre><code class="language-shell">[root@master route]# cat  virtual-service-go-canary.yaml
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: service-go
+spec:
+  host: service-go
+  subsets:
+  - name: v1
+    labels:
+      version: v1
+  - name: v2
+    labels:
+      version: v2
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: service-go
+spec:
+  hosts:
+  - service-go
+  http:
+  - route:
+    - destination:
+        host: service-go
+        subset: v1
+      weight: 70
+    - destination:
+        host: service-go
+        subset: v2
+      weight: 30
+[root@master route]# kubectl apply  -f  virtual-service-go-canary.yaml
+destinationrule.networking.istio.io/service-go unchanged
+virtualservice.networking.istio.io/service-go configured
+</code></pre>
+<h3 id="访问service-go服务此时请求会分别落到v1v2两个版本上">访问service-go服务，此时请求会分别落到v1、v2两个版本上:</h3>
+<pre><code class="language-shell">[root@master route]# kubectl exec dns-test -c dns-test -- curl -s http://10.108.198.6/env
+{&quot;message&quot;:&quot;go v1&quot;}
+[root@master route]# kubectl exec dns-test -c dns-test -- curl -s http://10.108.198.6/env
+{&quot;message&quot;:&quot;go v1&quot;}
+[root@master route]# kubectl exec dns-test -c dns-test -- curl -s http://10.108.198.6/env
+{&quot;message&quot;:&quot;go v2&quot;}
+[root@master route]# kubectl exec dns-test -c dns-test -- curl -s http://10.108.198.6/env
+{&quot;message&quot;:&quot;go v1&quot;}
+[root@master route]# kubectl exec dns-test -c dns-test -- curl -s http://10.108.198.6/env
+{&quot;message&quot;:&quot;go v1&quot;}
+[root@master route]# kubectl exec dns-test -c dns-test -- curl -s http://10.108.198.6/env
+{&quot;message&quot;:&quot;go v2&quot;}
+[root@master route]# kubectl exec dns-test -c dns-test -- curl -s http://10.108.198.6/env
+{&quot;message&quot;:&quot;go v1&quot;}
+[root@master route]# kubectl exec dns-test -c dns-test -- curl -s http://10.108.198.6/env
+{&quot;message&quot;:&quot;go v1&quot;}
+[root@master route]# kubectl exec dns-test -c dns-test -- curl -s http://10.108.198.6/env
+{&quot;message&quot;:&quot;go v2&quot;}
+[root@master route]# kubectl exec dns-test -c dns-test -- curl -s http://10.108.198.6/env
+{&quot;message&quot;:&quot;go v1&quot;}
+[root@master route]# kubectl exec dns-test -c dns-test -- curl -s http://10.108.198.6/env
+{&quot;message&quot;:&quot;go v1&quot;}
+[root@master route]# kubectl exec dns-test -c dns-test -- curl -s http://10.108.198.6/env
+{&quot;message&quot;:&quot;go v2&quot;}
+[root@master route]# kubectl exec dns-test -c dns-test -- curl -s http://10.108.198.6/env
+{&quot;message&quot;:&quot;go v1&quot;}
+[root@master route]# kubectl exec dns-test -c dns-test -- curl -s http://10.108.198.6/env
+{&quot;message&quot;:&quot;go v2&quot;}
+[root@master route]# kubectl exec dns-test -c dns-test -- curl -s http://10.108.198.6/env
+{&quot;message&quot;:&quot;go v2&quot;}
+</code></pre>
+<h3 id="观察服务的性能响应时间错误率等数据当服务达到要求时-增加service-go服务的v2版本实例数">观察服务的性能、响应时间、错误率等数据，当服务达到要求时， 增加service-go服务的v2版本实例数:</h3>
+<pre><code class="language-shell">[root@master route]# kubectl get pods -l app=service-go
+NAME                             READY   STATUS    RESTARTS   AGE
+service-go-v1-76b6d56f5c-2dz8h   2/2     Running   0          28h
+service-go-v1-76b6d56f5c-4xzg7   2/2     Running   0          8m22s
+service-go-v1-76b6d56f5c-8nxdk   2/2     Running   0          8m22s
+service-go-v1-76b6d56f5c-c2l42   2/2     Running   0          8m22s
+service-go-v1-76b6d56f5c-x8nsg   2/2     Running   0          8m22s
+service-go-v2-5c44655889-6cnkq   2/2     Running   0          9m55s
+service-go-v2-5c44655889-8xd9c   2/2     Running   0          30s
+service-go-v2-5c44655889-99plx   2/2     Running   0          8m47s
+service-go-v2-5c44655889-dgl8j   2/2     Running   0          30s
+service-go-v2-5c44655889-t44lm   2/2     Running   0          30s
+</code></pre>
+<h3 id="给service-go服务v2版本分配50流量">给service-go服务v2版本分配50%流量:</h3>
+<pre><code class="language-shell">[root@master route]#kubectl apply  -f virtual-service-go-canary-50.yaml
+</code></pre>
+<h3 id="减少v1版本的实例数增加service-go服务的v2版本实例数">减少v1版本的实例数，增加service-go服务的v2版本实例数:</h3>
+<pre><code class="language-shell">[root@master route]#kubectl scale  deployment  service-go-v1 --replicas=2
+[root@master route]#kubectl scale  deployment  service-go-v2 --replicas=2
+</code></pre>
+<h3 id="给service-go服务v2版本分配70流量">给service-go服务v2版本分配70%流量</h3>
+<pre><code class="language-shell">[root@master route]#kubectl apply  -f virtual-service-go-canary-70.yaml
+</code></pre>
+<h3 id="增加service-go服务的v2版本实例数">增加service-go服务的v2版本实例数</h3>
+<pre><code class="language-shell">[root@master route]#kubectl scale  deployment  service-go-v2 --replicas=5
+</code></pre>
+<h3 id="把流量全部引入service-go服务的v2版本">把流量全部引入service-go服务的v2版本</h3>
+<pre><code class="language-shell">[root@master route]# kubectl apply  -f virtual-service-go-v2.yaml
+</code></pre>
+<h3 id="访问service-go服务此时所有的请求只会落到v2版本上">访问service-go服务，此时所有的请求只会落到v2版本上</h3>
+<h3 id="减少或者删除service-go服务v1版本的实例完成服务的灰度发布">减少或者删除service-go服务v1版本的实例，完成服务的灰度发布:</h3>
+<pre><code class="language-shell">[root@master route]# kubectl scale  deployment  service-go-v1 --replicas=0
+deployment.extensions/service-go-v1 scaled
+</code></pre>
+<h2 id="灰度发布与ab测试结合">灰度发布与A/B测试结合</h2>
+<p>在真实的生产环境中，可能需要根据 用户信息、应用版本等信息进行灰度发布，比如我们可能只想在安卓手机用 户中挑选部分用户进行灰度测试，这时候我们就需要把灰度发布和A/B测试 进行结合，来达到目的。路由配置示例如下:</p>
+<pre><code class="language-shell">[root@master route]# cat -n virtual-service-python-ab-canary.yaml
+     1	apiVersion: networking.istio.io/v1alpha3
+     2	kind: Gateway
+     3	metadata:
+     4	  name: istio-lab-gateway
+     5	spec:
+     6	  selector:
+     7	    istio: ingressgateway # use Istio default gateway implementation
+     8	  servers:
+     9	  - port:
+    10	      number: 80
+    11	      name: http
+    12	      protocol: HTTP
+    13	    hosts:
+    14	    - &quot;*&quot;
+    15	---
+    16	apiVersion: networking.istio.io/v1alpha3
+    17	kind: DestinationRule
+    18	metadata:
+    19	  name: service-js
+    20	spec:
+    21	  host: service-js
+    22	  subsets:
+    23	  - name: v1
+    24	    labels:
+    25	      version: v1
+    26	  - name: v2
+    27	    labels:
+    28	      version: v2
+    29	---
+    30	apiVersion: networking.istio.io/v1alpha3
+    31	kind: DestinationRule
+    32	metadata:
+    33	  name: service-python
+    34	spec:
+    35	  host: service-python
+    36	  subsets:
+    37	  - name: v1
+    38	    labels:
+    39	      version: v1
+    40	  - name: v2
+    41	    labels:
+    42	      version: v2
+    43	---
+    44	apiVersion: networking.istio.io/v1alpha3
+    45	kind: VirtualService
+    46	metadata:
+    47	  name: istio-lab
+    48	spec:
+    49	  hosts:
+    50	  - &quot;*&quot;
+    51	  gateways:
+    52	  - istio-lab-gateway
+    53	  http:
+    54	  - match:
+    55	    - uri:
+    56	        prefix: /env
+    57	      headers:
+    58	        user-agent:
+    59	          regex: &quot;.*?(Firefox).*?&quot;
+    60	    route:
+    61	    - destination:
+    62	        host: service-python
+    63	        subset: v1
+    64	      weight: 70
+    65	    - destination:
+    66	        host: service-python
+    67	        subset: v2
+    68	      weight: 30
+    69	  - match:
+    70	    - uri:
+    71	        prefix: /env
+    72	    route:
+    73	    - destination:
+    74	        host: service-python
+    75	        subset: v1
+    76	  - route:
+    77	    - destination:
+    78	        host: service-js
+    79	        subset: v1
+</code></pre>
+<p>第54~68行的路由规则定义表示，对于使用Firefox浏览器访问/env的用户 请求，会有30%概率的请求转发到service-python的v2版本，70%的请求转发 到v1版本。</p>
+<p>第69~75行的路由规则定义表示，对于使用其他浏览器访问/env的用户请 求只会转发到service-python的v1版本。</p>
+<p>第76~79行定义了默认了路由规则，当没有规则匹配时，使用此默认路 由。当访问除了/env的链接时，请求转发到service-js的v1版本。</p>
+<p>通过如上的路由规则配置，就可以实现对于使用Firefox浏览器的用户进 行灰度上线service-python服务v2版本的需求。</p>
+<h2 id="实验-5">【实验】</h2>
+<h3 id="创建路由规则">创建路由规则</h3>
+<pre><code class="language-shell">[root@master route]# kubectl apply -f virtual-service-python-ab-canary.yaml
+</code></pre>
+<h3 id="浏览器访问-3">浏览器访问</h3>
+<p>此时打开浏览器访问http://192.168.1.69:31380/，并多次点击“发射”按 钮，如果你使用的是Firefox浏览器，就会看到大部请求都会落到service- python服务的v1版本，只有部分请求落到service-python服务的v2版本。如果 使用其他浏览器访问，就会看到所有请求只会落到service-python服务的v1版 本。</p>
+<h2 id="小结">小结</h2>
+<p>借助Istio提供的路由功能，我们只需要创建简单的路由规则配置文件， 就可以轻松实现服务路由管理，而完全不需要对应用做任何改变。我们可以 使用Gateway和ServiceEntry更方便地管理集群的入口与出口流量，这也可以 增强集群的安全性。另外，我们还可以很容易地实现复杂的A/B测试和灰度 发布功能。</p>
+</article>
+
+
+      
+
+      
+
+
+
+      
+
+      
+  <div
+    class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"
+  >
+    <div>
+      
+        <span class="text-primary-text block font-bold"
+          >Previous</span
+        >
+        <a href="https://hellocloudnative.github.io/en/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/8-%E5%9C%A8istio%E4%B8%AD%E9%83%A8%E7%BD%B2%E5%BE%AE%E6%9C%8D%E5%8A%A1/" class="block">在Istio中部署微服务</a>
+      
+    </div>
+    <div class="mt-4 md:mt-0 md:text-right">
+      
+        <span class="text-primary-text block font-bold">Next</span>
+        <a href="https://hellocloudnative.github.io/en/zh/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/10-%E8%AE%A9%E6%9C%8D%E5%8A%A1%E6%9B%B4%E5%85%B7%E5%BC%B9%E6%80%A7/" class="block">让服务更具弹性</a>
+      
+    </div>
+  </div>
+
+
+      
+
+
+
+    </div>
+    
+      <div class="col-span-2">
+        
+        
+          <div
+  class="
+    bg-primary-bg
+   prose sticky top-16 z-10 hidden px-6 py-4 lg:block"
+>
+  <h3>On This Page</h3>
+</div>
+<div
+  class="sticky-toc  hidden px-6 pb-6 lg:block"
+>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#管理集群的入口流量">管理集群的入口流量</a></li>
+    <li><a href="#把请求路由到服务的指定版本">把请求路由到服务的指定版本</a></li>
+    <li><a href="#实验">【实验】</a>
+      <ul>
+        <li><a href="#创建gateway和service-js的路由规则">创建Gateway和service-js的路由规则</a></li>
+        <li><a href="#创建service-lua的指定版本路由规则">创建service-lua的指定版本路由规则</a></li>
+        <li><a href="#浏览器访问">浏览器访问</a></li>
+        <li><a href="#根据服务版本权重拆分流量">根据服务版本权重拆分流量</a></li>
+      </ul>
+    </li>
+    <li><a href="#实验-1">【实验】</a>
+      <ul>
+        <li><a href="#创建gateway和service-js的路由规则-1">创建Gateway和service-js的路由规则:</a></li>
+        <li><a href="#创建service-lua的指定版本路由规则-1">创建service-lua的指定版本路由规则:</a></li>
+        <li><a href="#浏览器访问-1">浏览器访问</a></li>
+        <li><a href="#根据请求信息路由到服务的不同版本">根据请求信息路由到服务的不同版本</a></li>
+      </ul>
+    </li>
+    <li><a href="#排查思路">排查思路</a>
+      <ul>
+        <li><a href="#检查-ingress-gateway-里访问-service-python-的路由">检查 ingress gateway 里访问 service-python 的路由</a></li>
+        <li><a href="#查看-destinationrules">查看 destinationrules</a></li>
+      </ul>
+    </li>
+    <li><a href="#流量镜像">流量镜像</a></li>
+    <li><a href="#实验-2">【实验】</a>
+      <ul>
+        <li><a href="#创建一个测试pod">创建一个测试pod</a></li>
+        <li><a href="#创建service-go服务的路由规则">创建service-go服务的路由规则</a></li>
+        <li><a href="#打开一个新的终端查看service-go-v2实例的日志信息">打开一个新的终端查看service-go-v2实例的日志信息</a></li>
+        <li><a href="#测试访问service-go服务">测试访问service-go服务</a></li>
+      </ul>
+    </li>
+    <li><a href="#管理集群的出口流量">管理集群的出口流量</a>
+      <ul>
+        <li><a href="#使用serviceentry导入网格外部服务">使用ServiceEntry导入网格外部服务</a>
+          <ul>
+            <li><a href="#配置访问http协议的外部服务">配置访问HTTP协议的外部服务</a></li>
+            <li><a href="#配置访问https协议的外部服务">配置访问HTTPS协议的外部服务</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#使用egress-gateway统一管理访问外部服务的流量">使用Egress gateway统一管理访问外部服务的流量</a>
+      <ul>
+        <li><a href="#配置通过egress-gateway访问外部http协议服务">配置通过Egress gateway访问外部HTTP协议服务</a></li>
+        <li><a href="#配置通过egress-gateway访问外部https协议服务">配置通过Egress gateway访问外部HTTPS协议服务</a></li>
+        <li><a href="#网格内服务直接调用外部所有服务">网格内服务直接调用外部所有服务</a></li>
+        <li><a href="#总结">总结</a></li>
+      </ul>
+    </li>
+    <li><a href="#实现服务ab测试">实现服务A/B测试</a></li>
+    <li><a href="#实验-3">【实验】</a>
+      <ul>
+        <li><a href="#创建ab测试路由规则">创建A/B测试路由规则</a></li>
+        <li><a href="#浏览器访问-2">浏览器访问</a></li>
+      </ul>
+    </li>
+    <li><a href="#实现服务灰度发布">实现服务灰度发布</a></li>
+    <li><a href="#实验-4">【实验】</a>
+      <ul>
+        <li><a href="#删除service-go服务的v2版本的pod">删除service-go服务的v2版本的Pod</a></li>
+        <li><a href="#为了模拟真实环境我们提前把service-go服务扩容到5个实例也就-是5个pod使用如下方式增加实例个数">为了模拟真实环境，我们提前把service-go服务扩容到5个实例，也就 是5个Pod，使用如下方式增加实例个数:</a></li>
+        <li><a href="#创建用于测试的pod">创建用于测试的Pod</a></li>
+        <li><a href="#模拟生产环境流量全部转发到服务service-go的v1版本">模拟生产环境，流量全部转发到服务service-go的v1版本</a></li>
+        <li><a href="#访问service-go服务此时所有的请求只会落到v1版本上">访问service-go服务，此时所有的请求只会落到v1版本上</a></li>
+        <li><a href="#部署新版本服务此时只创建两个v2版本的service-go服务实例用来">部署新版本服务，此时只创建两个v2版本的service-go服务实例用来</a></li>
+        <li><a href="#给service-go服务v2版本分配30流量">给service-go服务v2版本分配30%流量:</a></li>
+        <li><a href="#访问service-go服务此时请求会分别落到v1v2两个版本上">访问service-go服务，此时请求会分别落到v1、v2两个版本上:</a></li>
+        <li><a href="#观察服务的性能响应时间错误率等数据当服务达到要求时-增加service-go服务的v2版本实例数">观察服务的性能、响应时间、错误率等数据，当服务达到要求时， 增加service-go服务的v2版本实例数:</a></li>
+        <li><a href="#给service-go服务v2版本分配50流量">给service-go服务v2版本分配50%流量:</a></li>
+        <li><a href="#减少v1版本的实例数增加service-go服务的v2版本实例数">减少v1版本的实例数，增加service-go服务的v2版本实例数:</a></li>
+        <li><a href="#给service-go服务v2版本分配70流量">给service-go服务v2版本分配70%流量</a></li>
+        <li><a href="#增加service-go服务的v2版本实例数">增加service-go服务的v2版本实例数</a></li>
+        <li><a href="#把流量全部引入service-go服务的v2版本">把流量全部引入service-go服务的v2版本</a></li>
+        <li><a href="#访问service-go服务此时所有的请求只会落到v2版本上">访问service-go服务，此时所有的请求只会落到v2版本上</a></li>
+        <li><a href="#减少或者删除service-go服务v1版本的实例完成服务的灰度发布">减少或者删除service-go服务v1版本的实例，完成服务的灰度发布:</a></li>
+      </ul>
+    </li>
+    <li><a href="#灰度发布与ab测试结合">灰度发布与A/B测试结合</a></li>
+    <li><a href="#实验-5">【实验】</a>
+      <ul>
+        <li><a href="#创建路由规则">创建路由规则</a></li>
+        <li><a href="#浏览器访问-3">浏览器访问</a></li>
+      </ul>
+    </li>
+    <li><a href="#小结">小结</a></li>
+  </ul>
+</nav>
+</div>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    enableStickyToc();
+  });
+</script>
+
+        
+      </div>
+    
+
+    
+    
+  </div>
+
+  
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        hljs.highlightAll();
+      });
+    </script>
+
+          </div>
+        </div>
+      
+    </main>
+    <footer class="pl-scrollbar">
+      <div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2021 <a href="https://hellocloudnative.github.io/">Pengxuan Zhang</a> 
+ &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div></div>
+    </footer>
+  </body>
+</html>
