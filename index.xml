@@ -8,7 +8,7 @@
     <language>zh</language>
     <copyright>&amp;copy; 2021 &lt;a href=&#34;https://hellocloudnative.github.io/&#34;&gt;Pengxuan Zhang&lt;/a&gt; 
 </copyright>
-    <lastBuildDate>Tue, 21 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://hellocloudnative.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 25 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://hellocloudnative.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>istio的安装部署</title>
       <link>https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/1-istio%E7%9A%84%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/</link>
@@ -117,21 +117,6 @@
       
       <guid>https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/12-%E8%AE%A9%E6%9C%8D%E5%8A%A1%E9%80%9A%E4%BF%A1%E6%9B%B4%E5%AE%89%E5%85%A8%E5%8F%AF%E6%8E%A7/</guid>
       <description>&lt;p&gt;在Istio中，我们可 以使用Denier适配器实现简单的服务访问控制，使用黑白名单更进一步控制 服务间的访问权限，使用RBAC实现复杂的接口、函数级别的访问权限控 制。Istio还提供了双向的TLS加密身份认证，以及基于JWT的终端用户的认 证，也可以将两者结合使用。Istio极大地增强了服务间的安全性。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>test</title>
-      <link>https://hellocloudnative.github.io/posts/upload/test/</link>
-      <pubDate>Tue, 21 Jan 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://hellocloudnative.github.io/posts/upload/test/</guid>
-      <description>golang的time.Duration问题 碰到一个Golang time.Duration的问题，编译的时候总是报错 time.Second * connectTimeout (mismatched types time.Duration and int)
-问题重现：
-package main import &amp;quot;time&amp;quot; func main(){ connectTimeout := 10 time.Sleep(time.Second*connectTimeout) } 解决的方法:
-connectTimeout := 10 time.Sleep(time.Duration(connectTimeout) * time.Second) 产生这个问题的原因是：
-int and time.Duration are different types. You need to convert the int to a time.Duration
-Golang的和时间相关的可以直接用数字，但不能是float浮点型，也不能直接是数值型变量.
-time.Sleep(1 * time.Second) //可以 time.Sleep(1.1 * time.Second) //不可以 time.Sleep(time.Duration(yourTime) * time.Second) //可以 time.Sleep(yourTime * time.Second) //不可以 </description>
     </item>
     
     <item>
