@@ -114,7 +114,7 @@
 
 
 
-<meta property="og:updated_time" content="2025-01-21T00:00:00&#43;00:00" />
+<meta property="og:updated_time" content="2021-05-25T00:00:00&#43;00:00" />
 
 
 
@@ -406,71 +406,6 @@
   
   
   <div class="overflow-hidden divide-y">
-  
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="prose">
-  <a href="https://hellocloudnative.github.io/posts/test/" class="no-underline">
-    <h3 class="mt-0">test</h3>
-  </a>
-  
-    golang的time.Duration问题 碰到一个Golang time.Duration的问题，编译的时候总是报错 time.Second * connectTimeout (mismatched types time.Duration and int)
-问题重现：
-package main import &#34;time&#34; func main(){ connectTimeout := 10 time.Sleep(time.Second*connectTimeout) } 解决的方法:
-connectTimeout := 10 time.Sleep(time.Duration(connectTimeout) * time.Second) 产生这个问题的原因是：
-int and time.Duration are different types. You need to convert the int to a time.Duration
-Golang的和时间相关的可以直接用数字，但不能是float浮点型，也不能直接是数值型变量.
-time.Sleep(1 * time.Second) //可以 time.Sleep(1.1 * time.Second) //不可以 time.Sleep(time.Duration(yourTime) * time.Second) //可以 time.Sleep(yourTime * time.Second) //不可以 
-  
-
-  
-    <div
-  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
->
-  <div class="me-6 my-2">
-    <i class="fas fa-calendar me-1"></i>
-    <span
-      >2025-01-21</span
-    >
-  </div>
-  <div class="me-6 my-2">
-    <i class="fas fa-clock me-1"></i>
-    <span>1分钟阅读时长</span>
-  </div>
-
-  
-    <div class="me-6 my-2">
-      <i class="fas fa-folder me-1"></i>
-      
-        <a href="https://hellocloudnative.github.io/categories/c/" class="hover:text-eureka"
-          >c</a
-        >
-      
-    </div>
-  
-
-  
-    <div class="me-6 my-2">
-      <i class="fas fa-th-list me-1"></i>
-      
-        <a href="https://hellocloudnative.github.io/series/b/" class="hover:text-eureka"
-          >b</a
-        >
-      
-    </div>
-  
-</div>
-
-  
-</div>
-
-  </div>
-
-  
-</div>
-  </div>
   
   <div class="py-6">
     <div class="flex flex-col-reverse lg:flex-row justify-between">
