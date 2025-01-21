@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html
-  lang=""
+  lang="zh"
   dir="ltr"
   
 ><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<title>云原生研习社</title>
+<title>文档 | 云原生研习社</title>
 
 <meta name="generator" content="Hugo Eureka 0.9.3" />
 <link rel="stylesheet" href="https://hellocloudnative.github.io/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
@@ -79,14 +79,29 @@
 
 
 
-<meta property="og:title" content="云原生研习社" />
+
+<script type="application/ld+json">
+{
+    "@context":"https://schema.org",
+    "@type":"ItemList",
+    "itemListElement":[{
+            "@type":"ListItem",
+            "position":  1 ,
+            "name": "Istio入门与实战",
+            "description": "Istio是一个连接，管理和保护微服务的开放平台。",
+            "image": "https://cdn.jsdelivr.net/gh/hellocloudnative/PicGoimages@main/202105/logo.png",
+            "url": "https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/"
+        }
+    ]
+}
+</script><meta property="og:title" content="文档 | 云原生研习社" />
 <meta property="og:type" content="website" />
 
 
 <meta property="og:image" content="https://hellocloudnative.github.io/images/icon.png">
 
 
-<meta property="og:url" content="https://hellocloudnative.github.io/en/categories/" />
+<meta property="og:url" content="https://hellocloudnative.github.io/docs/" />
 
 
 
@@ -98,9 +113,7 @@
 
 
 
-
-
-<meta property="og:locale:alternate" content="zh" />
+<meta property="og:locale" content="zh" />
 
 
 
@@ -114,10 +127,10 @@
 
 
 
-<meta property="article:section" content="categories" />
+<meta property="article:section" content="docs" />
 
 
-<link rel="alternate" type="application/rss+xml" href="https://hellocloudnative.github.io/en/categories/index.xml" title="云原生研习社" />
+<link rel="alternate" type="application/rss+xml" href="https://hellocloudnative.github.io/docs/index.xml" title="云原生研习社" />
 
 
   <body class="flex min-h-screen flex-col">
@@ -131,7 +144,7 @@
     }
 </script>
 <nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
-    <a href="/en/" class="me-6 text-primary-text text-xl font-bold">云原生研习社</a>
+    <a href="/" class="me-6 text-primary-text text-xl font-bold">云原生研习社</a>
     <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
         <i class="fas fa-bars"></i>
     </button>
@@ -139,12 +152,12 @@
     <div id="target"
         class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
         <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
-            <a href="/en/authors/pengxuan/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">About</a>
-            <a href="/en/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Posts</a>
-            <a href="/en/categories/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">Categories</a>
-            <a href="/en/series/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Series</a>
-            <a href="/en/tags/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Tags</a>
-            <a href="/en/docs/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Docs</a>
+            <a href="/authors/pengxuan/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">关于我</a>
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">文章</a>
+            <a href="/categories/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">分类</a>
+            <a href="/series/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">系列</a>
+            <a href="/tags/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">标签</a>
+            <a href="/docs/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">文档</a>
         </div>
 
         <div class="flex">
@@ -156,22 +169,9 @@
                 </div>
                 <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
                     id='lightDarkOptions'>
-                    <span class="px-4 py-1 hover:text-eureka" name="Light">Light</span>
-                    <span class="px-4 py-1 hover:text-eureka" name="Dark">Dark</span>
-                    <span class="px-4 py-1 hover:text-eureka" name="Auto">Auto</span>
-                </div>
-            </div>
-            <div class="relative pt-4 ps-4 md:pt-0">
-                <div class="cursor-pointer hover:text-eureka" id="languageMode">
-                    <i class="fas fa-globe"></i>
-                    <span class="ps-1"></span>
-                </div>
-                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open-lang">
-                </div>
-                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
-                    id='languageOptions'>
-                    <a class="px-4 py-1 hover:text-eureka" href="https://hellocloudnative.github.io/en/categories/"></a>
-                    <a class="px-4 py-1 hover:text-eureka" href="https://hellocloudnative.github.io/categories/">简体中文</a>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
                 </div>
             </div>
         </div>
@@ -201,7 +201,6 @@
     document.addEventListener('DOMContentLoaded', () => {
         getcolorscheme();
         switchBurger();
-        switchLanguage()
     });
 </script>
 </div>
@@ -209,14 +208,82 @@
     <main class="grow pt-16">
         <div class="pl-scrollbar">
           <div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8">
-  <article class="prose mx-6 my-8">
-  <h1>Categories</h1>
+<article class="prose mx-6 my-8">
+  <h1>文档</h1>
   
 </article>
 
-  <div class="bg-secondary-bg rounded px-6 py-8">
-    
+<div class="bg-secondary-bg rounded px-6">
+  <div class="overflow-hidden divide-y">
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full lg:w-2/3">
+    <div class="prose">
+  <a href="https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/" class="no-underline">
+    <h3 class="mt-0">Istio入门与实战</h3>
+  </a>
+  
+    Istio是一个连接，管理和保护微服务的开放平台。
+  
+
+  
+    <div class="mx-6">
+      
+        <a href="https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/1-istio%E7%9A%84%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/" class="no-underline">
+          <h4>istio的安装部署</h4>
+        </a>
+        
+          istio的安装部署
+        
+      
+        
+          <div class="-mx-4 my-4 border-t"></div>
+        <a href="https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/2-%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8istio%E7%9A%84%E8%A6%81%E6%B1%82/" class="no-underline">
+          <h4>服务使用Istio的要求</h4>
+        </a>
+        
+          服务使用Istio的要求
+        
+      
+        
+          <div class="-mx-4 my-4 border-t"></div>
+        <a href="https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/3-%E5%B8%B8%E7%94%A8%E8%B5%84%E6%BA%90%E7%B1%BB%E5%9E%8B/" class="no-underline">
+          <h4>常用资源类型</h4>
+        </a>
+        
+          常用资源类型
+        
+      
+      <a href="https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/" class="no-underline">
+        <h4>
+          阅读更多
+          <i
+            class="fas fa-caret-right ms-1"
+          ></i>
+        </h4>
+      </a>
+    </div>
+  
+</div>
+
   </div>
+
+  
+  <div class="w-full lg:w-1/3 mb-4 lg:mb-0 lg:ms-8">
+    <img src="https://cdn.jsdelivr.net/gh/hellocloudnative/PicGoimages@main/202105/logo.png" class="w-full" alt="Featured Image">
+  </div>
+  
+</div>
+  </div>
+  
+</div>
+
+
+</div>
+
+
 
           </div>
         </div>

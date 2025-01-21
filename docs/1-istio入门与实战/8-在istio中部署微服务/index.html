@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html
+  lang="zh"
+  dir="ltr"
+  
+><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>在Istio中部署微服务 | Istio入门与实战 | 云原生研习社</title>
+
+<meta name="generator" content="Hugo Eureka 0.9.3" />
+<link rel="stylesheet" href="https://hellocloudnative.github.io/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
+<script defer src="https://hellocloudnative.github.io/js/eureka.min.e30461307d4134a93cbbd7301a29631abc285b8d3df327389368cd910c20926df5759064caf0f8ba686f65edcbdff5ee.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto&#43;Serif&#43;SC:wght@400;600;700&amp;display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js"
+   crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js"
+     crossorigin></script>
+<link rel="stylesheet" href="https://hellocloudnative.github.io/css/highlightjs.min.2958991528e43eb6fc9b8c4f2b8e052f79c4010718e1d1e888a777620e9ee63021c2c57ec7417a3108019bb8c41943e6.css" media="print" onload="this.media='all';this.onload=null">
+
+
+<script defer type="text/javascript" src="https://hellocloudnative.github.io/js/fontawesome.min.d985ac16c7535cb80993ed54c495ca11e688d0c0dc6d5b42dfe36f85a5f1e3544f45c0d2c4b6941eaaec6084da6f19e0.js"></script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+   integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" 
+  integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+   integrity="sha384-&#43;XBljXPPiv&#43;OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js" 
+  integrity="sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0"  crossorigin></script>
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://hellocloudnative.github.io/images/icon_hu567c00f0881afc0330ccceee033e1285_28734_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://hellocloudnative.github.io/images/icon_hu567c00f0881afc0330ccceee033e1285_28734_180x180_fill_box_center_3.png">
+
+<meta name="description"
+  content="在Istio中部署微服务">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"文档",
+      "item":"https://hellocloudnative.github.io/docs/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"Istio入门与实战",
+      "item":"https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/"},{
+      "@type": "ListItem",
+      "position": 3 ,
+      "name":"在Istio中部署微服务",
+      "item":"https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/8-%E5%9C%A8istio%E4%B8%AD%E9%83%A8%E7%BD%B2%E5%BE%AE%E6%9C%8D%E5%8A%A1/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/8-%E5%9C%A8istio%E4%B8%AD%E9%83%A8%E7%BD%B2%E5%BE%AE%E6%9C%8D%E5%8A%A1/"
+    },
+    "headline": "在Istio中部署微服务 | Istio入门与实战 | 云原生研习社","datePublished": "2019-10-12T00:00:00+00:00",
+    "dateModified": "2019-10-12T00:00:00+00:00",
+    "wordCount":  327 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "Pengxuan Zhang",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://hellocloudnative.github.io/images/icon.png"
+        }
+        },
+    "description": "在Istio中部署微服务"
+}
+</script><meta property="og:title" content="在Istio中部署微服务 | Istio入门与实战 | 云原生研习社" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="https://hellocloudnative.github.io/images/icon.png">
+
+
+<meta property="og:url" content="https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/8-%E5%9C%A8istio%E4%B8%AD%E9%83%A8%E7%BD%B2%E5%BE%AE%E6%9C%8D%E5%8A%A1/" />
+
+
+
+<meta property="og:description" content="在Istio中部署微服务" />
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="云原生研习社" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2019-10-12T00:00:00&#43;00:00" />
+
+
+<meta property="article:modified_time" content="2019-10-12T00:00:00&#43;00:00" />
+
+
+
+<meta property="article:section" content="docs" />
+
+
+
+
+
+  <body class="flex min-h-screen flex-col">
+    <header
+      class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"
+    >
+      <div class="mx-auto w-full max-w-screen-xl"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="me-6 text-primary-text text-xl font-bold">云原生研习社</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/authors/pengxuan/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">关于我</a>
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">文章</a>
+            <a href="/categories/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">分类</a>
+            <a href="/series/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">系列</a>
+            <a href="/tags/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">标签</a>
+            <a href="/docs/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">文档</a>
+        </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+    </header>
+    <main class="grow pt-16">
+        <div class="pl-scrollbar">
+          <div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8">
+
+
+<div class="lg:pt-12">
+    <div class="flex flex-col md:flex-row bg-secondary-bg rounded">
+        <div class="md:w-1/4 lg:w-1/5 border-e">
+            <div class="sticky top-16 pt-6">
+                
+
+
+
+
+
+
+
+
+
+
+<div id="sidebar-title" class="md:hidden mx-4 px-2 pt-4 pb-2 md:border-b text-tertiary-text md:text-primary-text">
+    <span class="font-semibold">目录</span>
+    <i class='fas fa-caret-right ms-1'></i>
+</div>
+
+<div id="sidebar-toc"
+    class="hidden md:block overflow-y-auto mx-6 md:mx-0 pe-6 pt-2 md:max-h-doc-sidebar bg-primary-bg md:bg-transparent">
+    <div class="flex flex-wrap ms-4 -me-2 p-2 bg-secondary-bg md:bg-primary-bg rounded">
+        <a class=" hover:text-eureka"
+            href="https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/">Istio入门与实战</a>
+        
+        
+        
+
+
+    </div>
+    
+<ul class="ps-6">
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/1-istio%E7%9A%84%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/">istio的安装部署</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/2-%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8istio%E7%9A%84%E8%A6%81%E6%B1%82/">服务使用Istio的要求</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/3-%E5%B8%B8%E7%94%A8%E8%B5%84%E6%BA%90%E7%B1%BB%E5%9E%8B/">常用资源类型</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/4-%E5%B8%B8%E7%94%A8%E7%9A%84kubectl%E5%91%BD%E4%BB%A4/">常用的kubectl命令</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/5-%E5%B8%B8%E7%94%A8%E7%9A%84istioctl%E5%91%BD%E4%BB%A4/">常用的istioctl命令</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/6-istio%E6%B3%A8%E5%85%A5/">Istio注入</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/7-%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%BA%94%E7%94%A8%E7%9A%84%E9%83%A8%E7%BD%B2/">微服务应用的部署</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" text-eureka  hover:text-eureka"
+                href="https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/8-%E5%9C%A8istio%E4%B8%AD%E9%83%A8%E7%BD%B2%E5%BE%AE%E6%9C%8D%E5%8A%A1/">在Istio中部署微服务</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/9-istio%E6%9C%8D%E5%8A%A1%E8%B7%AF%E7%94%B1%E7%9B%B8%E5%85%B3%E7%9A%84%E5%8A%9F%E8%83%BD/">Istio服务路由相关的功能</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/10-%E8%AE%A9%E6%9C%8D%E5%8A%A1%E6%9B%B4%E5%85%B7%E5%BC%B9%E6%80%A7/">让服务更具弹性</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/11-%E8%AE%A9%E6%9C%8D%E5%8A%A1%E6%95%85%E9%9A%9C%E6%A3%80%E6%B5%8B%E6%9B%B4%E5%AE%B9%E6%98%93/">让服务故障检测更容易</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/12-%E8%AE%A9%E6%9C%8D%E5%8A%A1%E9%80%9A%E4%BF%A1%E6%9B%B4%E5%AE%89%E5%85%A8%E5%8F%AF%E6%8E%A7/">让服务通信更安全可控</a>
+        </div>
+        
+    </li>
+    
+    
+</ul>
+
+</div>
+
+
+
+
+
+            </div>
+
+        </div>
+        <div class="w-full md:w-3/4 lg:w-4/5 pb-8 pt-2 md:pt-8">
+            <div class="flex">
+                <div class="w-full lg:w-3/4 px-6">
+                    <article class="prose">
+  <h1 class="mb-4">在Istio中部署微服务</h1>
+
+  <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >2019-10-12</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>2分钟阅读时长</span>
+  </div>
+
+  
+
+  
+</div>
+
+
+  
+  
+
+  <p>在前面的实验中，服务部署完成之后，可以单独访问service-js服务的前 端静态页面，也可以单独访问service-python实现的API接口，但是仍然不能 实现两者相互配合调用，展现整个服务调用链情况。本节就带你体验一下 Istio的简单路由功能，并了解整个微服务的调用流程，对于本节使用的Istio 路由配置文件，不必太过关注细节，这些功能会在后续章节中详细说明。</p>
+<h2 id="在default命令空间开启自动注入功能">在default命令空间开启自动注入功能</h2>
+<pre><code class="language-shell">[root@master yaml]# kubectl label namespace default  istio-injection=enabled
+namespace/zhangpx labeled
+[root@master service-go]# kubectl get namespace -L istio-injection
+NAME            STATUS   AGE     ISTIO-INJECTION
+default         Active   34d     enabled
+ingress-nginx   Active   23d
+istio-system    Active   2d
+kube-public     Active   34d
+kube-system     Active   34d
+monitor         Active   3d6h
+test            Active   5d23h
+zhangpx         Active   142m    
+</code></pre>
+<h2 id="重启服务">重启服务</h2>
+<pre><code class="language-shell"> [root@master yaml]#kubectl delete  pods    --all
+</code></pre>
+<h2 id="查看服务部署状态">查看服务部署状态</h2>
+<p>使用如下的命令查看服务的部署状态</p>
+<pre><code class="language-shell">[root@master service-python]# kubectl get pods 
+NAME                                 READY   STATUS    RESTARTS   AGE
+service-go-v1-76b6d56f5c-tpzmr       2/2     Running   0          57m
+service-go-v2-5c44655889-vbrxb       2/2     Running   0          57m
+service-js-v1-7f9f5b64db-66kjv       2/2     Running   0          57m
+service-js-v2-5d876bb99d-k2rzh       2/2     Running   0          57m
+service-lua-v1-598fb964d5-xzkhb      2/2     Running   0          57m
+service-lua-v2-5b8986dd5c-k64v4      2/2     Running   0          57m
+service-node-v1-5976d5c9dc-lcpgn     2/2     Running   0          47m
+service-node-v2-687c58bfb7-kmbtd     2/2     Running   0          57m
+service-python-v1-5d85945565-f8nxx   2/2     Running   0          39m
+service-python-v2-8496d567cc-5whvp   2/2     Running   0          39m
+</code></pre>
+<p>与之前部署不同，现在每个服务启动的Pod有两个容器，其中一个容器 是被注入的Envoy代理，当所有服务的Pod处于Running状态时，再进行后续 的实验步骤。</p>
+<h2 id="应用路由规则">应用路由规则</h2>
+<p>将service-js服务的流量全部导入v1版本:</p>
+<pre><code class="language-shell">[root@master route]# cat gateway-js-v1-default.yaml
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: istio-lab-gateway
+spec:
+  selector:
+    istio: ingressgateway # use Istio default gateway implementation
+  servers:
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+    - &quot;*&quot;
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: service-js
+spec:
+  host: service-js
+  subsets:
+  - name: v1
+    labels:
+      version: v1
+  - name: v2
+    labels:
+      version: v2
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: istio-lab
+spec:
+  hosts:
+  - &quot;*&quot;
+  gateways:
+  - istio-lab-gateway
+  http:
+  - match:
+    - uri:
+        prefix: /env
+    route:
+    - destination:
+        host: service-python
+  - route:
+    - destination:
+        host: service-js
+        subset: v1
+[root@master route]# kubectl apply  -f gateway-js-v1-default.yaml
+</code></pre>
+<h2 id="在浏览器中访问测试">在浏览器中访问测试</h2>
+<p>此时通过浏览器访问地址http://192.168.1.123:31380/，并点击“发射”按 钮，会看到如图6-7所示的服务调用图。</p>
+<p><img src="https://zpx.hellocloudnative.io/2019-10-21-022713.png" alt="image-20191021102711083"></p>
+<h2 id="应用路由规则-1">应用路由规则</h2>
+<p>将流量全部导入service-js的v2版本:</p>
+<pre><code class="language-shell">[root@master route]# cat gateway-js-v2.yaml
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: istio-lab-gateway
+spec:
+  selector:
+    istio: ingressgateway # use Istio default gateway implementation
+  servers:
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+    - &quot;*&quot;
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: service-js
+spec:
+  host: service-js
+  subsets:
+  - name: v1
+    labels:
+      version: v1
+  - name: v2
+    labels:
+      version: v2
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: istio-lab
+spec:
+  hosts:
+  - &quot;*&quot;
+  gateways:
+  - istio-lab-gateway
+  http:
+  - match:
+    - uri:
+        prefix: /env
+    route:
+    - destination:
+        host: service-python
+  - route:
+    - destination:
+        host: service-js
+        subset: v2
+ [root@master route]# kubectl apply -f gateway-js-v2.yaml
+</code></pre>
+<h2 id="在浏览器中访问测试-1">在浏览器中访问测试</h2>
+<p>此时通过刷新浏览器，点击“发射”按钮，应该看到Vue版本的服务调用图</p>
+<p><img src="https://zpx.hellocloudnative.io/2019-10-21-023044.png" alt="image-20191021103043110"></p>
+</article>
+
+                    
+                    
+                    
+
+                    
+
+
+
+                    
+  <div
+    class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"
+  >
+    <div>
+      
+        <span class="text-primary-text block font-bold"
+          >上一页</span
+        >
+        <a href="https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/7-%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%BA%94%E7%94%A8%E7%9A%84%E9%83%A8%E7%BD%B2/" class="block">微服务应用的部署</a>
+      
+    </div>
+    <div class="mt-4 md:mt-0 md:text-right">
+      
+        <span class="text-primary-text block font-bold">下一页</span>
+        <a href="https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/9-istio%E6%9C%8D%E5%8A%A1%E8%B7%AF%E7%94%B1%E7%9B%B8%E5%85%B3%E7%9A%84%E5%8A%9F%E8%83%BD/" class="block">Istio服务路由相关的功能</a>
+      
+    </div>
+  </div>
+
+
+                    
+
+
+
+                </div>
+                
+                <div class="hidden lg:block lg:w-1/4">
+                    
+                    <div
+  class="
+    bg-secondary-bg
+   prose sticky top-16 z-10 hidden px-6 py-4 lg:block"
+>
+  <h3>本页内容</h3>
+</div>
+<div
+  class="sticky-toc 
+    border-s
+   hidden px-6 pb-6 lg:block"
+>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#在default命令空间开启自动注入功能">在default命令空间开启自动注入功能</a></li>
+    <li><a href="#重启服务">重启服务</a></li>
+    <li><a href="#查看服务部署状态">查看服务部署状态</a></li>
+    <li><a href="#应用路由规则">应用路由规则</a></li>
+    <li><a href="#在浏览器中访问测试">在浏览器中访问测试</a></li>
+    <li><a href="#应用路由规则-1">应用路由规则</a></li>
+    <li><a href="#在浏览器中访问测试-1">在浏览器中访问测试</a></li>
+  </ul>
+</nav>
+</div>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    enableStickyToc();
+  });
+</script>
+
+                    
+                </div>
+                
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        
+        hljs.highlightAll();
+        changeSidebarHeight();
+        switchDocToc();
+    })
+</script>
+
+
+
+
+
+
+
+
+
+          </div>
+        </div>
+      
+    </main>
+    <footer class="pl-scrollbar">
+      <div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2021 <a href="https://hellocloudnative.github.io/">Pengxuan Zhang</a> 
+ &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div></div>
+    </footer>
+  </body>
+</html>

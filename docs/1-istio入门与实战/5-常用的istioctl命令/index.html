@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html
+  lang="zh"
+  dir="ltr"
+  
+><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>常用的istioctl命令 | Istio入门与实战 | 云原生研习社</title>
+
+<meta name="generator" content="Hugo Eureka 0.9.3" />
+<link rel="stylesheet" href="https://hellocloudnative.github.io/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
+<script defer src="https://hellocloudnative.github.io/js/eureka.min.e30461307d4134a93cbbd7301a29631abc285b8d3df327389368cd910c20926df5759064caf0f8ba686f65edcbdff5ee.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto&#43;Serif&#43;SC:wght@400;600;700&amp;display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js"
+   crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js"
+     crossorigin></script>
+<link rel="stylesheet" href="https://hellocloudnative.github.io/css/highlightjs.min.2958991528e43eb6fc9b8c4f2b8e052f79c4010718e1d1e888a777620e9ee63021c2c57ec7417a3108019bb8c41943e6.css" media="print" onload="this.media='all';this.onload=null">
+
+
+<script defer type="text/javascript" src="https://hellocloudnative.github.io/js/fontawesome.min.d985ac16c7535cb80993ed54c495ca11e688d0c0dc6d5b42dfe36f85a5f1e3544f45c0d2c4b6941eaaec6084da6f19e0.js"></script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+   integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" 
+  integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+   integrity="sha384-&#43;XBljXPPiv&#43;OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js" 
+  integrity="sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0"  crossorigin></script>
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://hellocloudnative.github.io/images/icon_hu567c00f0881afc0330ccceee033e1285_28734_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://hellocloudnative.github.io/images/icon_hu567c00f0881afc0330ccceee033e1285_28734_180x180_fill_box_center_3.png">
+
+<meta name="description"
+  content="常用的istioctl命令">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"文档",
+      "item":"https://hellocloudnative.github.io/docs/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"Istio入门与实战",
+      "item":"https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/"},{
+      "@type": "ListItem",
+      "position": 3 ,
+      "name":"常用的istioctl命令",
+      "item":"https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/5-%E5%B8%B8%E7%94%A8%E7%9A%84istioctl%E5%91%BD%E4%BB%A4/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/5-%E5%B8%B8%E7%94%A8%E7%9A%84istioctl%E5%91%BD%E4%BB%A4/"
+    },
+    "headline": "常用的istioctl命令 | Istio入门与实战 | 云原生研习社","datePublished": "2019-10-12T00:00:00+00:00",
+    "dateModified": "2019-10-12T00:00:00+00:00",
+    "wordCount":  764 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "Pengxuan Zhang",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://hellocloudnative.github.io/images/icon.png"
+        }
+        },
+    "description": "常用的istioctl命令"
+}
+</script><meta property="og:title" content="常用的istioctl命令 | Istio入门与实战 | 云原生研习社" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="https://hellocloudnative.github.io/images/icon.png">
+
+
+<meta property="og:url" content="https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/5-%E5%B8%B8%E7%94%A8%E7%9A%84istioctl%E5%91%BD%E4%BB%A4/" />
+
+
+
+<meta property="og:description" content="常用的istioctl命令" />
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="云原生研习社" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2019-10-12T00:00:00&#43;00:00" />
+
+
+<meta property="article:modified_time" content="2019-10-12T00:00:00&#43;00:00" />
+
+
+
+<meta property="article:section" content="docs" />
+
+
+
+
+
+  <body class="flex min-h-screen flex-col">
+    <header
+      class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"
+    >
+      <div class="mx-auto w-full max-w-screen-xl"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="me-6 text-primary-text text-xl font-bold">云原生研习社</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/authors/pengxuan/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">关于我</a>
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">文章</a>
+            <a href="/categories/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">分类</a>
+            <a href="/series/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">系列</a>
+            <a href="/tags/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">标签</a>
+            <a href="/docs/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">文档</a>
+        </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+    </header>
+    <main class="grow pt-16">
+        <div class="pl-scrollbar">
+          <div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8">
+
+
+<div class="lg:pt-12">
+    <div class="flex flex-col md:flex-row bg-secondary-bg rounded">
+        <div class="md:w-1/4 lg:w-1/5 border-e">
+            <div class="sticky top-16 pt-6">
+                
+
+
+
+
+
+
+
+
+
+
+<div id="sidebar-title" class="md:hidden mx-4 px-2 pt-4 pb-2 md:border-b text-tertiary-text md:text-primary-text">
+    <span class="font-semibold">目录</span>
+    <i class='fas fa-caret-right ms-1'></i>
+</div>
+
+<div id="sidebar-toc"
+    class="hidden md:block overflow-y-auto mx-6 md:mx-0 pe-6 pt-2 md:max-h-doc-sidebar bg-primary-bg md:bg-transparent">
+    <div class="flex flex-wrap ms-4 -me-2 p-2 bg-secondary-bg md:bg-primary-bg rounded">
+        <a class=" hover:text-eureka"
+            href="https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/">Istio入门与实战</a>
+        
+        
+        
+
+
+    </div>
+    
+<ul class="ps-6">
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/1-istio%E7%9A%84%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/">istio的安装部署</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/2-%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8istio%E7%9A%84%E8%A6%81%E6%B1%82/">服务使用Istio的要求</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/3-%E5%B8%B8%E7%94%A8%E8%B5%84%E6%BA%90%E7%B1%BB%E5%9E%8B/">常用资源类型</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/4-%E5%B8%B8%E7%94%A8%E7%9A%84kubectl%E5%91%BD%E4%BB%A4/">常用的kubectl命令</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" text-eureka  hover:text-eureka"
+                href="https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/5-%E5%B8%B8%E7%94%A8%E7%9A%84istioctl%E5%91%BD%E4%BB%A4/">常用的istioctl命令</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/6-istio%E6%B3%A8%E5%85%A5/">Istio注入</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/7-%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%BA%94%E7%94%A8%E7%9A%84%E9%83%A8%E7%BD%B2/">微服务应用的部署</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/8-%E5%9C%A8istio%E4%B8%AD%E9%83%A8%E7%BD%B2%E5%BE%AE%E6%9C%8D%E5%8A%A1/">在Istio中部署微服务</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/9-istio%E6%9C%8D%E5%8A%A1%E8%B7%AF%E7%94%B1%E7%9B%B8%E5%85%B3%E7%9A%84%E5%8A%9F%E8%83%BD/">Istio服务路由相关的功能</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/10-%E8%AE%A9%E6%9C%8D%E5%8A%A1%E6%9B%B4%E5%85%B7%E5%BC%B9%E6%80%A7/">让服务更具弹性</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/11-%E8%AE%A9%E6%9C%8D%E5%8A%A1%E6%95%85%E9%9A%9C%E6%A3%80%E6%B5%8B%E6%9B%B4%E5%AE%B9%E6%98%93/">让服务故障检测更容易</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/12-%E8%AE%A9%E6%9C%8D%E5%8A%A1%E9%80%9A%E4%BF%A1%E6%9B%B4%E5%AE%89%E5%85%A8%E5%8F%AF%E6%8E%A7/">让服务通信更安全可控</a>
+        </div>
+        
+    </li>
+    
+    
+</ul>
+
+</div>
+
+
+
+
+
+            </div>
+
+        </div>
+        <div class="w-full md:w-3/4 lg:w-4/5 pb-8 pt-2 md:pt-8">
+            <div class="flex">
+                <div class="w-full lg:w-3/4 px-6">
+                    <article class="prose">
+  <h1 class="mb-4">常用的istioctl命令</h1>
+
+  <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >2019-10-12</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>4分钟阅读时长</span>
+  </div>
+
+  
+
+  
+</div>
+
+
+  
+  
+
+  <h2 id="通用参数说明">通用参数说明</h2>
+<p><strong>&ndash;context</strong>:指定istioctl使用kubeconfig中的哪个context，默认值为空，表</p>
+<p>示使用kubeconfig里的default context。</p>
+<p><strong>&ndash;istioNamespace</strong>:指定Istio所在命名空间，默认值为istio-system，短参 数-i。</p>
+<p><strong>&ndash;kubeconfig</strong>:指定kubeconfig文件的路径，默认值为空，表示使用 ~/.kube/config文件，短参数-c。</p>
+<p><strong>&ndash;namespace</strong>:指定操作的namespace，默认值为空，表示使用default命 名空间，短参数-n。</p>
+<h2 id="常用命令">常用命令</h2>
+<p>先说明一下，如下的示例中productpage-v1-8d69b45c-2z8v5为官方示例</p>
+<p>bookinfo中productpage的Pod名称，需要通过如下命令先获取Pod名称:</p>
+<pre><code class="language-shell">$ kubectl get pod productpage 
+</code></pre>
+<h3 id="手动注入envoy代理">手动注入Envoy代理</h3>
+<p>手动注入Envoy代理到Pod中，用于没有开启自动注入的情况，可以使用</p>
+<p>参数&ndash;file(-f)指定配置文件，使用形式如下:</p>
+<p>istioctl kube-inject [flags]</p>
+<p>示例如下:</p>
+<pre><code class="language-shell"> $kubectl apply -f &lt;(istioctl kube-inject -f mydeployment.yaml)
+ $ istioctl kube-inject -f deployment.yaml -o deployment-injected.yaml
+ $ kubectl get deployment -o yaml | istioctl kube-inject -f - | kubectl apply -f - 
+</code></pre>
+<pre><code class="language-shell">[root@master yaml]# istioctl  kube-inject -f  nginx-deployment.yaml -o deployment-injected.yaml
+</code></pre>
+<h3 id="获取启动时的配置信息">获取启动时的配置信息</h3>
+<p>在指定的Pod中获取Envoy实例启动时的配置信息，使用形式如下:</p>
+<p>istioctl proxy-config bootstrap <pod-name> [flags]</p>
+<p>示例如下:</p>
+<pre><code class="language-shell">[root@master yaml]# istioctl proxy-config   bootstrap  nginx-deployment-6bd5c7b5f8-h4klb
+</code></pre>
+<h3 id="获取集群配置信息">获取集群配置信息</h3>
+<p>从指定Pod中的Envoy实例里读取集群配置信息，使用形式如下:</p>
+<p>istioctl proxy-config cluster <pod-name> [flags]</p>
+<p>示例如下:</p>
+<pre><code class="language-shell">$ istioctl proxy-config cluster productpage-v1-8d69b45c-2z8v5
+$ istioctl proxy-config cluster productpage-v1-8d69b45c-2z8v5 --port 9080
+$ istioctl proxy-config cluster productpage-v1-8d69b45c-2z8v5 --fqdn details.default.svc.cluster
+</code></pre>
+<pre><code class="language-shell">[root@master yaml]# istioctl proxy-config   cluster  nginx-deployment-6bd5c7b5f8-h4klb
+SERVICE FQDN                                              PORT      SUBSET         DIRECTION     TYPE
+BlackHoleCluster                                          -         -              -             STATIC
+InboundPassthroughClusterIpv4                             -         -              -             ORIGINAL_DST
+PassthroughCluster                                        -         -              -             ORIGINAL_DST
+calico-typha.kube-system.svc.cluster.local                5473      -              outbound      EDS
+default-http-backend.ingress-nginx.svc.cluster.local      80        -              outbound      EDS
+deploy-nginx.default.svc.cluster.local                    80        -              outbound      EDS
+details.default.svc.cluster.local                         9080      -              outbound      EDS
+grafana.monitor.svc.cluster.local                         3000      -              outbound      EDS
+httpbin.default.svc.cluster.local                         8000      -              outbound      EDS
+ingress-nginx.ingress-nginx.svc.cluster.local             80        -              outbound      EDS
+ingress-nginx.ingress-nginx.svc.cluster.local             443       -              outbound      EDS
+istio-citadel.istio-system.svc.cluster.local              8060      -              outbound      EDS
+istio-citadel.istio-system.svc.cluster.local              15014     -              outbound      EDS
+istio-galley.istio-system.svc.cluster.local               443       -              outbound      EDS
+istio-galley.istio-system.svc.cluster.local               9901      -              outbound      EDS
+istio-galley.istio-system.svc.cluster.local               15014     -              outbound      EDS
+istio-ingressgateway.istio-system.svc.cluster.local       80        -              outbound      EDS
+istio-ingressgateway.istio-system.svc.cluster.local       443       -              outbound      EDS
+istio-ingressgateway.istio-system.svc.cluster.local       15020     -              outbound      EDS
+istio-ingressgateway.istio-system.svc.cluster.local       15029     -              outbound      EDS
+istio-ingressgateway.istio-system.svc.cluster.local       15030     -              outbound      EDS
+istio-ingressgateway.istio-system.svc.cluster.local       15031     -              outbound      EDS
+istio-ingressgateway.istio-system.svc.cluster.local       15032     -              outbound      EDS
+istio-ingressgateway.istio-system.svc.cluster.local       15443     -              outbound      EDS
+istio-ingressgateway.istio-system.svc.cluster.local       31400     -              outbound      EDS
+istio-pilot.istio-system.svc.cluster.local                8080      -              outbound      EDS
+istio-pilot.istio-system.svc.cluster.local                15010     -              outbound      EDS
+istio-pilot.istio-system.svc.cluster.local                15011     -              outbound      EDS
+istio-pilot.istio-system.svc.cluster.local                15014     -              outbound      EDS
+istio-policy.istio-system.svc.cluster.local               9091      -              outbound      EDS
+istio-policy.istio-system.svc.cluster.local               15004     -              outbound      EDS
+istio-policy.istio-system.svc.cluster.local               15014     -              outbound      EDS
+istio-sidecar-injector.istio-system.svc.cluster.local     443       -              outbound      EDS
+istio-sidecar-injector.istio-system.svc.cluster.local     15014     -              outbound      EDS
+istio-telemetry.istio-system.svc.cluster.local            9091      -              outbound      EDS
+istio-telemetry.istio-system.svc.cluster.local            15004     -              outbound      EDS
+istio-telemetry.istio-system.svc.cluster.local            15014     -              outbound      EDS
+istio-telemetry.istio-system.svc.cluster.local            42422     -              outbound      EDS
+kube-dns.kube-system.svc.cluster.local                    53        -              outbound      EDS
+kube-state-metrics.monitor.svc.cluster.local              8080      -              outbound      EDS
+kube-state-metrics.monitor.svc.cluster.local              8081      -              outbound      EDS
+kubernetes.default.svc.cluster.local                      443       -              outbound      EDS
+metrics-server.kube-system.svc.cluster.local              443       -              outbound      EDS
+mgmtCluster                                               15020     mgmt-15020     inbound       STATIC
+myapp.default.svc.cluster.local                           80        -              outbound      EDS
+nginx.default.svc.cluster.local                           80        -              inbound       STATIC
+nginx.default.svc.cluster.local                           80        -              outbound      EDS
+productpage.default.svc.cluster.local                     9080      -              outbound      EDS
+prometheus-svc.monitor.svc.cluster.local                  9090      -              outbound      EDS
+prometheus_stats                                          -         -              -             STATIC
+ratings.default.svc.cluster.local                         9080      -              outbound      EDS
+reviews.default.svc.cluster.local                         9080      -              outbound      EDS
+sleep.default.svc.cluster.local                           80        -              outbound      EDS
+tiller-deploy.kube-system.svc.cluster.local               44134     -              outbound      EDS
+xds-grpc                                                  -         -              -             STRICT_DNS
+zipkin                                                    -         -              -             STRICT_DNS
+</code></pre>
+<h3 id="获取监听器信息">获取监听器信息</h3>
+<p>从指定Pod中的Envoy实例里读取监听器信息，使用形式如下:</p>
+<p>istioctl proxy-config listener <pod-name> [flags]</p>
+<p>示例如下:</p>
+<pre><code class="language-shell">$istioctl proxy-config listener productpage-v1-8d69b45c-2z8v5
+$ istioctl proxy-config listener productpage-v1-8d69b45c-2z8v5 --port 9080
+$ istioctl proxy-config listener productpage-v1-8d69b45c-2z8v5 --type HTTP --address 0.0.0.0 -o json 
+
+</code></pre>
+<pre><code class="language-shell">[root@master yaml]# istioctl proxy-config   listener  nginx-deployment-6bd5c7b5f8-h4klb
+ADDRESS            PORT      TYPE
+10.0.1.250         80        TCP
+10.0.1.250         15020     TCP
+10.110.151.75      15030     TCP
+10.96.0.10         53        TCP
+10.106.175.248     15011     TCP
+10.110.151.75      15032     TCP
+10.110.151.75      443       TCP
+10.110.151.75      15031     TCP
+10.96.0.1          443       TCP
+10.106.86.249      443       TCP
+10.110.151.75      15029     TCP
+10.110.151.75      31400     TCP
+10.110.151.75      15443     TCP
+10.111.80.193      443       TCP
+10.106.205.180     443       TCP
+10.110.164.157     44134     TCP
+0.0.0.0            15004     TCP
+10.99.71.147       42422     TCP
+10.97.170.162      80        TCP
+0.0.0.0            15014     TCP
+0.0.0.0            15010     TCP
+10.103.178.100     80        TCP
+10.104.219.211     8081      TCP
+10.108.181.230     5473      TCP
+10.109.255.52      9090      TCP
+0.0.0.0            8080      TCP
+10.111.21.236      80        TCP
+0.0.0.0            9080      TCP
+10.96.224.114      3000      TCP
+10.110.151.75      15020     TCP
+0.0.0.0            80        TCP
+0.0.0.0            9901      TCP
+0.0.0.0            9091      TCP
+0.0.0.0            8000      TCP
+10.101.29.107      443       TCP
+0.0.0.0            8060      TCP
+0.0.0.0            15001     TCP
+0.0.0.0            15006     TCP
+0.0.0.0            15090     HTTP
+[root@master yaml]# istioctl proxy-config   listener  nginx-deployment-6bd5c7b5f8-h4klb  --port 8080
+ADDRESS     PORT     TYPE
+0.0.0.0     8080     TCP
+[root@master yaml]# istioctl proxy-config   listener  nginx-deployment-6bd5c7b5f8-h4klb  --type HTTP --address 0.0.0.0 -o json
+[
+    {
+        &quot;address&quot;: {
+            &quot;socketAddress&quot;: {
+                &quot;address&quot;: &quot;0.0.0.0&quot;,
+                &quot;portValue&quot;: 15090
+            }
+        },
+        &quot;filterChains&quot;: [
+            {
+                &quot;filters&quot;: [
+                    {
+                        &quot;name&quot;: &quot;envoy.http_connection_manager&quot;,
+                        &quot;config&quot;: {
+                            &quot;codec_type&quot;: &quot;AUTO&quot;,
+                            &quot;http_filters&quot;: {
+                                &quot;name&quot;: &quot;envoy.router&quot;
+                            },
+                            &quot;route_config&quot;: {
+                                &quot;virtual_hosts&quot;: [
+                                    {
+                                        &quot;domains&quot;: [
+                                            &quot;*&quot;
+                                        ],
+                                        &quot;name&quot;: &quot;backend&quot;,
+                                        &quot;routes&quot;: [
+                                            {
+                                                &quot;match&quot;: {
+                                                    &quot;prefix&quot;: &quot;/stats/prometheus&quot;
+                                                },
+                                                &quot;route&quot;: {
+                                                    &quot;cluster&quot;: &quot;prometheus_stats&quot;
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            &quot;stat_prefix&quot;: &quot;stats&quot;
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]
+</code></pre>
+<p>(5)获取路由配置信息</p>
+<p>从指定Pod中的Envoy实例里读取路由配置信息，使用形式如下:</p>
+<p>istioctl proxy-config route <pod-name> [flags]</p>
+<p>示例如下:</p>
+<pre><code class="language-shell"> $istioctl proxy-config route productpage-v1-8d69b45c-2z8v5
+ $ istioctl proxy-config route productpage-v1-8d69b45c-2z8v5 --name 9080
+ $ istioctl proxy-config route productpage-v1-8d69b45c-2z8v5 --name 9080 -o json 
+</code></pre>
+<pre><code class="language-shell">[root@master yaml]# istioctl proxy-config   route   nginx-deployment-6bd5c7b5f8-h4klb
+NOTE: This output only contains routes loaded via RDS.
+NAME                                                          VIRTUAL HOSTS
+tiller-deploy.kube-system.svc.cluster.local:44134             1
+istio-telemetry.istio-system.svc.cluster.local:42422          1
+metrics-server.kube-system.svc.cluster.local:443              1
+istio-ingressgateway.istio-system.svc.cluster.local:15020     1
+grafana.monitor.svc.cluster.local:3000                        1
+8000                                                          2
+default-http-backend.ingress-nginx.svc.cluster.local:80       1
+nginx.default.svc.cluster.local:80                            1
+80                                                            8
+prometheus-svc.monitor.svc.cluster.local:9090                 1
+calico-typha.kube-system.svc.cluster.local:5473               1
+8060                                                          2
+kube-state-metrics.monitor.svc.cluster.local:8081             1
+deploy-nginx.default.svc.cluster.local:80                     1
+8080                                                          3
+9080                                                          5
+9091                                                          3
+9901                                                          2
+15004                                                         3
+15010                                                         2
+15014                                                         7
+                                                              1
+</code></pre>
+<h3 id="获取配置的同步状态">获取配置的同步状态</h3>
+<p>获取Pilot到网格中每个Envoy的配置同步状态，使用形式如下:</p>
+<p>istioctl proxy-status [<proxy-name>] [flags]</p>
+<p>示例如下:</p>
+<pre><code class="language-shell"> $istioctl proxy-status
+ $ istioctl proxy-status productpage-v1-8d69b45c-2z8v5.default 
+</code></pre>
+<pre><code class="language-shell">[root@master yaml]# istioctl proxy-status   nginx-deployment-6bd5c7b5f8-h4klb.default
+Clusters Match
+Listeners Match
+Routes Match (RDS last loaded at Mon, 14 Oct 2019 11:04:01 CST)
+</code></pre>
+</article>
+
+                    
+                    
+                    
+
+                    
+
+
+
+                    
+  <div
+    class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"
+  >
+    <div>
+      
+        <span class="text-primary-text block font-bold"
+          >上一页</span
+        >
+        <a href="https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/4-%E5%B8%B8%E7%94%A8%E7%9A%84kubectl%E5%91%BD%E4%BB%A4/" class="block">常用的kubectl命令</a>
+      
+    </div>
+    <div class="mt-4 md:mt-0 md:text-right">
+      
+        <span class="text-primary-text block font-bold">下一页</span>
+        <a href="https://hellocloudnative.github.io/docs/1-istio%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E6%88%98/6-istio%E6%B3%A8%E5%85%A5/" class="block">Istio注入</a>
+      
+    </div>
+  </div>
+
+
+                    
+
+
+
+                </div>
+                
+                <div class="hidden lg:block lg:w-1/4">
+                    
+                    <div
+  class="
+    bg-secondary-bg
+   prose sticky top-16 z-10 hidden px-6 py-4 lg:block"
+>
+  <h3>本页内容</h3>
+</div>
+<div
+  class="sticky-toc 
+    border-s
+   hidden px-6 pb-6 lg:block"
+>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#通用参数说明">通用参数说明</a></li>
+    <li><a href="#常用命令">常用命令</a>
+      <ul>
+        <li><a href="#手动注入envoy代理">手动注入Envoy代理</a></li>
+        <li><a href="#获取启动时的配置信息">获取启动时的配置信息</a></li>
+        <li><a href="#获取集群配置信息">获取集群配置信息</a></li>
+        <li><a href="#获取监听器信息">获取监听器信息</a></li>
+        <li><a href="#获取配置的同步状态">获取配置的同步状态</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    enableStickyToc();
+  });
+</script>
+
+                    
+                </div>
+                
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        
+        hljs.highlightAll();
+        changeSidebarHeight();
+        switchDocToc();
+    })
+</script>
+
+
+
+
+
+
+
+
+
+          </div>
+        </div>
+      
+    </main>
+    <footer class="pl-scrollbar">
+      <div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2021 <a href="https://hellocloudnative.github.io/">Pengxuan Zhang</a> 
+ &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div></div>
+    </footer>
+  </body>
+</html>
